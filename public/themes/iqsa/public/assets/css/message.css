@@ -1,0 +1,67 @@
+.message{
+	padding: 50px 40px 0 100px;
+	background: url(../images/message.jpg) no-repeat left bottom;
+	border-bottom:1px solid #CCC;
+	margin-bottom:50px;
+}
+.message h3{ color:#DF2C20; font-size:24px; height:40px; line-height:40px; font-weight:normal;}
+.message p{ color:#99A2B1; font-size:12px; padding-bottom:10px;}
+
+
+.form_message{ margin:20px; margin-bottom:50px;}
+.form_message th{ text-align:right; font-size:14px; font-weight:normal; color:#666;}
+.form_message td{ padding:5px;}
+
+.input_message{
+	border-top:1px solid #C9CACF;
+	border-right:1px solid #E5E5E5;
+	border-bottom:1px solid #E5E5E5;
+	border-left:1px solid #C9CACF;
+	height:28px;
+	line-height:28px;
+	padding:0 5px;
+	}
+.input_message:hover{ background-color:#FFC;}	
+.textarea_message{
+	border-top:1px solid #C9CACF;
+	border-right:1px solid #E5E5E5;
+	border-bottom:1px solid #E5E5E5;
+	border-left:1px solid #C9CACF;
+	line-height:25px;
+	padding:5px;
+	}
+.textarea_message:hover{ background-color:#FFC;}	
+
+.btn_message{
+ height:30px; line-height:30px; width:93px;background: url(../images/li3_b.png) no-repeat center top; overflow:hidden; color:#FFEFBF; display:block; text-align:center;cursor:pointer;
+ border:none;
+ border:0px;
+}
+.btn_message:hover{ background: url(../images/li3_b.png) no-repeat center bottom; color:#FFF;}
+
+
+
+
+
+.message_ok{ line-height:30px; font-size:15px; color:#666;padding:20px 10px 0px 150px; margin:10px 30px;}
+.message_ok strong{ padding:0 5px; color:#F00; font-weight:normal;}
+.message_ok ol{	margin:10px; line-height:20px;}
+.message_ok ol li{
+	list-style-type: decimal;
+	list-style-position: inside;
+	font-size:13px;
+}
+
+.message_ok_t { margin:10px 30px; height:105px;background: url(../images/message_img.jpg) no-repeat left top; padding:40px 10px 0px 150px; border-bottom:1px solid #E8EBEE; line-height:40px; color:#666; font-size:13px;}
+.message_ok_t strong{ font-size:30px; color:#FF6600; font-weight:normal; padding-right:15px;}
+.message_ok_t em{ font-size:16px; color:#000; font-style:normal; padding:0 5px;}
+
+
+
+
+/*表单验证提示框*/
+.form_error{border: 2px solid #FF0000; color:red;}
+.form_error_info{ color:#F00;}
+.form_ok_info{ color:#090;}
+.form_tip_info{ color:#999; font-size:13px;}
+
