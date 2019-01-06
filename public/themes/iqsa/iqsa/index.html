@@ -39,19 +39,21 @@
 <body>
 
 <div id="header" class="w_set">
-<a href="http://www.dede58.com" id="logo"><span>网站名称-织梦模板</span></a>
+    <a href="http://www.iqsachina.com/index.html"> <img src="http://www.iqsachina.com/templets/IQSA/images/logochan.png" alt="综中何大中华区" class="normal_logo"></a>
 <div class="topnav">
-<a href="#">收藏本站</a>/
-<a href="#">联系我们</a>/
-<a href="#">客户留言</a>
+    <a href="#">400-860-3833</a>/
+    <a href="http://weibo.com/iqsa">官方微博</a>/
+    <a href="#">中文</a>/
+    <a href="#">English</a>/
+    <a href="#">加入收藏</a>
 </div>
 
 <div id="topmenu_f" class="clear">
 <ul>
-<li class="topmenu_f_on_l"><a href="#">网站首页</a></li>
+<li class="topmenu_f_on"><a href="#">网站首页</a></li>
 <li><a href="#">企业简介</a></li>
 <li><a href="#">组织机构</a></li>
-<li class="topmenu_f_on"><a href="#">企业动态</a></li>
+<li><a href="#">企业动态</a></li>
 <li><a href="#">综合实力</a></li>
 <li><a href="#">荣誉工程</a></li>
 <li><a href="#">党群建设</a></li>
@@ -229,10 +231,15 @@ $(document).ready(function(){
 <div class="w_set2">
 
 <dl class="fl w_310">
-<dt class="t_1"><h3>关于织梦模板</h3><span>ABOUT US</span></dt>
+<dt class="t_1"><a href="#" class="t_1_more">更多</a><h3>成功案例</h3><span>SUCCESS</span></dt>
 <dd class="about pa10" style="height:220px;">
-<p>织梦模板(dede58.com)是知名你说你将要远将你说你将要远将你说你将要远将你说你将要远将你说你将要远将免版税模板库之一，主要业务为微利正版模板及图片素材服务。您可以在拥有模板(dede58.com)是知名你说你将要远将你说你将要远将你说你将要远将你说你将要远将你说你将要远将免版税模板库之一，主要业务为微利正版模板及图片素材服务。</p>
-<a href="#" class="url_1 mt10">了解更多</a>
+<!--<p>织梦模板(dede58.com)是知名你说你将要远将你说你将要远将你说你将要远将你说你将要远将你说你将要远将免版税模板库之一，主要业务为微利正版模板及图片素材服务。您可以在拥有模板(dede58.com)是知名你说你将要远将你说你将要远将你说你将要远将你说你将要远将你说你将要远将免版税模板库之一，主要业务为微利正版模板及图片素材服务。</p>-->
+    <ul class="list_1">
+        <foreach name="caseList" item="vo">
+            <li><a href="#">{$vo.title}</a><span><?php echo date('Y-m-d',$vo['sortrank']) ?></span></li>
+        </foreach>
+    </ul>
+    <!--<a href="#" class="url_1 mt10">了解更多</a>-->
 </dd>
 </dl>
 <!--/w_310-->
@@ -240,22 +247,13 @@ $(document).ready(function(){
 
 
 <dl class="fl w_310 ml15">
-<dt class="t_1 "><a href="#" class="t_1_more">更多</a><h3>企业新闻</h3><span>NEWS</span></dt>
+<dt class="t_1 "><a href="#" class="t_1_more">更多</a><h3>新闻及最新标准</h3><span>NEWS</span></dt>
 <dd class="pa10" style="height:240px;">
-<ul class="list_tig_1">
-<li>
-<a href="#" class="list_tig_1_i"><img src="__TMPL__/public/assets/images/temp/1.jpg" width="100" height="70" /></a>
-<a href="#" class="list_tig_1_t">员工赴入企第一课</a>
-<p>核心提示：3日14时50分,在吉林省境内的长辆从哈尔滨方向驶</p>
-</li>
-</ul>
-
 
   <ul class="list_1">
-    <li><a href="#">来看看娃哈哈的谷歌和最新发明</a><span>11-15</span></li>
-    <li><a href="#">来看看娃哈哈的谷歌和最新发明</a><span>11-15</span></li>
-    <li><a href="#">苹果、谷歌和微软的硅谷战争</a><span>11-15</span></li>
-    <li><a href="#">周鸿祎：无论对谷歌和手多强大我都</a><span>11-15</span></li>
+      <foreach name="newsList" item="vo">
+          <li><a href="#">{$vo.title}</a><span><?php echo date('Y-m-d',$vo['sortrank']) ?></span></li>
+      </foreach>
   </ul>
 
 </dd>
@@ -263,10 +261,10 @@ $(document).ready(function(){
 <!--/w_310-->
 
 
-<dl class="fr w_310">
-<dt class="t_1 "><a href="#" class="t_1_more">更多</a><h3>产业及服务</h3><span>NEWS</span></dt>
-<dd class="pa10" style="height:240px;">
-<p class="c_666">将要远游不需人相送留下今夜需人相送你说你将要远游说你将要远游不需人相送留下今夜你说你将要远游不需人相送留下今夜</p>
+<!--<dl class="fr w_310">-->
+<!--<dt class="t_1 "><a href="#" class="t_1_more">更多</a><h3>产业及服务</h3><span>NEWS</span></dt>-->
+<!--<dd class="pa10" style="height:240px;">-->
+<!--<p class="c_666">将要远游不需人相送留下今夜需人相送你说你将要远游说你将要远游不需人相送留下今夜你说你将要远游不需人相送留下今夜</p>-->
 <!--<div class="online">-->
 <!--<p>-->
 <!--售前咨询<br />-->
@@ -332,43 +330,83 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
 <div id="foot">
 <table cellpadding="5" class="w_set">
   <tr>
-    <td><img src="images/2.png" width="112" height="112" /></td>
+    <td><img src="http://www.iqsachina.com/templets/IQSA/images/qrcode_for_gh_a7955e0d7bbf_430.jpg" width="112" height="112" /></td>
     <td valign="top" style="text-align:left;">
-<h4 class="f14 c_fff">合作伙伴</h4>
+<h4 class="f14 c_fff">我们就在您身边！ 24小时热线：400-860-3833</h4>
 <div class="pa10">
-<a href="#"><img src="__TMPL__/public/assets/images/temp/a1.jpg" width="70" height="35" /></a>
-<a href="#"><img src="__TMPL__/public/assets/images/temp/a2.jpg" width="70" height="35" /></a>
-<a href="#"><img src="__TMPL__/public/assets/images/temp/a3.jpg" width="70" height="35" /></a>
-<a href="#"><img src="__TMPL__/public/assets/images/temp/a4.jpg" width="70" height="35" /></a>
-</div>
+    <section class="grid-column-3 grid-column-medium-4 dnvgl-collapsed">
+    <h1 style="line-height:20px;font-weight:700!important">深圳市综中合咨询服务有限公司（总部）</h1>
+    <ul>
+    <li>
+    手机：13802254325（同微信号）
+    </li>
+    <li>
+    电话：0755-82290007
+    </li>
+    <li>
+    QQ： 13802254325
+    </li>
+    <li>
+    邮箱：iqsa@public.szptt.net.cn
+    </li>
+    <li>
+    地址：深圳市罗湖区人民南路36号深房广场A座35楼（自购物业）
+    </li>
+    </ul>
+    </section>
+    <section class="grid-column-3 grid-column-medium-4 dnvgl-collapsed">
+    <h1 style="line-height:20px">江苏综中合咨询服务有限公司</h1>
+    <ul>
+    <li>
+    手机：13776208467
+    </li>
+    <li>
+    电话：0512-81569046
+    </li>
+    <li>
+    QQ： 19502566&#160;
+    </li>
+    <li>
+    邮箱：yui@iqsachina.com
+    </li>
+    <li>
+    地址：江苏省常熟市东南大道333号科创大厦A区206室
+    </li>
+    </ul>
+    </section>
+    <section class="grid-column-3 grid-column-medium-4 dnvgl-collapsed">
+    <h1 style="line-height:20px">安徽综中合咨询服务有限公司</h1>
+    <ul>
+    <li>
+    手机：13505532175
+    </li>
+    <li>
+    电话：0553-3116125
 
-<p>© 20010-20011 版权所有 2003 -2010 dede58.com  分享模板？就去织梦模板！</p>
-<div id="footmenu">
-<a href="#">关于我们</a>|
-<a href="#">企业新闻</a>|
-<a href="#">成功案例</a>|
-<a href="#">产品中心</a>|
-<a href="#">人力资源</a>|
-<a href="#">产品中心</a>
+    </li>
+    <li>
+    地址：安徽省芜湖市文化路世纪花园I座901
+    </li>
+    </ul>
+    </section>
 </div>
 <!--/footmenu-->
 
-    
+
     </td>
-    <td valign="top"><p class="tel">客户服务热线<strong>400-100-123456</strong></p>
+    <td valign="top"><p class="tel">客户服务热线<strong>400-860-3833</strong></p>
 <!--/tel-->
 </td>
   </tr>
 </table>
 
+<span>
+    Copyright 1998-2017 IQSA&COMPANY|All Rights Reserved 综中合咨询服务有限公司 从优秀到卓越的验厂咨询辅导公司！ <br />
+    粤 ICP 备 15111424号
+</span>
 </div>
 <!--/foot-->
 

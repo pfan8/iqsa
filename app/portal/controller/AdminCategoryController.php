@@ -23,7 +23,7 @@ class AdminCategoryController extends AdminBaseController
      * 文章分类列表
      * @adminMenu(
      *     'name'   => '分类管理',
-     *     'parent' => 'portal/AdminIndex/default',
+     *     'parent' => 'iqsa/AdminIndex/default',
      *     'display'=> true,
      *     'hasView'=> true,
      *     'order'  => 10000,
@@ -91,8 +91,8 @@ class AdminCategoryController extends AdminBaseController
         $categoriesTree      = $portalCategoryModel->adminCategoryTree($parentId);
 
         $themeModel        = new ThemeModel();
-        $listThemeFiles    = $themeModel->getActionThemeFiles('portal/List/index');
-        $articleThemeFiles = $themeModel->getActionThemeFiles('portal/Article/index');
+        $listThemeFiles    = $themeModel->getActionThemeFiles('iqsa/List/index');
+        $articleThemeFiles = $themeModel->getActionThemeFiles('iqsa/Article/index');
 
         $this->assign('list_theme_files', $listThemeFiles);
         $this->assign('article_theme_files', $articleThemeFiles);
@@ -169,11 +169,11 @@ class AdminCategoryController extends AdminBaseController
             $categoriesTree = $portalCategoryModel->adminCategoryTree($category['parent_id'], $id);
 
             $themeModel        = new ThemeModel();
-            $listThemeFiles    = $themeModel->getActionThemeFiles('portal/List/index');
-            $articleThemeFiles = $themeModel->getActionThemeFiles('portal/Article/index');
+            $listThemeFiles    = $themeModel->getActionThemeFiles('iqsa/List/index');
+            $articleThemeFiles = $themeModel->getActionThemeFiles('iqsa/Article/index');
 
             $routeModel = new RouteModel();
-            $alias      = $routeModel->getUrl('portal/List/index', ['id' => $id]);
+            $alias      = $routeModel->getUrl('iqsa/List/index', ['id' => $id]);
 
             $category['alias'] = $alias;
             $this->assign($category);

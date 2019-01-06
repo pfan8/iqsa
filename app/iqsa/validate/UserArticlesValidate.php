@@ -6,27 +6,23 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: 老猫 <thinkcmf@126.com>
+// | Author: 小夏 < 449134904@qq.com>
 // +----------------------------------------------------------------------
-namespace app\portal\controller;
+namespace app\user\validate;
 
-use cmf\controller\AdminBaseController;
+use think\Validate;
 
-/**
- * Class AdminIndexController
- * @package app\iqsa\controller
- * @adminMenuRoot(
- *     'name'   =>'门户管理',
- *     'action' =>'default',
- *     'parent' =>'',
- *     'display'=> true,
- *     'order'  => 30,
- *     'icon'   =>'th',
- *     'remark' =>'门户管理'
- * )
- */
-class AdminIndexController extends AdminBaseController
+class UserArticlesValidate extends Validate
 {
+    protected $rule = [
+        'post_title' => 'require',
+    ];
+    protected $message = [
+        'post_title.require' => '文章标题不能为空',
+    ];
 
-
+    protected $scene = [
+        'add'  => ['post_title'],
+        'edit' => ['post_title'],
+    ];
 }

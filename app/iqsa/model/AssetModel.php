@@ -8,25 +8,13 @@
 // +----------------------------------------------------------------------
 // | Author: 老猫 <thinkcmf@126.com>
 // +----------------------------------------------------------------------
-namespace app\portal\controller;
+namespace app\user\model;
 
-use cmf\controller\AdminBaseController;
+use think\Model;
 
-/**
- * Class AdminIndexController
- * @package app\iqsa\controller
- * @adminMenuRoot(
- *     'name'   =>'门户管理',
- *     'action' =>'default',
- *     'parent' =>'',
- *     'display'=> true,
- *     'order'  => 30,
- *     'icon'   =>'th',
- *     'remark' =>'门户管理'
- * )
- */
-class AdminIndexController extends AdminBaseController
+class AssetModel extends Model
 {
+
 
 
 }

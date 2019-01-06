@@ -23,7 +23,7 @@ class AdminPageController extends AdminBaseController
      * 页面管理
      * @adminMenu(
      *     'name'   => '页面管理',
-     *     'parent' => 'portal/AdminIndex/default',
+     *     'parent' => 'iqsa/AdminIndex/default',
      *     'display'=> true,
      *     'hasView'=> true,
      *     'order'  => 10000,
@@ -75,7 +75,7 @@ class AdminPageController extends AdminBaseController
         }
 
         $themeModel     = new ThemeModel();
-        $pageThemeFiles = $themeModel->getActionThemeFiles('portal/Page/index');
+        $pageThemeFiles = $themeModel->getActionThemeFiles('iqsa/Page/index');
         $this->assign('page_theme_files', $pageThemeFiles);
         return $this->fetch();
     }
@@ -151,10 +151,10 @@ class AdminPageController extends AdminBaseController
         $post            = $portalPostModel->where('id', $id)->find();
 
         $themeModel     = new ThemeModel();
-        $pageThemeFiles = $themeModel->getActionThemeFiles('portal/Page/index');
+        $pageThemeFiles = $themeModel->getActionThemeFiles('iqsa/Page/index');
 
         $routeModel         = new RouteModel();
-        $alias              = $routeModel->getUrl('portal/Page/index', ['id' => $id]);
+        $alias              = $routeModel->getUrl('iqsa/Page/index', ['id' => $id]);
         $post['post_alias'] = $alias;
         $this->assign('page_theme_files', $pageThemeFiles);
         $this->assign('post', $post);

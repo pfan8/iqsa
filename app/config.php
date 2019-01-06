@@ -53,7 +53,7 @@ $configs = [
     // | 模块设置
     // +----------------------------------------------------------------------
     // 默认模块名
-    'default_module'         => 'portal',
+    'default_module'         => 'iqsa',
     // 禁止访问模块
     'deny_module_list'       => ['common'],
     // 默认控制器名
@@ -121,7 +121,7 @@ $configs = [
         // | CMF模板 设置
         // +----------------------------------------------------------------------
         'cmf_theme_path'          => 'themes/',
-        'cmf_default_theme'       => 'simpleboot3',
+        'cmf_default_theme'       => 'iqsa',
         'cmf_admin_theme_path'    => 'themes/',
         'cmf_admin_default_theme' => 'admin_simpleboot3',
     ],

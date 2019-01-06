@@ -112,7 +112,7 @@ class RecycleBinController extends AdminBaseController
                 $re = Db::name('portal_post')->where('id', $result['object_id'])->delete();
                 //消除路由
                 $routeModel = new RouteModel();
-                $routeModel->setRoute('', 'portal/Page/index', ['id' => $result['object_id']], 2, 5000);
+                $routeModel->setRoute('', 'iqsa/Page/index', ['id' => $result['object_id']], 2, 5000);
                 $routeModel->getRoutes(true);
             } else {
                 $re = Db::name($result['table_name'])->where('id', $result['object_id'])->delete();

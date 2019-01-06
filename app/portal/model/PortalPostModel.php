@@ -391,7 +391,7 @@ class PortalPostModel extends Model
         $this->allowField(true)->isUpdate(true)->data($data, true)->save();
 
         $routeModel = new RouteModel();
-        $routeModel->setRoute($data['post_alias'], 'portal/Page/index', ['id' => $data['id']], 2, 5000);
+        $routeModel->setRoute($data['post_alias'], 'iqsa/Page/index', ['id' => $data['id']], 2, 5000);
 
         $routeModel->getRoutes(true);
         return $this;

@@ -8,25 +8,23 @@
 // +----------------------------------------------------------------------
 // | Author: 老猫 <thinkcmf@126.com>
 // +----------------------------------------------------------------------
-namespace app\portal\controller;
-
-use cmf\controller\AdminBaseController;
-
-/**
- * Class AdminIndexController
- * @package app\iqsa\controller
- * @adminMenuRoot(
- *     'name'   =>'门户管理',
- *     'action' =>'default',
- *     'parent' =>'',
- *     'display'=> true,
- *     'order'  => 30,
- *     'icon'   =>'th',
- *     'remark' =>'门户管理'
- * )
- */
-class AdminIndexController extends AdminBaseController
-{
-
-
-}
+return [
+    'Login/index'        => [
+        'name'   => '用户登录',
+        'vars'   => [
+        ],
+        'simple' => false
+    ],
+    'Register/index'     => [
+        'name'   => '用户注册',
+        'vars'   => [
+        ],
+        'simple' => false
+    ],
+    'Login/findPassword' => [
+        'name'   => '找回密码',
+        'vars'   => [
+        ],
+        'simple' => false
+    ],
+];

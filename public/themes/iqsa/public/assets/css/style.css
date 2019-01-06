@@ -114,7 +114,7 @@ background: url(../images/topmenu_f.gif) no-repeat center top;
 /**/
 .slides_bg{}
 
-.slides{ height:300px; width:100%;  position:relative; background-color:#F5F6F5;}
+.slides{ height:455px; width:100%;  position:relative; background-color:#F5F6F5;}
 
 .slides_nav{width:980px; margin:auto; height:20px; position:relative; }
 .slides_nav ul{}
@@ -123,8 +123,8 @@ background: url(../images/topmenu_f.gif) no-repeat center top;
 .slides_nav .current{background: url(../images/slides_nav_on.gif) no-repeat left top;}
 
 
-.slides_box{width:100%; height:300px; overflow:hidden;}
-.slides_box div{position: absolute; z-index:99;width:100%; height:300px;}
+.slides_box{width:100%; height:455px; overflow:hidden;}
+.slides_box div{position: absolute; z-index:99;width:100%; height:455px;}
 .slides_box div img{}
 
 .scroll{ margin-left:0px;display:block;white-space: nowrap;}
@@ -354,12 +354,12 @@ height:55px; padding:10px 0 0 45px;
 .w_set{ width:980px; margin-left:auto; margin-right:auto;}
 .w_set2{ width:960px; margin-left:auto; margin-right:auto;}
 
-.w_310{ width:310px;}
+.w_310{ width:465px;}
 .w_680{ width:680px;}
 .w_215{ width:215px;}
 .w_750{ width:750px;}
 
-.w_310{ width:310px;}
+.w_310{ width:465px;}
 .w_640{ width:640px;}
 
 /*/w_*/
