@@ -5,19 +5,19 @@ html{}
 body{background: url(../images/body.png) repeat-x left 0px;}
 a{}
 a:hover{ color:#DB241C;}
-#header{ position:relative; height:120px;background: url(../images/header.png) no-repeat right top;}
+#header{ position:relative; height:120px;}
 
 /**/
 /*标识*/
 /**/
 #logo{
-	width:170px;
-	height:50px;
+	width: 453px;
+	height:30px;
 	display:block;
 	background-image: url(../images/logo.png);
 	position:absolute;
 	left:0;
-	top:16px;
+	top:26px;
 }
 #logo span{ display:none;}
 
@@ -39,7 +39,7 @@ a:hover{ color:#DB241C;}
 	color:#CCC;
 	font-size:12px;
 }
-.input_search:focus{ outline:none } 
+.input_search:focus{ outline:none }
 
 .btn_search{ width:34px; height:30px;background: url(../images/btn_search.gif) no-repeat; border:none; float:right;}
 
@@ -50,8 +50,8 @@ a:hover{ color:#DB241C;}
 /**/
 /*顶部菜单-单排menutop-f*/
 /**/
-#topmenu_f{ position:absolute; bottom:0px; left:0; width:1280px;
-background: url(../images/topmenu_f.gif) no-repeat center top;
+#topmenu_f{ position:absolute; bottom:0px; left:0; width:980px;
+background: url(../images/topmenu_f.jpg) no-repeat center top;
 }
 #topmenu_f li{
 	height:40px;
@@ -128,13 +128,13 @@ background: url(../images/topmenu_f.gif) no-repeat center top;
 .slides_box div img{}
 
 .scroll{ margin-left:0px;display:block;white-space: nowrap;}
-.scroll_box{z-index:300; position:absolute; height:20px; right:10px; bottom:10px; overflow:hidden; width:150px;}
+.scroll_box{z-index:300; position:absolute; height:20px; right:10px; bottom:10px; overflow:hidden; width:130px;}
 
 .scroll_center{ height:20px; overflow:hidden;}
 
-.scroll_left{ background: url(../images/scroll.png) no-repeat left 0; position:absolute; left:0px; bottom:32px;z-index:310; width:15px; height:20px; cursor:pointer;}
+.scroll_left{  position:absolute; left:0px; bottom:32px;z-index:310; width:15px; height:20px; cursor:pointer;}
 .scroll_left span{ display:none;}
-.scroll_right{background: url(../images/scroll.png) no-repeat right 0; position:absolute; right:10px; bottom:32px;z-index:320;width:15px; height:20px; cursor:pointer;}
+.scroll_right{ position:absolute; right:10px; bottom:32px;z-index:320;width:15px; height:20px; cursor:pointer;}
 .scroll_right span{ display:none;}
 /*slides*/
 

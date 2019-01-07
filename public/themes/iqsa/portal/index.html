@@ -1,0 +1,84 @@
+<include file="public@head"/>
+
+
+<div class="bg_c_2" style="height:330px;">
+<div class="w_set2">
+
+<dl class="fl w_310">
+<dt class="t_1"><a href="#" class="t_1_more">更多</a><h3>成功案例</h3><span>SUCCESS</span></dt>
+<dd class="about pa10" style="height:220px;">
+    <ul class="list_1">
+        <foreach name="caseList" item="vo">
+            <li><a href="#">{$vo.title}</a><span><?php echo date('Y-m-d',$vo['sortrank']) ?></span></li>
+        </foreach>
+    </ul>
+</dd>
+</dl>
+<!--/w_310-->
+
+
+
+<dl class="fl w_310 ml15">
+<dt class="t_1 "><a href="#" class="t_1_more">更多</a><h3>新闻及最新标准</h3><span>NEWS</span></dt>
+<dd class="pa10" style="height:240px;">
+
+  <ul class="list_1">
+      <foreach name="newsList" item="vo">
+          <li><a href="#">{$vo.title}</a><span><?php echo date('Y-m-d',$vo['sortrank']) ?></span></li>
+      </foreach>
+  </ul>
+
+</dd>
+</dl>
+<!--/w_310-->
+
+</div>
+<!--/w_set2-->
+</div>
+<!--/bg_c_1-->
+
+
+
+
+
+
+<div class="bg_c_1 pt10" style="height:290px;">
+<div class="w_set2">
+<dt class="t_2"><a href="#" class="t_2_more">更多</a><h3>服务项目</h3><span>CATEGORY</span></dt>
+<dd class="pa10" style="height:240px;">
+<script type="text/javascript" src="__TMPL__/public/assets/js/jquery.bxSlider.min.js"></script><!--滚动图片-->
+<script type="text/javascript">
+$(document).ready(function(){
+<!--用于滚动图片-->
+	$('#scroll').bxSlider({
+		auto: true,
+		displaySlideQty: 4,
+		prevText: '',
+		nextText: '',
+		moveSideQty: 1
+	});
+});
+</script>
+
+<div class="scroll">
+<UL id="scroll">
+  <LI><a href="#"><IMG src="http://www.iqsachina.com/templets/IQSA/images/bsci.jpg" width="180" height="125"></a><a href="#">BSCI认证</a></LI>
+  <LI><a href="#"><IMG src="http://www.iqsachina.com/templets/IQSA/images/TPAT.jpg" width="180" height="125"></a><a href="#">DNV GL Energy</a></LI>
+  <LI><a href="#"><IMG src="__TMPL__/public/assets/images/temp/3.jpg" width="180" height="125"></a><a href="#">中哦死ufhdsa放到手机啊垃圾发电萨拉</a></LI>
+  <LI><a href="#"><IMG src="__TMPL__/public/assets/images/temp/4.jpg" width="180" height="125"></a><a href="#">中哦死ufhdsa放到手机啊垃圾发电萨拉</a></LI>
+  <LI><a href="#"><IMG src="__TMPL__/public/assets/images/temp/5.jpg" width="180" height="125"></a><a href="#">中哦死ufhdsa放到手机啊垃圾发电萨拉</a></LI>
+  <LI><a href="#"><IMG src="__TMPL__/public/assets/images/temp/6.jpg" width="180" height="125"></a><a href="#">中哦死ufhdsa放到手机啊垃圾发电萨拉</a></LI>
+  <LI><a href="#"><IMG src="__TMPL__/public/assets/images/temp/7.jpg" width="180" height="125"></a><a href="#">中哦死ufhdsa放到手机啊垃圾发电萨拉</a></LI>
+  <LI><a href="#"><IMG src="__TMPL__/public/assets/images/temp/8.jpg" width="180" height="125"></a><a href="#">中哦死ufhdsa放到手机啊垃圾发电萨拉</a></LI>
+</UL>
+</div>
+<!--/scroll-->
+
+</dd>
+
+</div>
+<!--/w_set2-->
+</div>
+<!--/bg_c_1-->
+
+<include file="public@foot"/>
