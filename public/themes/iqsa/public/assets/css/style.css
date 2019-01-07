@@ -50,7 +50,7 @@ a:hover{ color:#DB241C;}
 /**/
 /*顶部菜单-单排menutop-f*/
 /**/
-#topmenu_f{ position:absolute; bottom:0px; left:0; width:980px;
+#topmenu_f{ position:absolute; bottom:0px; left:0; width:1280px;
 background: url(../images/topmenu_f.gif) no-repeat center top;
 }
 #topmenu_f li{
@@ -128,7 +128,7 @@ background: url(../images/topmenu_f.gif) no-repeat center top;
 .slides_box div img{}
 
 .scroll{ margin-left:0px;display:block;white-space: nowrap;}
-.scroll_box{z-index:300; position:absolute; height:20px; right:10px; bottom:10px; overflow:hidden; width:130px;}
+.scroll_box{z-index:300; position:absolute; height:20px; right:10px; bottom:10px; overflow:hidden; width:150px;}
 
 .scroll_center{ height:20px; overflow:hidden;}
 

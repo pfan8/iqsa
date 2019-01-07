@@ -152,68 +152,68 @@
 </head>
 <body>
 <div class="wrap">
-    <empty name="has_smtp_setting">
-        <div class="grid-item col-md-12">
-            <div class="alert alert-danger alert-dismissible fade in" role="alert" style="margin-bottom: 0;">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <strong>提示!</strong> 邮箱配置未完成,无法进行邮件发送!
-                <a href="#" data-dismiss="alert" aria-label="Close"
-                   onclick="parent.openapp('{:url('Mailer/index')}','admin_mailer_index','邮箱配置');">现在设置</a>
-            </div>
-        </div>
-    </empty>
+    <!--<empty name="has_smtp_setting">-->
+        <!--<div class="grid-item col-md-12">-->
+            <!--<div class="alert alert-danger alert-dismissible fade in" role="alert" style="margin-bottom: 0;">-->
+                <!--<button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
+                    <!--<span aria-hidden="true">&times;</span>-->
+                <!--</button>-->
+                <!--<strong>提示!</strong> 邮箱配置未完成,无法进行邮件发送!-->
+                <!--<a href="#" data-dismiss="alert" aria-label="Close"-->
+                   <!--onclick="parent.openapp('{:url('Mailer/index')}','admin_mailer_index','邮箱配置');">现在设置</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</empty>-->
 
-    <if condition="!extension_loaded('fileinfo')">
-        <div class="grid-item col-md-12">
-            <div class="alert alert-danger alert-dismissible fade in" role="alert" style="margin-bottom: 0;">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <strong>提示!</strong> php_fileinfo扩展没有开启，无法正常上传文件！
-            </div>
-        </div>
-    </if>
+    <!--<if condition="!extension_loaded('fileinfo')">-->
+        <!--<div class="grid-item col-md-12">-->
+            <!--<div class="alert alert-danger alert-dismissible fade in" role="alert" style="margin-bottom: 0;">-->
+                <!--<button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
+                    <!--<span aria-hidden="true">&times;</span>-->
+                <!--</button>-->
+                <!--<strong>提示!</strong> php_fileinfo扩展没有开启，无法正常上传文件！-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</if>-->
 
-    <div class="grid-item col-md-12" id="thinkcmf-notices-grid" style="display:none;">
-        <div class="dashboard-box">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">{:lang('SYSTEM_NOTIFICATIONS')}</h3>
-                </div>
-                <div class="panel-body home-info">
-                    <ul id="thinkcmf-notices" class="list-unstyled">
-                        <li>
-                            <img src="__TMPL__/public/assets/images/loading.gif" style="vertical-align: middle;"/>
-                            <span style="display: inline-block; vertical-align: middle;">加载中...</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!--<div class="grid-item col-md-12" id="thinkcmf-notices-grid" style="display:none;">-->
+        <!--<div class="dashboard-box">-->
+            <!--<div class="panel panel-default">-->
+                <!--<div class="panel-heading">-->
+                    <!--<h3 class="panel-title">{:lang('SYSTEM_NOTIFICATIONS')}</h3>-->
+                <!--</div>-->
+                <!--<div class="panel-body home-info">-->
+                    <!--<ul id="thinkcmf-notices" class="list-unstyled">-->
+                        <!--<li>-->
+                            <!--<img src="__TMPL__/public/assets/images/loading.gif" style="vertical-align: middle;"/>-->
+                            <!--<span style="display: inline-block; vertical-align: middle;">加载中...</span>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 
-    <div class="home-grid">
-        <!-- width of .grid-sizer used for columnWidth -->
-        <div class="grid-sizer"></div>
-        <foreach name="dashboard_widgets" item="vo">
-            <if condition="$vo.is_system">
-                <div class="grid-item col-md-12" data-system="1" data-widget="{$vo.name}">
-                    <div class="dashboard-box">{:_get_system_widget($vo.name)}</div>
-                </div>
-                <else/>
-                <present name="dashboard_widget_plugins[$vo['name']]">
-                    <div class="grid-item col-md-{$dashboard_widget_plugins[$vo['name']]['width']}" data-system="0"
-                         data-widget="{$vo.name}">
-                        <div class="dashboard-box">{$dashboard_widget_plugins[$vo.name]['view']}</div>
-                    </div>
-                </present>
+    <!--<div class="home-grid">-->
+        <!--&lt;!&ndash; width of .grid-sizer used for columnWidth &ndash;&gt;-->
+        <!--<div class="grid-sizer"></div>-->
+        <!--<foreach name="dashboard_widgets" item="vo">-->
+            <!--<if condition="$vo.is_system">-->
+                <!--<div class="grid-item col-md-12" data-system="1" data-widget="{$vo.name}">-->
+                    <!--<div class="dashboard-box">{:_get_system_widget($vo.name)}</div>-->
+                <!--</div>-->
+                <!--<else/>-->
+                <!--<present name="dashboard_widget_plugins[$vo['name']]">-->
+                    <!--<div class="grid-item col-md-{$dashboard_widget_plugins[$vo['name']]['width']}" data-system="0"-->
+                         <!--data-widget="{$vo.name}">-->
+                        <!--<div class="dashboard-box">{$dashboard_widget_plugins[$vo.name]['view']}</div>-->
+                    <!--</div>-->
+                <!--</present>-->
 
-            </if>
+            <!--</if>-->
 
-        </foreach>
-    </div>
+        <!--</foreach>-->
+    <!--</div>-->
 </div>
 <script src="__STATIC__/js/admin.js"></script>
 <php>
