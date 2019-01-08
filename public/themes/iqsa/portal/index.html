@@ -224,7 +224,7 @@
                     <div class="dnvgl-image">
                         <img src="http://www.iqsachina.com/templets/IQSA/images/cqc.jpg" />
                     </div>
-                    <span>ISO90001</span>
+                    <span>ISO9001</span>
                 </a>
             </li>
             <li>
@@ -460,7 +460,7 @@
                     <div class="dnvgl-image">
                         <img src="http://www.iqsachina.com/templets/IQSA/images/bsm.jpg" />
                     </div>
-                    <span>白死买验厂</span>
+                    <span>百思买验厂</span>
                 </a>
             </li>
             <li>
@@ -529,7 +529,12 @@
        timeq = setInterval(run,4*1000);
     });
     var timeq = setInterval(run,4*1000);
-
+    $(".scroll2>ul>li").mouseover(function(){
+        clearInterval(timeq);
+    });
+    $(".scroll2>ul>li").mouseout(function(){
+        timeq = setInterval(run,4*1000);
+    })
 
 
 
