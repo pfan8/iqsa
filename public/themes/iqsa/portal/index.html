@@ -69,7 +69,7 @@
             $top_slide_id=empty($theme_vars['top_slide'])?1:$theme_vars['top_slide'];
         </php>
         <slides id="$top_slide_id">
-            <a href="{$vo.url|default=''}"><div style="background: url("{:cmf_get_image_url($vo.image)}") no-repeat center center;"></div></a>
+            <a href="{$vo.url|default=''}"><div style="background: url('{:cmf_get_image_url($vo.image)}') no-repeat center center;"></div></a>
     </slides>
     <noslides id="$top_slide_id">
         <a href=""><div style="background:url('__TMPL__/public/assets/images/demo/1.jpg')"></div></a>
@@ -91,12 +91,13 @@
                     <li><span>1</span></li>
                     <li><span>2</span></li>
                     <li><span>3</span></li>
+                    <li><span>4</span></li>
+                    <li><span>5</span></li>
                 </noslides>
             </ul>
         </div>
         <div class="scroll_right"><span>右</span></div>
     </div>
-
 </div>
 <!--/slides_nav-->
 </div>
