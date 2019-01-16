@@ -95,7 +95,6 @@ class PostService
             })
             ->order('update_time', 'DESC')
             ->paginate(10);
-
         return $articles;
 
     }

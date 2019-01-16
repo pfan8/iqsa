@@ -78,7 +78,7 @@ class ArticleController extends HomeBaseController
 
         $tplName = empty($article['more']['template']) ? $tplName : $article['more']['template'];
 
-        return $this->fetch("/$tplName");
+        return $this->fetch(":article");
     }
 
     // 文章点赞

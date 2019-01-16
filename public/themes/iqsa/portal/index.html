@@ -71,11 +71,11 @@
         <slides id="$top_slide_id">
             <a href="{$vo.url|default=''}"><div style="background: url('{:cmf_get_image_url($vo.image)}') no-repeat center center;"></div></a>
     </slides>
-    <noslides id="$top_slide_id">
-        <a href=""><div style="background:url('__TMPL__/public/assets/images/demo/1.jpg')"></div></a>
-        <a href=""><div style="background:url('__TMPL__/public/assets/images/demo/2.jpg')"></div></a>
-        <a href=""><div style="background:url('__TMPL__/public/assets/images/demo/3.jpg')"></div></a>
-    </noslides>
+    <!--<noslides id="$top_slide_id">-->
+        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/1.jpg')"></div></a>-->
+        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/2.jpg')"></div></a>-->
+        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/3.jpg')"></div></a>-->
+    <!--</noslides>-->
 </div>
 <!--/slides_box-->
 
@@ -113,7 +113,7 @@
 <dd class="about pa10" style="height:220px;">
     <ul class="list_1">
         <foreach name="caseList" item="vo">
-            <li><a href="#">{$vo.title}</a><span><?php echo date('Y-m-d',$vo['sortrank']) ?></span></li>
+            <li><a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>61])}">{$vo.post_title}</a><span><?php echo date('Y-m-d',$vo['update_time']) ?></span></li>
         </foreach>
     </ul>
 </dd>
@@ -128,7 +128,7 @@
 
   <ul class="list_1">
       <foreach name="newsList" item="vo">
-          <li><a href="#">{$vo.title}</a><span><?php echo date('Y-m-d',$vo['sortrank']) ?></span></li>
+          <li><a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>8])}">{$vo.post_title}</a><span><?php echo date('Y-m-d',$vo['update_time']) ?></span></li>
       </foreach>
   </ul>
 
