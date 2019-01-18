@@ -2,57 +2,49 @@
 
 
 
-<div class="w_set pt10">
-<div class="w_215 fl">
-<dl class="mb20">
-<dt class="t_3"><h3>关于我们</h3></dt>
-<dd class="pa10 left_menu_1">
-<a href="#">公司简介</a>
-<a href="#">领导致辞</a>
-<a href="#" class="left_menu_on">机构设置</a>
-<a href="#">地理位置</a>
-<a href="#">图片介绍</a>
-</dd>
-</dl>
-</div>
-<!--/w_215-->
+<!--<div class="w_set pt10">-->
+<!--<div class="w_215 fl">-->
+<!--<dl class="mb20">-->
+<!--<dt class="t_3"><h3>关于我们</h3></dt>-->
+<!--<dd class="pa10 left_menu_1">-->
+<!--<a href="#">公司简介</a>-->
+<!--<a href="#">领导致辞</a>-->
+<!--<a href="#" class="left_menu_on">机构设置</a>-->
+<!--<a href="#">地理位置</a>-->
+<!--<a href="#">图片介绍</a>-->
+<!--</dd>-->
+<!--</dl>-->
+<!--</div>-->
+<!--&lt;!&ndash;/w_215&ndash;&gt;-->
 
-<div class="w_750 fr">
+<div class="w_60p">
 <dl class="f_1_a pl10 pr10">
-<dt class="t_4">
-<p class="web_nav fr">
-<strong>当前位置</strong><a href="#">首页</a><a href="#">栏目名称</a>
-</p>
-<h3>产业及服务</h3><span>NEWS</span>
+<dt class="t_4" style="width: 95%;">
+<h3>文章列表</h3><span>LIST</span>
 <!--/web_nav-->
 </dt>
 
-<dd class="pa10 clear">
-
-
 <ul class="list_page_1">
-<li><a href="#"><img src="images/temp/1.jpg" width="110" height="110" /></a><a href="#" class="list_page_t">雨出地气云出天气故清阳出</a><p><span>2013-12-15</span>神明之府，就是说宇宙万物变化极玄妙有宇宙其玄妙有的显而易匿莫测，都源神明之府，就是说宇宙万物变化极其玄妙有于阴阳。 <a href="#">[全文]</a></p></li>
-<li><a href="#"><img src="images/temp/2.jpg" width="110" height="110" /></a><a href="#" class="list_page_t">雨出地气云出天气故清阳出</a><p><span>2013-12-15</span>神明之府，就是说宇宙万物变化极玄妙有宇宙其玄妙有的显而易匿莫测，都源神明之府，就是说宇宙万物变化极其玄妙有于阴阳。 <a href="#">[全文]</a></p></li>
-<li><a href="#"><img src="images/temp/3.jpg" width="110" height="110" /></a><a href="#" class="list_page_t">雨出地气云出天气故清阳出</a><p><span>2013-12-15</span>神明之府，就是说宇宙万物变化极玄妙有宇宙其玄妙有的显而易匿莫测，都源神明之府，就是说宇宙万物变化极其玄妙有于阴阳。 <a href="#">[全文]</a></p></li>
-<li><a href="#"><img src="images/temp/4.jpg" width="110" height="110" /></a><a href="#" class="list_page_t">雨出地气云出天气故清阳出</a><p><span>2013-12-15</span>神明之府，就是说宇宙万物变化极玄妙有宇宙其玄妙有的显而易匿莫测，都源神明之府，就是说宇宙万物变化极其玄妙有于阴阳。 <a href="#">[全文]</a></p></li>
-<li><a href="#"><img src="images/temp/5.jpg" width="110" height="110" /></a><a href="#" class="list_page_t">雨出地气云出天气故清阳出</a><p><span>2013-12-15</span>神明之府，就是说宇宙万物变化极玄妙有宇宙其玄妙有的显而易匿莫测，都源神明之府，就是说宇宙万物变化极其玄妙有于阴阳。 <a href="#">[全文]</a></p></li>
-<li><a href="#"><img src="images/temp/6.jpg" width="110" height="110" /></a><a href="#" class="list_page_t">雨出地气云出天气故清阳出</a><p><span>2013-12-15</span>神明之府，就是说宇宙万物变化极玄妙有宇宙其玄妙有的显而易匿莫测，都源神明之府，就是说宇宙万物变化极其玄妙有于阴阳。 <a href="#">[全文]</a></p></li>
+    <foreach name="list" item="vo">
+
+        <li><a href="{:url('portal/Article/index',['id'=>$vo.id])}" class="list_page_t">{$vo.post_title}</a>
+            <p>
+                <span><?php echo date('Y-m-d',$vo['update_time']) ?></span>
+                {$vo.description}
+            </p>
+        </li>
+    </foreach>
 </ul>
 
 
 
-  
-<div class="page">
-<a href="#">首页</a>
-<a href="#">上一页</a>
-<strong>1</strong>
-<a href="#">2</a>
-<a href="#">下一页</a>
-<a href="#">尾页</a>
+<!-- 分页 -->
+<div class="row">
+    <div id="result">
+        {$list->render()}
+    </div>
 </div>
 <!--/page-->
-
-</dd>
 </dl>
 
 
@@ -73,64 +65,19 @@
 
 <p class="pa10 clear"></p>
 
-<div id="foot">
-<table cellpadding="5" class="w_set">
-  <tr>
-    <td><img src="images/2.png" width="112" height="112" /></td>
-    <td valign="top" style="text-align:left;">
-<h4 class="f14 c_fff">合作伙伴</h4>
-<div class="pa10">
-<a href="#"><img src="images/temp/a1.jpg" width="70" height="35" /></a> 
-<a href="#"><img src="images/temp/a2.jpg" width="70" height="35" /></a> 
-<a href="#"><img src="images/temp/a3.jpg" width="70" height="35" /></a> 
-<a href="#"><img src="images/temp/a4.jpg" width="70" height="35" /></a> 
-</div>
+<script>
+    var AjaxPage = function(page){
+        $.ajax({
+            url:'http://xxx/public/index.php/back/topic/ajaxList',
+            type:'post',
+            dataType:'json',
+            data: {apage:page},
+            success:function(data){
+                //console.log(data)
+                $("#result").html(data.page);
+            }
+        });
+    }
 
-<p>© 20010-20011 版权所有 2003 -2010 dede58.com  分享模板？就去织梦模板！</p>
-<div id="footmenu">
-<a href="#">关于我们</a>|
-<a href="#">企业新闻</a>|
-<a href="#">成功案例</a>|
-<a href="#">产品中心</a>|
-<a href="#">人力资源</a>|
-<a href="#">产品中心</a>
-</div>
-<!--/footmenu-->
-
-    
-    </td>
-    <td valign="top"><p class="tel">客户服务热线<strong>400-100-123456</strong></p>
-<!--/tel-->
-</td>
-  </tr>
-</table>
-
-</div>
-<!--/foot-->
-
-
-
-<DIV id="customer_service" onmouseover="toBig()" onmouseout="toSmall()">
-<DIV class="customer_service">
-<DIV class="open_cs" onclick="copen()"></DIV>
-<!--open_cs end-->
-<DIV class="customer_service_content">
-<dl>
-<dt>分类一</dt>
-<dd>
-<a href="#"><img src="vipimages/tm.gif" width="81" height="23" /></a>
-<a href="#"><img src="vipimages/tm.gif" width="81" height="23" /></a>
-<a href="#"><img src="vipimages/tm.gif" width="81" height="23" /></a>
-</dd>
-</dl>
-
-</DIV>
-<!--customer_service_content end-->
-
-</DIV>
-</DIV>
-</DIV>
-<!--左侧浮动 end-->
-<script type="text/javascript" src="js/kefu.js"></script>
-</body>
-</html>
+</script>
+<include file="public@foot"/>

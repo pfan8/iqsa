@@ -59,7 +59,7 @@ background: url(../images/topmenu_f.jpg) no-repeat center top;
 	width:100px;
 	float:left;
 	text-align:center;
-	background: url(../images/topmenu_f.jpg) no-repeat right top;
+	/*background: url(../images/topmenu_f.jpg) no-repeat right top;*/
 }
 #topmenu_f li a,#topmenu_f li a:visited,#topmenu_f li a:link{ font-size:14px; color:#FFF; }
 #topmenu_f li a:hover{
@@ -162,7 +162,13 @@ a.url_b:hover{
 }
 
 
-
+.content {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+	text-indent: 2em;
+}
 
 /**/
 /*列表*/
@@ -282,7 +288,10 @@ height:55px; padding:10px 0 0 45px;
 	padding:0px 0 0 30px;
 	height:40px;
 	line-height:40px;
-	background: url(../images/t_4.png) no-repeat left center; 
+	background: url(../images/t_4.png) no-repeat left center;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
 }
 .t_4 h3{ font-size:14px; color:#111111; float:left; margin-right:10px;}
 .t_4 a.t_4_more{ float:right; color:#373737;background: url(../images/t_1.gif) no-repeat right center; padding-right:15px;}
@@ -361,9 +370,9 @@ height:55px; padding:10px 0 0 45px;
 .w_680{ width:680px;}
 .w_215{ width:215px;}
 .w_750{ width:750px;}
-
 .w_310{ width:465px;}
 .w_640{ width:640px;}
+.w_60p{ width:60%;margin-left: auto;margin-right: auto;}
 
 /*/w_*/
 

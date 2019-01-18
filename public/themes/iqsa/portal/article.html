@@ -1,221 +1,61 @@
 <include file="public@head"/>
 <!--幻灯片-->
-<script type="text/javascript" src="__TMPL__/public/assets/js/jquery.featureList-1.0.0.js"></script>
-<script language="javascript">
-    /*******************************
-     * 幻灯片
-     * 当前状态时 .current
-     * start_item 从第几个开始
-     *******************************/
-    $(document).ready(function() {
-
-        $.featureList(
-            $(".slides_nav li"),
-            $(".slides_box div"), {
-                start_item	:	0
-            }
-        );
-
-    });
-
-
-
-    /**
-     * 图片等对象滚动
-     */
-    $(document).ready(function(){
-        var scrollSpeed=400;//滚动速度
-        var scrollUnit=100;//滚动的距离
-        //给外部限款框 设置CSS属性
-        $('.scroll').css({
-            'overflow':'hidden',
-            'position':'relative'
-        });
-        var w=$('.scroll').width();//外框的宽度
-        var c=$('.scroll_center');//滚动的对象
-        var cw=c.width();//滚动对象的宽度
-        c.css({
-            'position':'absolute',
-            'left':'0px'
-        });
-
-        //向左滚动按钮
-        $('.scroll_left').click(function(){
-            var left = c.css('left').match(/\-?\d+/);
-            var m=left-0+scrollUnit;
-            if(m>0) m=0;
-            c.animate({
-                "left":(m+"px")
-            },scrollSpeed);
-        });
-        //向右滚动按钮
-        $('.scroll_right').click(function(){
-            var left = c.css('left').match(/\-?\d+/);
-            var m=left-scrollUnit;
-            if(m<0-cw+w) m=0-cw+w;
-            c.animate({
-                "left":(m+"px")
-            },scrollSpeed);
-        });
-
-    });
-
-
-</script>
-<div class="slides">
-
-    <div class="slides_box">
-        <php>
-            $top_slide_id=empty($theme_vars['top_slide'])?1:$theme_vars['top_slide'];
-        </php>
-        <slides id="$top_slide_id">
-            <a href="{$vo.url|default=''}"><div style="background: url('{:cmf_get_image_url($vo.image)}') no-repeat center center;"></div></a>
-        </slides>
-        <!--<noslides id="$top_slide_id">-->
-        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/1.jpg')"></div></a>-->
-        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/2.jpg')"></div></a>-->
-        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/3.jpg')"></div></a>-->
-        <!--</noslides>-->
-    </div>
-    <!--/slides_box-->
-
-    <div class="slides_nav">
-        <div class="scroll_box">
-            <div class="scroll_left"><span>左</span></div>
-            <div style="width:400px; overflow:hidden; position:absolute; height:65px;">
-                <ul class="scroll_center">
-                    <slides id="$top_slide_id">
-                        <li><span>{$i++;}</span></li>
-                    </slides>
-                    <noslides id="$top_slide_id">
-                        <li><span>1</span></li>
-                        <li><span>2</span></li>
-                        <li><span>3</span></li>
-                        <li><span>4</span></li>
-                        <li><span>5</span></li>
-                    </noslides>
-                </ul>
-            </div>
-            <div class="scroll_right"><span>右</span></div>
-        </div>
-    </div>
-    <!--/slides_nav-->
-</div>
-<!--/slides-->
-
-
-<div class="bg_c_3" style="height:37px;">
-<script type="text/javascript" src="js/jqueryScroll.js"></script>
-<div class="mq">
-<strong>滚动公告：</strong>
-<div class="scrollGallery">
-	<ul class="scroll_t" delay="2500" step="34" style="height:34px;">
-		<li><a href="#">旅行者离开地球</a><span>12-15</span></li>
-		<li><a href="#">旅行者到达土星</a><span>12-15</span></li>
-		<li><a href="#">旅行者到达土卫六</a><span>12-15</span></li>
-		<li><a href="#">旅行者2号紧随其后</a><span>12-15</span></li>
-		<li><a href="#">旅行者2号执行剩下的任务</a><span>12-15</span></li>
-	</ul>
-</div>
-</div>
-</div>
-<!--/bg_c_3-->
 
 
 
 
-<div class="w_set pt10">
-<div class="w_215 fl">
-<dl class="mb20">
-<dt class="t_3"><h3>关于我们</h3></dt>
-<dd class="pa10 left_menu_1">
-<a href="#">公司简介</a>
-<a href="#">领导致辞</a>
-<a href="#" class="left_menu_on">机构设置</a>
-<a href="#">地理位置</a>
-<a href="#">图片介绍</a>
-</dd>
-</dl>
-</div>
+
+
+<!--<div class="w_set pt10">-->
+<!--<div class="w_215 fl">-->
+<!--<dl class="mb20">-->
+<!--<dt class="t_3"><h3>关于我们</h3></dt>-->
+<!--<dd class="pa10 left_menu_1">-->
+<!--<a href="#" class="left_menu_on">公司简介</a>-->
+<!--<a href="#">领导致辞</a>-->
+<!--<a href="#">机构设置</a>-->
+<!--<a href="#">地理位置</a>-->
+<!--<a href="#">图片介绍</a>-->
+<!--</dd>-->
+<!--</dl>-->
+<!--</div>-->
 <!--/w_215-->
 
-<div class="w_750 fr">
-<dl class="f_1_a pl10 pr10">
-<dt class="t_4">
-<p class="web_nav fr">
-<strong>当前位置</strong><a href="#">首页</a><a href="#">栏目名称</a>
-</p>
-<h3>产业及服务</h3><span>NEWS</span>
-<!--/web_nav-->
-</dt>
+<div>
+<!--<dl class="f_1_a pl10 pr10">-->
+    <dt class="t_4">
+    <!--<p class="web_nav fr">-->
+    <!--<strong>当前位置</strong><a href="#">首页</a><a href="#">栏目名称</a>-->
+    <!--</p>-->
+    <h3>内容</h3><span>CONTENT</span>
+    <!--/web_nav-->
+    </dt>
 
-<dd class=" pa20 clear">
-<div class="c_title">
-<h1>生活可以更美好 - 卖模板 dede58.com</h1>
-<p>Life can be better
-</p>
-</div>
-<!--/c_title-->
+    <dd class=" pa20 clear">
+    <div class="c_title">
+        <h1 align="center">{$article.post_title}</h1>
+    </div>
+    <!--/c_title-->
+    <div class="content">{$article.post_content}</div>
 
+    <dt class="t_4">
+        <h3>IQSA友情提示</h3>
+        <!--/web_nav-->
+    </dt>
+    <dd class=" pa20 clear">
+        <div class="content">
+            综中合验厂网（简称：IQSA）作为验厂咨询辅导领先品牌，致力于企业社会责任验厂、品质验厂及反恐验厂,提供BSCI验厂，ICTI验厂,沃尔玛验厂,GSV验厂，WCA验厂,SEDEX验厂,WRAP验厂等验厂咨询辅导服务！经过多年坚持不懈的努力，以“最优质的服务,最专业的辅导”成功辅导了全国各地的众多大、中、小企业顺利通过了验厂。
+            25年专注验厂咨询、秉承客户良好口碑相传，帮您规避供应链风险，确保外贸业务的可持续性！诚邀上门洽谈业务，见证实力！
+        </div>
 
-
-<div class="content">
-<table cellpadding="10" class="fr ml20">
-  <tr>
-    <td><img src="images/temp/1.jpg" width="200" height="120" /></td>
-  </tr>
-  <tr>
-    <td><img src="images/temp/2.jpg" width="200" height="120" /></td>
-  </tr>
-  <tr>
-    <td><img src="images/temp/3.jpg" width="200" height="120" /></td>
-  </tr>
-</table>
-
-<p>17Tech 02月12日消息： 日前，17tech报道《撒谎的土豆：流氓推广与色情弹出一应俱全》后，又发现另一个视频网站六间房也轰轰烈烈加入流氓推广的行列，更可笑的是还为此声明：<strong>是电信运营商赠送的服务，并不是六间房本意</strong>。</p>
-	  <p>有用户抱怨六间房的视频弹出，不仅伤害上网体验，还会有很多色情视频。为此六间房很聪明的推出官方声明，称六间房"6rooms作为电信运营商销售带宽的大客户，能够享有电信运营商提供的额外服务：由电信运营商在服务器端向用户推送6rooms的页面。<a href="#">6rooms</a>在带宽上有高额的成本支出，没有理由拒绝运营商提
-      供的额外服务。"</p>
-<ol>
-<li>有序列表项目第一条</li>
-<li>有序列表项目第二条</li>
-<li>有序列表项目第三条</li>
-</ol>
-
-<p>并辩称自己的推广是是"纯绿色的"，只在"有限的几个省份"才有。按照流氓推广的惯例，因为东部地区的媒体发达，网民成熟，如果有流氓弹出，会极大影响品牌。选择少数几个省份就是 选择媒体不发达的省份，这是典型的流氓思维。</p>
-<ul>
-<li>无序列表项目第一条</li>
-<li>无序列表项目第二条</li>
-<li>无序列表项目第三条</li>
-</ul>
-<p>附六间房《"弹窗广告"的官方说明》<a href="#">http://bbs.6rooms.com/t.php?tid=5233</a></p>
-<p>近期有网友反映，在某些时候出现弹出6rooms窗口的情况，为避免大家的误解，现对此情况正式说明：<br />
-　　1、6rooms从未发布任何的弹窗插件，也没有利用这类插件进行推广；<br />
-　　2、6rooms作为电信运营商销售带宽的大客户，能够享有电信运营商提供的额外服务：由电信运营商在服务器端向用户推送6rooms的页面。6rooms在带宽上有高额的成本支出，没有理由拒绝运营商提供的额外服务。<br />
-　　同时，针对此类推广，6rooms也坚持两点原则：<br />
-　　1、绝对没有在客户端安装任何插件，完全是由服务器直接推送到客户端，是纯绿色的。<br />
-　　2、严格控制涉及范围，只是在有限的几个省份会出现此类现象。<br />
-　　即便如此，仍给部分网友造成了麻烦和误解。对此，我们深表歉意，并将与运营商进行沟通。<br />
-<h1>谢谢理解和支持！</h1>
-<h2>谢谢理解和支持！</h2>
-<h3>谢谢理解和支持！</h3>
-<h4>谢谢理解和支持！</h4>
-<h5>谢谢理解和支持！</h5>
-<h6>谢谢理解和支持！</h6>
-</div>
-<!--/content-->      
-</dd>
-</dl>
-
-
-
-
-
-
-
-
-
-</div>
-<!--/w_750-->
+    <dt class="t_4">
+        <h3>权责声明</h3>
+        <!--/web_nav-->
+    </dt>
+    <dd class=" pa20 clear">
+        <div class="content">
+            凡本站作品均属综中合验厂咨询网整理编辑，未经授权，不得转载使用。另：本站部分转贴文章均转载自正规网站，并不代表本站赞同其观点和对其真实性负责。如涉及作品内容、版权和其它问题，请致电 0755-82289432！
+        </div>
 </div>
 <!--/w_set2-->
 
