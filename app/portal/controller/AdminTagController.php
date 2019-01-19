@@ -16,7 +16,7 @@ use think\Db;
 
 /**
  * Class AdminTagController 标签管理控制器
- * @package app\portal\controller
+ * @package app\iqsa\controller
  */
 class AdminTagController extends AdminBaseController
 {
@@ -24,7 +24,7 @@ class AdminTagController extends AdminBaseController
      * 文章标签管理
      * @adminMenu(
      *     'name'   => '文章标签',
-     *     'parent' => 'portal/AdminIndex/default',
+     *     'parent' => 'iqsa/AdminIndex/default',
      *     'display'=> true,
      *     'hasView'=> true,
      *     'order'  => 10000,

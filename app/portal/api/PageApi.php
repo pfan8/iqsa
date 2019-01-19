@@ -61,7 +61,7 @@ class PageApi
 
         $return = [
             'rule'  => [
-                'action' => 'portal/Page/index',
+                'action' => 'iqsa/Page/index',
                 'param'  => [
                     'id' => 'id'
                 ]

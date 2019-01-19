@@ -98,7 +98,6 @@ class PortalPostModel extends Model
     public function adminAddArticle($data, $categories)
     {
         $data['user_id'] = cmf_get_current_admin_id();
-
         if (!empty($data['more']['thumbnail'])) {
             $data['more']['thumbnail'] = cmf_asset_relative_url($data['more']['thumbnail']);
             $data['thumbnail']         = $data['more']['thumbnail'];
@@ -391,7 +390,7 @@ class PortalPostModel extends Model
         $this->allowField(true)->isUpdate(true)->data($data, true)->save();
 
         $routeModel = new RouteModel();
-        $routeModel->setRoute($data['post_alias'], 'portal/Page/index', ['id' => $data['id']], 2, 5000);
+        $routeModel->setRoute($data['post_alias'], 'iqsa/Page/index', ['id' => $data['id']], 2, 5000);
 
         $routeModel->getRoutes(true);
         return $this;

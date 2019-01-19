@@ -14,7 +14,7 @@ use cmf\controller\AdminBaseController;
 
 /**
  * Class AdminIndexController
- * @package app\portal\controller
+ * @package app\iqsa\controller
  * @adminMenuRoot(
  *     'name'   =>'门户管理',
  *     'action' =>'default',

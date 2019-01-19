@@ -23,7 +23,7 @@ class AdminArticleController extends AdminBaseController
      * 文章列表
      * @adminMenu(
      *     'name'   => '文章管理',
-     *     'parent' => 'portal/AdminIndex/default',
+     *     'parent' => 'iqsa/AdminIndex/default',
      *     'display'=> true,
      *     'hasView'=> true,
      *     'order'  => 10000,
@@ -94,7 +94,7 @@ class AdminArticleController extends AdminBaseController
         }
 
         $themeModel        = new ThemeModel();
-        $articleThemeFiles = $themeModel->getActionThemeFiles('portal/Article/index');
+        $articleThemeFiles = $themeModel->getActionThemeFiles('iqsa/Article/index');
         $this->assign('article_theme_files', $articleThemeFiles);
         return $this->fetch();
     }
@@ -196,7 +196,7 @@ class AdminArticleController extends AdminBaseController
         $postCategoryIds = implode(',', array_keys($postCategories));
 
         $themeModel        = new ThemeModel();
-        $articleThemeFiles = $themeModel->getActionThemeFiles('portal/Article/index');
+        $articleThemeFiles = $themeModel->getActionThemeFiles('iqsa/Article/index');
         $this->assign('article_theme_files', $articleThemeFiles);
         $this->assign('post', $post);
         $this->assign('post_categories', $postCategories);

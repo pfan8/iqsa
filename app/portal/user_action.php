@@ -8,7 +8,7 @@ return [
 //        'cycle_type'    => 1,//周期类型;0:不限;1:按天;2:按小时;3:永久
 //        'reward_number' => 1,//奖励次数
 //        'url'           => [
-//            'action' => 'portal/Test/test',
+//            'action' => 'iqsa/Test/test',
 //            'param'  => ['id' => 1]
 //        ],//执行操作的url
 //    ]

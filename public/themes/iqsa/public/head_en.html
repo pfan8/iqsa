@@ -1,0 +1,83 @@
+<taglib name="app\portal\taglib\Portal"/>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="../../../index.php" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../index.php" type="image/x-icon" />
+    <!--用于抵制IE6-->
+    <!--[if IE 6]>
+    <script src="http://letskillie6.googlecode.com/svn/trunk/letskillie6.zh_CN.pack.js"></script>
+    <![endif]-->
+
+    <!--用于PNG图片在IE6下透明-->
+    <!--[if IE 6]>
+    <script src="__TMPL__/public/assets/js/png.js"></script>
+    <script>
+        DD_belatedPNG.fix('#logo');
+        var GV = {
+            ROOT: "__ROOT__/",
+            WEB_ROOT: "__WEB_ROOT__/",
+            JS_ROOT: "static/js/"
+        };
+    </script>
+    <![endif]-->
+    <script type="text/javascript" src="__TMPL__/public/assets/js/jquery-1.3.2.min.js"></script>
+
+
+    <title>{$theme_vars.company_name|default='ThinkCMF'}</title>
+    <link href="__TMPL__/public/assets/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="__TMPL__/public/assets/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="header" class="w_set">
+    <a href="http://www.iqsachina.com/EN/index.html" id="logo" style="background-image: url(__TMPL__/public/assets/images/logoen.png)"></a>
+    <div class="topnav">
+        400-860-3833  &nbsp;&nbsp;/
+        <a href="http://weibo.com/iqsa">Weibo</a>/
+        <a href="{:url('/portal/Index?lang=cn&')}">Chinese</a>/
+        <a href="{:url('/portal/Index?lang=en&')}">English</a>/
+        <a href="javascript:window.external.AddFavorite('http://www.iqsachina.com','')">Add to Favorites</a>
+    </div>
+    <div id="topmenu_f" class="clear">
+        <ul>
+            <navigation nav-id="3" root="" id="main-navigation" class="nav navbar-nav navbar-nav-custom"
+                        max-level="0">
+                <navigationMenu>
+                    <if condition="$level gt 1">
+                        <li class="menu-item menu-item-level-{$level} levelgt1">
+                            <a href="{$menu.href|default=''}" target="{$menu.target|default=''}">
+                                {$menu.name|default=''}
+                            </a>
+                        </li>
+                        <else/>
+                        <li class="menu-item menu-item-level-{$level}">
+                            <a href="{$menu.href|default=''}" target="{$menu.target|default=''}">
+                                {$menu.name|default=''}
+                            </a>
+                        </li>
+                    </if>
+                </navigationMenu>
+                <navigationFolder root="li"
+                                  class="dropdown dropdown-custom dropdown-custom-level-{$level}"
+                                  dropdown="ul"
+                                  dropdown-class="dropdown-menu dropdown-menu-level-{$level}">
+                    <a href="#" class="dropdown-toggle dropdown-toggle-{$level}" data-toggle="dropdown">
+                        {$menu.name|default=''}<span class="caret"></span>
+                    </a>
+                </navigationFolder>
+            </navigation>
+        </ul>
+    </div>
+    <!--/topmenu_e-->
+
+    <form action="" class="search" method="post" action="{:cmf_url('portal/Search/index')}">
+        <input name="" type="submit" class="btn_search" value="" />
+        <input type="text" class="input_search" name="keyword" placeholder="Search"
+               value="{:input('param.keyword','')}">
+    </form>
+
+
+</div>
+<!--/header-->

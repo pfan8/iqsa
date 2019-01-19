@@ -40,7 +40,7 @@ class AdminPageValidate extends Validate
         }
 
         $routeModel = new RouteModel();
-        $fullUrl    = $routeModel->buildFullUrl('portal/Page/index', ['id' => $data['id']]);
+        $fullUrl    = $routeModel->buildFullUrl('iqsa/Page/index', ['id' => $data['id']]);
         if (!$routeModel->existsRoute($value, $fullUrl)) {
             return true;
         } else {

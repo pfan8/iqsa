@@ -121,7 +121,7 @@ $configs = [
         // | CMF模板 设置
         // +----------------------------------------------------------------------
         'cmf_theme_path'          => 'themes/',
-        'cmf_default_theme'       => 'simpleboot3',
+        'cmf_default_theme'       => 'iqsa',
         'cmf_admin_theme_path'    => 'themes/',
         'cmf_admin_default_theme' => 'admin_simpleboot3',
     ],

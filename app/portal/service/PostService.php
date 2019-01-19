@@ -67,6 +67,10 @@ class PostService
             ->where('a.create_time', '>=', 0)
             ->where('a.delete_time', 0)
             ->where(function (Query $query) use ($filter, $isPage) {
+                $language = isset($filter['language']) ? $filter['language'] : 'cn';
+                if (in_array($language,array('cn','en'))) {
+                    $query->where('a.language', $language);
+                }
 
                 $category = empty($filter['category']) ? 0 : intval($filter['category']);
                 if (!empty($category)) {
@@ -95,7 +99,6 @@ class PostService
             })
             ->order('update_time', 'DESC')
             ->paginate(10);
-
         return $articles;
 
     }

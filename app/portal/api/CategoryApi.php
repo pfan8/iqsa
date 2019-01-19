@@ -53,7 +53,7 @@ class CategoryApi
         $return = [
             //'name'  => '文章分类',
             'rule'  => [
-                'action' => 'portal/List/index',
+                'action' => 'iqsa/List/index',
                 'param'  => [
                     'id' => 'id'
                 ]

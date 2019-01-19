@@ -90,7 +90,7 @@ class PortalCategoryModel extends Model
             $item['style']          = empty($item['parent_id']) ? '' : 'display:none;';
             $item['status_text']    = empty($item['status']) ? '<span class="label label-warning">隐藏</span>' : '<span class="label label-success">显示</span>';
             $item['checked']        = in_array($item['id'], $currentIds) ? "checked" : "";
-            $item['url']            = cmf_url('portal/List/index', ['id' => $item['id']]);
+            $item['url']            = cmf_url('iqsa/List/index', ['id' => $item['id']]);
             $item['str_action']     = '<a class="btn btn-xs btn-primary" href="' . url("AdminCategory/add", ["parent" => $item['id']]) . '">添加子分类</a>  <a class="btn btn-xs btn-primary" href="' . url("AdminCategory/edit", ["id" => $item['id']]) . '">' . lang('EDIT') . '</a>  <a class="btn btn-xs btn-danger js-ajax-delete" href="' . url("AdminCategory/delete", ["id" => $item['id']]) . '">' . lang('DELETE') . '</a> ';
             if ($item['status']) {
                 $item['str_action'] .= '<a class="btn btn-xs btn-warning js-ajax-dialog-btn" data-msg="您确定隐藏此分类吗" href="' . url('AdminCategory/toggle', ['ids' => $item['id'], 'hide' => 1]) . '">隐藏</a>';
@@ -151,8 +151,8 @@ class PortalCategoryModel extends Model
             //设置别名
             $routeModel = new RouteModel();
             if (!empty($data['alias']) && !empty($id)) {
-                $routeModel->setRoute($data['alias'], 'portal/List/index', ['id' => $id], 2, 5000);
-                $routeModel->setRoute($data['alias'] . '/:id', 'portal/Article/index', ['cid' => $id], 2, 4999);
+                $routeModel->setRoute($data['alias'], 'iqsa/List/index', ['id' => $id], 2, 5000);
+                $routeModel->setRoute($data['alias'] . '/:id', 'iqsa/Article/index', ['cid' => $id], 2, 4999);
             }
             $routeModel->getRoutes(true);
         }
@@ -199,11 +199,11 @@ class PortalCategoryModel extends Model
 
             $routeModel = new RouteModel();
             if (!empty($data['alias'])) {
-                $routeModel->setRoute($data['alias'], 'portal/List/index', ['id' => $data['id']], 2, 5000);
-                $routeModel->setRoute($data['alias'] . '/:id', 'portal/Article/index', ['cid' => $data['id']], 2, 4999);
+                $routeModel->setRoute($data['alias'], 'iqsa/List/index', ['id' => $data['id']], 2, 5000);
+                $routeModel->setRoute($data['alias'] . '/:id', 'iqsa/Article/index', ['cid' => $data['id']], 2, 4999);
             } else {
-                $routeModel->deleteRoute('portal/List/index', ['id' => $data['id']]);
-                $routeModel->deleteRoute('portal/Article/index', ['cid' => $data['id']]);
+                $routeModel->deleteRoute('iqsa/List/index', ['id' => $data['id']]);
+                $routeModel->deleteRoute('iqsa/Article/index', ['cid' => $data['id']]);
             }
 
             $routeModel->getRoutes(true);

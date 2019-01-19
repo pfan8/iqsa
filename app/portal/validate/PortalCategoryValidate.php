@@ -41,7 +41,7 @@ class PortalCategoryValidate extends Validate
 
         $routeModel = new RouteModel();
         if (isset($data['id']) && $data['id'] > 0) {
-            $fullUrl = $routeModel->buildFullUrl('portal/List/index', ['id' => $data['id']]);
+            $fullUrl = $routeModel->buildFullUrl('iqsa/List/index', ['id' => $data['id']]);
         } else {
             $fullUrl = $routeModel->getFullUrlByUrl($data['alias']);
         }
