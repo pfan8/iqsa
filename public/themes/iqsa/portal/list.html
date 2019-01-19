@@ -1,0 +1,71 @@
+<include file="public@head"/>
+
+    <php>
+        $where=[
+        'post.create_time'=>['egt',0]
+        ];
+        $page=[
+        'list_rows'=>10,
+        'next'=>'下一页',
+        'prev'=>'上一页'
+        ];
+    </php>
+
+    <div class="w70p">
+        <dl class="f_1_a pl10 pr10">
+            <dt class="t_4">
+                <p class="web_nav fr">
+                    <strong>当前位置</strong><a href="/">首页</a><a href="{:cmf_url('portal/Article/index',array('cid'=>$category['id']))}">{$category.name}</a>
+                </p>
+                <h3>文章列表</h3><span>LIST</span>
+                <!--/web_nav-->
+            </dt>
+
+            <dd class="pa10 clear">
+
+                <ul class="list_page_1">
+                    <portal:articles item="vo" where="$where" order="post.create_time DESC" page="$page"
+                                     relation="categories"
+                                     categoryIds="$category.id"
+                                     returnVarName="articles_data">
+                        <li>
+                            <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">
+                                <img src="{$vo.thumbnail}" onerror="this.onerror='';src='__TMPL__/public/assets/images/defaultpic.gif'" width="110" height="110" />
+                            </a>
+                            <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}" class="list_page_t">{$vo.post_title}</a>
+                            <p>
+                                <span><?php echo date('Y-m-d',$vo['update_time']) ?></span>
+                                {$vo.description}
+                                <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">[全文]</a>
+                            </p>
+                        </li>
+
+                    </portal:articles>
+                </ul>
+
+
+
+
+                <div class="page">
+                    <ul class="pagination">
+                     <page/>
+                    </ul>
+                </div>
+                <!--/page-->
+
+            </dd>
+        </dl>
+
+
+
+
+
+
+
+
+
+    </div>
+    <!--/w_750-->
+</div>
+<!--/w_set2-->
+<include file="public@foot"/>
