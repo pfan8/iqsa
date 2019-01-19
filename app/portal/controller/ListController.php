@@ -10,8 +10,8 @@
 // +----------------------------------------------------------------------
 namespace app\portal\controller;
 
+use app\portal\model\PortalCategoryModel;
 use cmf\controller\HomeBaseController;
-use app\portal\service\PostService;
 
 class ListController extends HomeBaseController
 {
@@ -24,17 +24,13 @@ class ListController extends HomeBaseController
      */
     public function index()
     {
-        $category = $this->request->param('category', 0, 'intval');
-        $postService         = new PostService();
-        $filter = [
-            'category' => $category
-        ];
+        $id                  = $this->request->param('id', 0, 'intval');
+        $portalCategoryModel = new PortalCategoryModel();
+        $category = $portalCategoryModel->where('id', $id)->where('status', 1)->find();
 
-        $list = $postService->adminPostList($filter);
-
-        $this->assign('list', $list);
-
-        return $this->fetch(':list');
+        $this->assign('category', $category);
+        $listTpl = empty($category['list_tpl']) ? 'list' : $category['list_tpl'];
+        return $this->fetch('/' . $listTpl);
     }
 
 }
