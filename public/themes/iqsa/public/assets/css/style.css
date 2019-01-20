@@ -168,6 +168,7 @@ a.url_b:hover{
 	margin-right: auto;
 	padding-top: 10px;
 	text-indent: 2em;
+	overflow: hidden;
 }
 
 /**/
@@ -380,6 +381,7 @@ height:55px; padding:10px 0 0 45px;
 .w_310{ width:465px;}
 .w_640{ width:640px;}
 .w_60p{ width:60%;margin-left: auto;margin-right: auto;}
+.w_80p{ width:80%;margin-left: auto;margin-right: auto;}
 
 /*/w_*/
 

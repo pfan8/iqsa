@@ -12,6 +12,7 @@ namespace app\portal\controller;
 
 use cmf\controller\HomeBaseController;
 use app\portal\service\PostService;
+use app\portal\model\PortalCategoryModel;
 
 class PageController extends HomeBaseController
 {
@@ -26,13 +27,19 @@ class PageController extends HomeBaseController
     {
         $postService = new PostService();
         $pageId      = $this->request->param('id', 0, 'intval');
+        $categoryId      = $this->request->param('cid', 0, 'intval');
         $page        = $postService->publishedPage($pageId);
+        if($categoryId == '4' | $categoryId == '141') {
+            $portalCategoryModel = new PortalCategoryModel();
+            $category = $portalCategoryModel->where('id', $categoryId)->where('status', 1)->find();
 
+            $this->assign('category', $category);
+        }
         if (empty($page)) {
             abort(404, ' 页面不存在!');
         }
-
-        $this->assign('page', $page);
+        $this->assign('theme_page', $page);
+        $this->assign('cid', $categoryId);
 
         $more = $page['more'];
 

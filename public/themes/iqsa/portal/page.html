@@ -1,0 +1,108 @@
+<include file="public@head"/>
+
+<div class="w70p">
+    <dl class="f_1_a pl10 pr10">
+        <dt class="t_4">
+            <h3>{$theme_page.post_title}</h3><span>INTRO</span>
+            <!--/web_nav-->
+        </dt>
+        <div class="content">{$theme_page.post_content}</div>
+        <?php
+            if ($cid == '2' | $cid == '3' | $cid == '5')
+            {
+        ?>
+        <dt class="t_4">
+            <h3>{$theme_page.post_title}项目</h3><span>CATEGORY</span>
+            <!--/web_nav-->
+        </dt>
+        <div class="bg_c_4 pt10 mb10" style="height:370px;overflow: hidden">
+            <div class="w_set2">
+                <dd>
+                    <div class="scroll2">
+                        <ul>
+                            <php>
+                                $where = ['parent_id' => $cid,
+                                        'language' => 'cn'];
+                            </php>
+                            <portal:categories where="$where" order="list_order DESC" item="vo">
+                                <li>
+                                    <a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">
+                                        <div class="dnvgl-image">
+                                            <img src="{$vo.more['thumbnail']}">
+                                        </div>
+                                        <span>{$vo.name}</span>
+                                    </a>
+                                </li>
+                            </portal:categories>
+                        </ul>
+                    </div>
+                </dd>
+
+            </div>
+        </div>
+
+        <?php
+        }
+        else if($cid == '4' | $cid == '141')
+        {
+            $where=[
+            'post.create_time'=>['egt',0]
+            ];
+            $page=[
+            'list_rows'=>10,
+            'next'=>'下一页',
+            'prev'=>'上一页'
+            ];
+        ?>
+        <dt class="t_4">
+            <h3>{$theme_page.post_title}列表</h3><span>LIST</span>
+            <!--/web_nav-->
+        </dt>
+        <dd class="pa10 clear">
+
+            <ul class="list_page_1">
+                <portal:articles item="vo" where="$where" order="post.create_time DESC" page="$page"
+                                 relation="categories"
+                                 categoryIds="$category.id"
+                                 returnVarName="articles_data">
+                    <li>
+                        <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">
+                            <img src="{$vo.thumbnail}" onerror="this.onerror='';src='__TMPL__/public/assets/images/defaultpic.gif'" width="110" height="110" />
+                        </a>
+                        <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}" class="list_page_t">{$vo.post_title}</a>
+                        <p>
+                            <span><?php echo date('Y-m-d',$vo['update_time']) ?></span>
+                            {$vo.description}
+                            <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">[全文]</a>
+                        </p>
+                    </li>
+
+                </portal:articles>
+            </ul>
+
+
+
+
+            <div class="page">
+                <ul class="pagination">
+                    <page/>
+                </ul>
+            </div>
+            <!--/page-->
+
+        </dd>
+        <?php
+        }
+        ?>
+        <dt class="t_4">
+            <h3>权责声明</h3>
+            <!--/web_nav-->
+        </dt>
+        <div class="content" style="margin-bottom: 30px">凡本站作品均属综中合验厂咨询网整理编辑，未经授权，不得转载使用。另：本站部分转贴文章均转载自
+            正规网站，并不代表本站赞同其观点和对其真实性负责。如涉及作品内容、版权和其它问题，请致电 0755-82289432！</div>
+        <!--/w_set2-->
+    </dl>
+</div>
+
+<!--/w_set2-->
+<include file="public@foot"/>

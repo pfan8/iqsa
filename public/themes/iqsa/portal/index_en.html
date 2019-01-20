@@ -109,11 +109,11 @@
 <div class="w_set2">
 
 <dl class="fl w_310">
-<dt class="t_1"><a href="{:url('portal/List/index',['category'=>61])}" class="t_1_more">More</a><span>CASES</span></dt>
+<dt class="t_1"><a href="{:url('portal/List/index',['id'=>1005])}" class="t_1_more">More</a><span>CASES</span></dt>
 <dd class="about pa10" style="height:220px;">
     <ul class="list_1">
         <foreach name="caseList" item="vo">
-            <li><a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>61])}">{$vo.post_title}</a><span><?php echo date('Y-m-d',$vo['update_time']) ?></span></li>
+            <li><a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>1005])}">{$vo.post_title}</a><span><?php echo date('Y-m-d',$vo['update_time']) ?></span></li>
         </foreach>
     </ul>
 </dd>
@@ -123,12 +123,12 @@
 
 
 <dl class="fl w_310 ml15">
-<dt class="t_1 "><a href="{:url('portal/List/index',['category'=>8])}" class="t_1_more">More</a><span>FAQ</span></dt>
+<dt class="t_1 "><a href="{:url('portal/List/index',['id'=>1066])}" class="t_1_more">More</a><span>FAQ</span></dt>
 <dd class="pa10" style="height:240px;">
 
   <ul class="list_1">
       <foreach name="newsList" item="vo">
-          <li><a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>8])}">{$vo.post_title}</a><span><?php echo date('Y-m-d',$vo['update_time']) ?></span></li>
+          <li><a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>1066])}">{$vo.post_title}</a><span><?php echo date('Y-m-d',$vo['update_time']) ?></span></li>
       </foreach>
   </ul>
 

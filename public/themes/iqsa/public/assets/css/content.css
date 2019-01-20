@@ -23,7 +23,7 @@
 	background: url(../images/content.jpg) no-repeat left bottom;
 	padding-bottom:40px;
 }
-.content p{text-indent:27px; margin-bottom:15px;}
+.content p{text-indent:27px; margin-bottom:15px;text-overflow: ellipsis;}
 .content strong{color:#333; padding:0px 10px;}
 .content a{
 	font-size:14px;
