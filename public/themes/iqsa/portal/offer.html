@@ -1,4 +1,7 @@
 <include file="public@head"/>
+<include file="public@nav"/>
+<link href="__TMPL__/public/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+</head>
 
 
 
@@ -21,7 +24,7 @@
                             <label for="cpn">公司名称：</label>
                             <input type="text" name="company_name" value="" id="cpn" style="width: 250px">
                         </div>
-                        <div class="form-inline">
+                        <div style="position: relative;" class="offer-group">
                             <div style="float: left;padding-top: 5px"> <label for="city-picker3">所在区域：</label></div>
                             <input id="city-picker3" class="form-control" type="text" value="广东省/深圳市/南山区" data-toggle="city-picker">
                             <button class="btn btn-primary" id="reset" type="button" style="float: left;">重置</button>
@@ -244,4 +247,11 @@
         }
     }
 </script>
+
+<!--省市县联动下拉控件-->
+<script src="__TMPL__/public/assets/js/jquery.js"></script>
+<script src="__TMPL__/public/assets/js/bootstrap.js"></script>
+<script src="__TMPL__/public/assets/js/city-picker.data.js"></script>
+<script src="__TMPL__/public/assets/js/city-picker.js"></script>
+<script src="__TMPL__/public/assets/js/main.js"></script>
 <include file="public@foot"/>
