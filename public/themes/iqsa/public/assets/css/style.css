@@ -11,11 +11,12 @@ a:hover{ color:#DB241C;}
 /*标识*/
 /**/
 #logo{
-	width: 453px;
-	height:30px;
+	width: 600px;
+	height:50px;
 	display:block;
 	background-image: url(../images/logo.png);
 	position:absolute;
+	background-repeat: no-repeat;
 	left:0;
 	top:26px;
 }
@@ -23,7 +24,7 @@ a:hover{ color:#DB241C;}
 
 .offer{
 	width: 800px;
-	height: 450px;
+	height: 615px;
 	margin-left: auto;
 	margin-right: auto;
 	border: solid;
@@ -41,11 +42,21 @@ a:hover{ color:#DB241C;}
 	color: white;
 }
 .offer-content{
-	width: 90%;
+	width: 92%;
 	height: 30px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top:10px;
+}
+.offer-content2{
+	width: 95%;
+	height: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:10px;
+}
+.form-required {
+	color: red;
 }
 .btn-group,
 .btn-group-vertical {
@@ -220,8 +231,8 @@ a:hover{ color:#DB241C;}
 }
 .offer-group{width: 50%;float: left}
 
-.topnav{ position:absolute; top:10px; right:0;color:#CCC; }
-.topnav a{ font-size:12px; color:#CCC; padding:0 10px;}
+.topnav{ position:absolute; top:10px; right:0;color:#000; }
+.topnav a{ font-size:12px; color:#000; padding:0 10px;}
 .topnav a:hover{ color:#06C;}
 
 
@@ -861,13 +872,13 @@ input[type="button"].btn-block {
 	.form-inline .radio,
 	.form-inline .checkbox {
 		display: inline-block;
-		margin-top: 0;
-		margin-bottom: 0;
+		margin-top: 5px;
+		margin-bottom: 12px;
 		vertical-align: middle;
 	}
 	.form-inline .radio label,
 	.form-inline .checkbox label {
-		padding-left: 0;
+		padding-left: 5px;
 	}
 	.form-inline .radio input[type="radio"],
 	.form-inline .checkbox input[type="checkbox"] {
@@ -1252,6 +1263,7 @@ a.url_b:hover{
 .w_310{ width:465px;}
 .w_640{ width:640px;}
 .w_60p{ width:60%;margin-left: auto;margin-right: auto;}
+.w_70p{ width:70%;margin-left: auto;margin-right: auto;}
 .w_80p{ width:80%;margin-left: auto;margin-right: auto;}
 
 /*/w_*/
@@ -1432,5 +1444,7 @@ a.url_b:hover{
 #footmenu a{ padding:0 10px; color:#6697C1;}
 /*/footmenu*/
 
-#foot{ position:relative; margin-left:auto; margin-right:auto; color:#B3CBE0; text-align:center; padding:10px; background-color:#005297; clear:both; }
+#foot{ position:relative; margin-left:auto; margin-right:auto; color:whitesmoke; text-align:center; padding:10px; background-color:#005297; clear:both; }
 /*/foot*/
+
+.foot-li {padding: 5px;letter-spacing: 1px;}

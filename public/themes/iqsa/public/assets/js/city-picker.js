@@ -511,7 +511,7 @@
         },
 
         reset: function () {
-            this.$element.val(null).trigger('change');
+            this.$element.val('广东省/深圳市/南山区').trigger('change');
         },
 
         destroy: function () {
