@@ -9,6 +9,13 @@
         标题:
         <input type="text" class="form-control" name="keyword" style="width: 200px;"
                value="{$keyword|default=''}" placeholder="请输入关键字">
+        时间:
+        <input type="text" class="form-control js-bootstrap-datetime" name="start_time"
+               value="{$start_time|default=''}"
+               style="width: 140px;" autocomplete="off">-
+        <input type="text" class="form-control js-bootstrap-datetime" name="end_time"
+               value="{$end_time|default=''}"
+               style="width: 140px;" autocomplete="off">
         <button class="btn btn-primary">搜索</button>
     </form>
     <form class="js-ajax-form" method="post">
@@ -17,23 +24,28 @@
                     data-subcheck="true" data-msg="{:lang('DELETE_CONFIRM_MESSAGE')}">{:lang('DELETE')}
             </button>
         </div>
-        <table class="table table-hover table-bordered table-list">
+        <table class="table table-hover table-bordered table-list" style="table-layout: fixed">
             <thead>
             <tr>
-                <th width="16">
+                <th width="30">
                     <label>
                         <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
                     </label>
                 </th>
-                <th width="100">ID</th>
-                <th>标题</th>
-                <th width="80">作者</th>
-                <th width="160">发布时间</th>
+                <th width="70">ID</th>
+                <th width="100">公司名称</th>
+                <th width="100">所在区域</th>
+                <th width="100">发布时间</th>
+                <th width="120">社会责任管理类</th>
+                <th width="120">生产品质管理类</th>
+                <th width="120">反恐安全管理类</th>
+                <th width="120">管理体系认证类</th>
+                <th width="120">信息安全认证类</th>
                 <th width="80">状态</th>
                 <th width="120">操作</th>
             </tr>
             </thead>
-            <php>$status=array("1"=>'已发布',"0"=>'未发布');</php>
+            <php>$used=array("1"=>'已标记',"0"=>'未标记');</php>
             <foreach name="pages" item="vo">
                 <tr>
                     <td>
@@ -42,48 +54,63 @@
                     </td>
                     <td>{$vo.id}</td>
                     <td>
-                        <a href="{:url('portal/page/index',array('id'=>$vo['id']))}" target="_blank">
-                            {$vo.post_title}
+                        <a href="{:url('AdminOffer/info',array('id'=>$vo['id']))}" target="_blank">
+                            {$vo.cpn}
                         </a>
                     </td>
-                    <td>{$vo.user_nickname}</td>
+                    <td>{$vo.region}</td>
                     <td>
-                        <empty name="vo.published_time">
+                        <empty name="vo.created_time">
                             未发布
                             <else/>
-                            {:date('Y-m-d H:i',$vo['published_time'])}
+                            {:date('Y-m-d H:i',$vo['created_time'])}
                         </empty>
                     </td>
+                    <td>{$vo.shzr_overall}</td>
+                    <td>{$vo.scpz_overall}</td>
+                    <td>{$vo.fkaq_overall}</td>
+                    <td>{$vo.gltx_overall}</td>
+                    <td>{$vo.xxaq_overall}</td>
                     <td>
-                        <notempty name="vo.post_status">
-                            <a data-toggle="tooltip" title="已发布"><i class="fa fa-check"></i></a>
+                        <notempty name="vo.used">
+                            <a data-toggle="tooltip" title="已标记"><i class="fa fa-check"></i></a>
                             <else/>
-                            <a data-toggle="tooltip" title="未发布"><i class="fa fa-close"></i></a>
+                            <a data-toggle="tooltip" title="未标记"><i class="fa fa-close"></i></a>
                         </notempty>
                     </td>
                     <td>
-                        <a class="btn btn-xs btn-primary" href="{:url('AdminOffer/edit',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>
+                        <a class="btn btn-xs btn-primary" href="{:url('AdminOffer/mark',array('id'=>$vo['id'],'used'=>$vo['used']))}">
+                            <php>echo $vo['used'] ? '取消标记' : '标记';</php>
+                        </a>
                         <a class="btn btn-xs btn-danger js-ajax-delete" href="{:url('AdminOffer/delete',array('id'=>$vo['id']))}">{:lang('DELETE')}</a>
                     </td>
                 </tr>
             </foreach>
             <tfoot>
             <tr>
-                <th width="16">
+                <th width="30">
                     <label>
                         <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
                     </label>
                 </th>
-                <th width="100">ID</th>
-                <th>标题</th>
-                <th width="80">作者</th>
-                <th width="160">发布时间</th>
-                <th>状态</th>
+                <th width="70">ID</th>
+                <th width="100">公司名称</th>
+                <th width="100">所在区域</th>
+                <th width="100">发布时间</th>
+                <th width="120">社会责任管理类</th>
+                <th width="120">生产品质管理类</th>
+                <th width="120">反恐安全管理类</th>
+                <th width="120">管理体系认证类</th>
+                <th width="120">信息安全认证类</th>
+                <th width="80">状态</th>
                 <th width="120">操作</th>
             </tr>
             </tfoot>
         </table>
         <div class="table-actions">
+            <button class="btn btn-primary btn-sm js-ajax-submit" type="submit" data-action="{:url('AdminOffer/mark')}"
+                    data-subcheck="true" >标记/取消标记
+            </button>
             <button class="btn btn-danger btn-sm js-ajax-submit" type="submit" data-action="{:url('AdminOffer/delete')}"
                     data-subcheck="true" data-msg="你确定删除吗？">{:lang('DELETE')}
             </button>

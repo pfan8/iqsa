@@ -13,7 +13,7 @@ namespace app\portal\controller;
 use cmf\controller\HomeBaseController;
 use app\portal\model\PortalCategoryModel;
 use app\portal\service\PostService;
-use app\portal\model\PortalPostModel;
+use app\portal\model\PortalOfferModel;
 use think\Db;
 
 class ArticleController extends HomeBaseController

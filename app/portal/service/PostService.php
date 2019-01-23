@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\portal\service;
 
-use app\portal\model\PortalPostModel;
+use app\portal\model\PortalOfferModel;
 use think\db\Query;
 
 class PostService
@@ -61,7 +61,7 @@ class PostService
             $field = 'a.*,b.id AS post_category_id,b.list_order,b.category_id,u.user_login,u.user_nickname,u.user_email';
         }
 
-        $portalPostModel = new PortalPostModel();
+        $portalPostModel = new PortalOfferModel();
         $articles        = $portalPostModel->alias('a')->field($field)
             ->join($join)
             ->where('a.create_time', '>=', 0)
@@ -120,7 +120,7 @@ class PostService
                 $field = 'a.*,b.id AS post_category_id,b.list_order,b.category_id,u.user_login,u.user_nickname,u.user_email';
             }
 
-            $portalPostModel = new PortalPostModel();
+            $portalPostModel = new PortalOfferModel();
             $articles   = $portalPostModel->alias('a')->field($field)
                 ->join($join)
                 ->where('a.create_time', '>=', 0)
@@ -176,7 +176,7 @@ class PostService
      */
     public function publishedArticle($postId, $categoryId = 0)
     {
-        $portalPostModel = new PortalPostModel();
+        $portalPostModel = new PortalOfferModel();
 
         if (empty($categoryId)) {
 
@@ -225,7 +225,7 @@ class PostService
      */
     public function publishedPrevArticle($postId, $categoryId = 0)
     {
-        $portalPostModel = new PortalPostModel();
+        $portalPostModel = new PortalOfferModel();
 
         if (empty($categoryId)) {
 
@@ -281,7 +281,7 @@ class PostService
      */
     public function publishedNextArticle($postId, $categoryId = 0)
     {
-        $portalPostModel = new PortalPostModel();
+        $portalPostModel = new PortalOfferModel();
 
         if (empty($categoryId)) {
 
@@ -339,7 +339,7 @@ class PostService
             'id'          => $pageId
         ];
 
-        $portalPostModel = new PortalPostModel();
+        $portalPostModel = new PortalOfferModel();
         $page            = $portalPostModel
             ->where($where)
             ->where('published_time', ['< time', time()], ['> time', 0], 'and')

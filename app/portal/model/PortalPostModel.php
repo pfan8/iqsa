@@ -17,7 +17,7 @@ use think\Db;
 /**
  * @property mixed id
  */
-class PortalPostModel extends Model
+class PortalOfferModel extends Model
 {
 
     protected $type = [

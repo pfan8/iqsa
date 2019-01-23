@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\portal\api;
 
-use app\portal\model\PortalPostModel;
+use app\portal\model\PortalOfferModel;
 
 class PageApi
 {
@@ -21,7 +21,7 @@ class PageApi
      */
     public function index($param = [])
     {
-        $portalPostModel = new PortalPostModel();
+        $portalPostModel = new PortalOfferModel();
 
         $where = [
             'post_type'      => 2,
@@ -46,7 +46,7 @@ class PageApi
      */
     public function nav()
     {
-        $portalPostModel = new PortalPostModel();
+        $portalPostModel = new PortalOfferModel();
 
         $where = [
             'post_type'      => 2,

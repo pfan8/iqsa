@@ -12,7 +12,7 @@ namespace app\portal\controller;
 
 use app\admin\model\RouteModel;
 use cmf\controller\AdminBaseController;
-use app\portal\model\PortalPostModel;
+use app\portal\model\PortalOfferModel;
 use app\portal\service\PostService;
 use app\admin\model\ThemeModel;
 
@@ -118,7 +118,7 @@ class AdminPageController extends AdminBaseController
             }
         }
 
-        $portalPostModel = new PortalPostModel();
+        $portalPostModel = new PortalOfferModel();
         $portalPostModel->adminAddPage($data['post']);
         $this->success(lang('ADD_SUCCESS'), url('AdminPage/edit', ['id' => $portalPostModel->id]));
 
@@ -147,7 +147,7 @@ class AdminPageController extends AdminBaseController
 
         $id = $this->request->param('id', 0, 'intval');
 
-        $portalPostModel = new PortalPostModel();
+        $portalPostModel = new PortalOfferModel();
         $post            = $portalPostModel->where('id', $id)->find();
 
         $themeModel     = new ThemeModel();
@@ -200,7 +200,7 @@ class AdminPageController extends AdminBaseController
             }
         }
 
-        $portalPostModel = new PortalPostModel();
+        $portalPostModel = new PortalOfferModel();
 
         $portalPostModel->adminEditPage($data['post']);
 
@@ -224,7 +224,7 @@ class AdminPageController extends AdminBaseController
      */
     public function delete()
     {
-        $portalPostModel = new PortalPostModel();
+        $portalPostModel = new PortalOfferModel();
         $data            = $this->request->param();
 
         $result = $portalPostModel->adminDeletePage($data);
