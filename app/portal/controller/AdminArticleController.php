@@ -11,7 +11,7 @@
 namespace app\portal\controller;
 
 use cmf\controller\AdminBaseController;
-use app\portal\model\PortalOfferModel;
+use app\portal\model\PortalPostModel;
 use app\portal\service\PostService;
 use app\portal\model\PortalCategoryModel;
 use think\Db;
@@ -129,7 +129,7 @@ class AdminArticleController extends AdminBaseController
                 $this->error($result);
             }
 
-            $portalPostModel = new PortalOfferModel();
+            $portalPostModel = new PortalPostModel();
 
             if (!empty($data['photo_names']) && !empty($data['photo_urls'])) {
                 $data['post']['more']['photos'] = [];
@@ -190,7 +190,7 @@ class AdminArticleController extends AdminBaseController
 
         $id = $this->request->param('id', 0, 'intval');
 
-        $portalPostModel = new PortalOfferModel();
+        $portalPostModel = new PortalPostModel();
         $post            = $portalPostModel->where('id', $id)->find();
         $postCategories  = $post->categories()->alias('a')->column('a.name', 'a.id');
         $postCategoryIds = implode(',', array_keys($postCategories));
@@ -236,7 +236,7 @@ class AdminArticleController extends AdminBaseController
                 $this->error($result);
             }
 
-            $portalPostModel = new PortalOfferModel();
+            $portalPostModel = new PortalPostModel();
 
             if (!empty($data['photo_names']) && !empty($data['photo_urls'])) {
                 $data['post']['more']['photos'] = [];
@@ -288,7 +288,7 @@ class AdminArticleController extends AdminBaseController
     public function delete()
     {
         $param           = $this->request->param();
-        $portalPostModel = new PortalOfferModel();
+        $portalPostModel = new PortalPostModel();
 
         if (isset($param['id'])) {
             $id           = $this->request->param('id', 0, 'intval');
@@ -351,7 +351,7 @@ class AdminArticleController extends AdminBaseController
     public function publish()
     {
         $param           = $this->request->param();
-        $portalPostModel = new PortalOfferModel();
+        $portalPostModel = new PortalPostModel();
 
         if (isset($param['ids']) && isset($param["yes"])) {
             $ids = $this->request->param('ids/a');
@@ -383,7 +383,7 @@ class AdminArticleController extends AdminBaseController
     public function top()
     {
         $param           = $this->request->param();
-        $portalPostModel = new PortalOfferModel();
+        $portalPostModel = new PortalPostModel();
 
         if (isset($param['ids']) && isset($param["yes"])) {
             $ids = $this->request->param('ids/a');
@@ -419,7 +419,7 @@ class AdminArticleController extends AdminBaseController
     public function recommend()
     {
         $param           = $this->request->param();
-        $portalPostModel = new PortalOfferModel();
+        $portalPostModel = new PortalPostModel();
 
         if (isset($param['ids']) && isset($param["yes"])) {
             $ids = $this->request->param('ids/a');

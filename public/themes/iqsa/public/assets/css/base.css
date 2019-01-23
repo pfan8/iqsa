@@ -162,3 +162,5 @@ html{color:#000;background:#FFF;}
 .line_xb{
 	background: url(line_xb.gif) repeat-x left bottom;
 }
+
+p {text-align: justify;font-size: 15px;}

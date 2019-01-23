@@ -231,8 +231,8 @@ a:hover{ color:#DB241C;}
 }
 .offer-group{width: 50%;float: left}
 
-.topnav{ position:absolute; top:10px; right:0;color:#000; }
-.topnav a{ font-size:12px; color:#000; padding:0 10px;}
+.topnav{ position:absolute; top:10px; right:0;color:#055C9E; }
+.topnav a{ font-size:12px; color:#055C9E; padding:0 10px;}
 .topnav a:hover{ color:#06C;}
 
 
@@ -1444,7 +1444,7 @@ a.url_b:hover{
 #footmenu a{ padding:0 10px; color:#6697C1;}
 /*/footmenu*/
 
-#foot{ position:relative; margin-left:auto; margin-right:auto; color:whitesmoke; text-align:center; padding:10px; background-color:#005297; clear:both; }
+#foot{ height:300px;position:relative; margin-left:auto; margin-right:auto; color:whitesmoke; text-align:center; padding:10px; background-color:#005297; clear:both; }
 /*/foot*/
 
-.foot-li {padding: 5px;letter-spacing: 1px;}
+.foot-li {padding-top: 15px;letter-spacing: 1px;}
