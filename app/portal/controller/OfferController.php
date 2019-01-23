@@ -36,7 +36,7 @@ class OfferController extends HomeBaseController
             }
 
             $portalOfferModel = new PortalOfferModel();
-
+            $data['created_time'] = time();
             $portalOfferModel->addOffer($data);
 
             $this->success('添加成功!','/portal/offer');

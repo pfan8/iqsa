@@ -1002,7 +1002,7 @@ ul.prevNext li{float:left;padding:2px 6px;border:solid 1px #fff;background:#eee;
 
 .slides_nav{width:980px; margin:auto; height:20px; position:relative; }
 .slides_nav ul{}
-.slides_nav li{ cursor:pointer; width:20px; height:20px; float:right; margin:0 5px; background: url(../images/slides_nav.gif) no-repeat left top;}
+.slides_nav li{ cursor:pointer; width:20px; height:20px; float:left; margin:0 5px; background: url(../images/slides_nav.gif) no-repeat left top;}
 .slides_nav li span{ display:none;}
 .slides_nav .current{background: url(../images/slides_nav_on.gif) no-repeat left top;}
 

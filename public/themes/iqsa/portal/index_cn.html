@@ -2,6 +2,43 @@
 <include file="public@nav"/>
 </head>
 <!--幻灯片-->
+<div class="slides">
+
+    <div class="slides_box">
+        <php>
+            $top_slide_id=empty($theme_vars['top_slide'])?1:$theme_vars['top_slide'];
+        </php>
+        <slides id="$top_slide_id">
+            <a href="{$vo.url|default=''}"><div style="background: url('{:cmf_get_image_url($vo.image)}') no-repeat center center;"></div></a>
+        </slides>
+        <!--<noslides id="$top_slide_id">-->
+        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/1.jpg')"></div></a>-->
+        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/2.jpg')"></div></a>-->
+        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/3.jpg')"></div></a>-->
+        <!--</noslides>-->
+    </div>
+    <!--/slides_box-->
+
+    <div class="slides_nav">
+        <div class="scroll_box">
+            <div class="scroll_left"><span>左</span></div>
+            <div style="width:400px; overflow:hidden; position:absolute; height:65px;">
+                <ul class="scroll_center">
+                    <slides id="$top_slide_id">
+                        <li><span>{$i++;}</span></li>
+                    </slides>
+                    <noslides id="$top_slide_id">
+                        <li><span>1</span></li>
+                        <li><span>2</span></li>
+                        <li><span>3</span></li>
+                        <li><span>4</span></li>
+                        <li><span>5</span></li>
+                    </noslides>
+                </ul>
+            </div>
+            <div class="scroll_right"><span>右</span></div>
+        </div>
+    </div>
 <script type="text/javascript" src="__TMPL__/public/assets/js/jquery.featureList-1.0.0.js"></script>
 <script language="javascript">
     /*******************************
@@ -64,43 +101,6 @@
 
 
 </script>
-<div class="slides">
-
-    <div class="slides_box">
-        <php>
-            $top_slide_id=empty($theme_vars['top_slide'])?1:$theme_vars['top_slide'];
-        </php>
-        <slides id="$top_slide_id">
-            <a href="{$vo.url|default=''}"><div style="background: url('{:cmf_get_image_url($vo.image)}') no-repeat center center;"></div></a>
-    </slides>
-    <!--<noslides id="$top_slide_id">-->
-        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/1.jpg')"></div></a>-->
-        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/2.jpg')"></div></a>-->
-        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/3.jpg')"></div></a>-->
-    <!--</noslides>-->
-</div>
-<!--/slides_box-->
-
-<div class="slides_nav">
-    <div class="scroll_box">
-        <div class="scroll_left"><span>左</span></div>
-        <div style="width:400px; overflow:hidden; position:absolute; height:65px;">
-            <ul class="scroll_center">
-                <slides id="$top_slide_id">
-                    <li><span>{$i++;}</span></li>
-                </slides>
-                <noslides id="$top_slide_id">
-                    <li><span>1</span></li>
-                    <li><span>2</span></li>
-                    <li><span>3</span></li>
-                    <li><span>4</span></li>
-                    <li><span>5</span></li>
-                </noslides>
-            </ul>
-        </div>
-        <div class="scroll_right"><span>右</span></div>
-    </div>
-</div>
 <!--/slides_nav-->
 </div>
 <!--/slides-->
