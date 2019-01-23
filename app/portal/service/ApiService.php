@@ -10,9 +10,8 @@
 // +----------------------------------------------------------------------
 namespace app\portal\service;
 
-use app\portal\model\PortalOfferModel;
 use app\portal\model\PortalCategoryModel;
-use think\Db;
+use app\portal\model\PortalPostModel;
 use think\db\Query;
 
 class ApiService
@@ -50,7 +49,7 @@ class ApiService
      */
     public static function articles($param)
     {
-        $portalPostModel = new PortalOfferModel();
+        $portalPostModel = new PortalPostModel();
 
         $where = [
             'post.post_status' => 1,
@@ -177,7 +176,7 @@ class ApiService
      */
     public static function tagArticles($param)
     {
-        $portalPostModel = new PortalOfferModel();
+        $portalPostModel = new PortalPostModel();
 
         $where = [
             'post.post_status' => 1,
@@ -259,7 +258,7 @@ class ApiService
      */
     public static function article($id)
     {
-        $portalPostModel = new PortalOfferModel();
+        $portalPostModel = new PortalPostModel();
 
         $where = [
             'post_status' => 1,
@@ -288,7 +287,7 @@ class ApiService
 
         $order = empty($param['order']) ? '' : $param['order'];
 
-        $portalPostModel = new PortalOfferModel();
+        $portalPostModel = new PortalPostModel();
 
         $where = [
             'post_status' => 1,
@@ -311,7 +310,7 @@ class ApiService
      */
     public static function page($id)
     {
-        $portalPostModel = new PortalOfferModel();
+        $portalPostModel = new PortalPostModel();
 
         $where = [
             'post_status' => 1,

@@ -53,6 +53,19 @@ class AdminOfferController extends AdminBaseController
         return $this->fetch();
     }
 
+
+    public function info() {
+        $param = $this->request->param();
+        if(!isset($param['id'])) {
+            return $this->error("查询失败");
+        }
+        $portalOfferModel = new PortalOfferModel();
+        $data = $portalOfferModel->where('id',$param['id'])->find();
+        $this->assign('offer',$data);
+        return $this->fetch();
+    }
+
+
     /**
      * 标记订单
      * @author    pfan8
