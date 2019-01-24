@@ -40,11 +40,12 @@ $configs = [
     // 默认时区
     'default_timezone'       => 'PRC',
     // 是否开启多语言
-    'lang_switch_on'         => false,
+    'lang_switch_on'         => true,
     // 默认全局过滤方法 用逗号分隔多个
     'default_filter'         => 'htmlspecialchars',
     // 默认语言
     'default_lang'           => 'zh-cn',
+    'lang_list'              => ['zh-cn','en-us'],
     // 应用类库后缀
     'class_suffix'           => true,
     // 控制器类后缀

@@ -16,10 +16,14 @@
     <div class="w70p">
         <dl class="f_1_a pl10 pr10">
             <dt class="t_4">
+                <h3>{$category.name}</h3>
                 <p class="web_nav fr">
-                    <strong>当前位置</strong><a href="/">首页</a><a href="{:cmf_url('portal/List/index',array('id'=>$category['id']))}">{$category.name}</a>
+                    <strong>{:lang('CURRENT_POS')}</strong><a href="/">{:lang('HOME')}</a><a href="{:cmf_url('portal/List/index',array('id'=>$category['id']))}">{$category.name}</a>
                 </p>
-                <h3>文章列表</h3>
+            </dt>
+            <div class="content">{$category.content}</div>
+            <dt class="t_4">
+                <h3>{:lang('ARTICLE_LIST')}</h3>
                 <!--/web_nav-->
             </dt>
 
@@ -38,7 +42,7 @@
                             <p>
                                 <span><?php echo date('Y-m-d',$vo['update_time']) ?></span>
                                 {$vo.description}
-                                <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">[全文]</a>
+                                <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">{:lang('FULL_CONTENT')}</a>
                             </p>
                         </li>
 

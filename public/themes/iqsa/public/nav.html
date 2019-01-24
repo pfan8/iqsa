@@ -4,14 +4,15 @@
     <a href="http://www.iqsachina.com/index.html" id="logo"></a>
     <div class="topnav">
         400-860-3833  &nbsp;&nbsp;/
-        <a href="http://weibo.com/iqsa">官方微博</a>/
-        <a href="{:url('/portal/Index?lang=cn&')}">中文</a>/
-        <a href="{:url('/portal/Index?lang=en&')}">English</a>/
-        <a href="javascript:window.external.AddFavorite('http://www.iqsachina.com','')">加入收藏</a>
+        <a href="http://weibo.com/iqsa">{:lang('WEIBO')}</a>/
+        <a href="{:url('/portal/Index?lang=zh-cn&')}">{:lang('CN')}</a>/
+        <a href="{:url('/portal/Index?lang=en-us&')}">English</a>/
+        <a href="javascript:window.external.AddFavorite('http://www.iqsachina.com','')">{:lang('ADD_FAVORITE')}</a>
     </div>
     <div id="topmenu_f" class="clear">
         <ul>
-            <navigation nav-id="" root="" id="main-navigation" class="nav navbar-nav navbar-nav-custom"
+            <php>$lang = $lang == '' ? 'zh-cn' : $lang;</php>
+            <navigation nav-id="$lang == 'zh-cn' ? 1 : 3" root="" id="main-navigation" class="nav navbar-nav navbar-nav-custom"
                         max-level="0">
                 <navigationMenu>
                     <if condition="$level gt 1">

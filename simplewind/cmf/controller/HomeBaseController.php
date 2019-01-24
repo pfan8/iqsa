@@ -10,8 +10,10 @@
 // +----------------------------------------------------------------------
 namespace cmf\controller;
 
+use think\Cookie;
 use think\Db;
 use app\admin\model\ThemeModel;
+use think\Lang;
 use think\View;
 
 class HomeBaseController extends BaseController
@@ -80,6 +82,12 @@ class HomeBaseController extends BaseController
      */
     protected function fetch($template = '', $vars = [], $replace = [], $config = [])
     {
+        //赋值语种变量
+        Lang::range(Cookie::has('lang') ? cookie('lang') : 'zh-cn');
+        if (\cookie('lang') == 'en-us') {
+            Lang::load(APP_PATH.'portal\lang\en-us.php');
+        }
+        $this->assign('lang',cookie('lang'));
         $template = $this->parseTemplate($template);
         $more     = $this->getThemeFileMore($template);
         $this->assign('theme_vars', $more['vars']);

@@ -11,31 +11,36 @@
 namespace app\portal\controller;
 use app\portal\service\PostService;
 use cmf\controller\HomeBaseController;
+use think\Cookie;
+use think\Lang;
 
 class IndexController extends HomeBaseController
 {
     public function index()
     {
-        $language = $this->request->param('lang', 'cn');
+        $language = $this->request->param('lang', Cookie::has('lang') ? \cookie('lang') : 'zh-cn');
+        if ($language == 'en-us') {
+            Cookie::set('lang','en-us');
+        } else {
+            Cookie::set('lang','zh-cn');
+        }
         $postService         = new PostService();
-
+        $cate_case = $language=='zh-cn' ? 61 : 1005;
+        $cate_news =  $language=='zh-cn' ? 8 : 1066;
+        $this->assign('cate_case',$cate_case);
+        $this->assign('cate_news',$cate_news);
         $filter_case = [
-                'category' => $language=='cn' ? 61 : 1005,
+                'category' => $cate_case,
                 'language' => $language
             ];
         $filter_news = [
-            'category' => $language=='cn' ? 8 : 1066,
+            'category' => $cate_news,
             'language' => $language
         ];
         $case_list = $postService->adminPostList($filter_case);
         $new_list = $postService->adminPostList($filter_news);
         $this->assign('caseList', $case_list);
         $this->assign('newsList', $new_list);
-        if($language == 'cn')
-            return $this->fetch(':index_cn');
-        elseif($language == 'en')
-            return $this->fetch(':index_en');
-        else
-            return $this->error('Language Set Error（语言设置有误）');
+        return $this->fetch(':index');
     }
 }

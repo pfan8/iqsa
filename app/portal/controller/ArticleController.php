@@ -14,6 +14,7 @@ use cmf\controller\HomeBaseController;
 use app\portal\model\PortalCategoryModel;
 use app\portal\service\PostService;
 use think\Db;
+use think\Lang;
 
 class ArticleController extends HomeBaseController
 {
@@ -27,7 +28,6 @@ class ArticleController extends HomeBaseController
      */
     public function index()
     {
-
         $portalCategoryModel = new PortalCategoryModel();
         $postService         = new PostService();
 

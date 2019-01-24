@@ -1,132 +1,151 @@
 
 
-
-<div id="foot">
-    <div class="w_80p" style="height: 250px;margin-bottom: 20px;">
+<php> if(cookie('lang') == 'en-us') {</php>
+<div id="foot" style="height: 280px;">
+<php>} else {</php>
+<div id="foot" style="height: 250px;">
+<php>}</php>
+    <php>
+        if(cookie('lang') == 'en-us')
+        {
+    </php>
+    <div class="w_90p" style="margin-bottom: 20px;">
+    <php>
+        } else {
+    </php>
+    <div class="w_80p" style="margin-bottom: 20px;">
+    <php>
+        }
+    </php>
         <div>
             <span>
-                <h4 class="f14 c_fff">我们就在您身边！ 24小时热线：400-860-3833</h4>
+                <h4 class="f14 c_fff">{:lang('HOTLINE')}</h4>
             </span>
 
             <div style="margin-right: 30px;float: left;margin-top: 30px"><img src="http://www.iqsachina.com/templets/IQSA/images/qrcode_for_gh_a7955e0d7bbf_430.jpg" width="200" height="200" /></div>
             <div style="float:left;text-align:left;width: 330px">
                 <li class="foot-li">
-                    <h5>深圳市综中合咨询服务有限公司（总部）</h5>
+                    <h5>{:lang('CNAME1')}</h5>
                 </li>
                 <ul style="float: left">
                     <li class="foot-li">
-                        手机：
+                        {:lang('C1_LABEL1')}：
                     </li>
                     <li class="foot-li">
-                        电话：
+                        {:lang('C1_LABEL2')}：
                     </li>
                     <li class="foot-li">
-                        QQ：
+                        {:lang('C1_LABEL3')}：
                     </li>
                     <li class="foot-li">
-                        邮箱：
+                        {:lang('C1_LABEL4')}：
                     </li>
                     <li class="foot-li">
-                        地址：
+                        {:lang('C1_LABEL5')}：
                     </li>
                 </ul>
 
                 <ul style="width:80%;float: left">
                     <li class="foot-li">
-                        13802254325（微信同号）
+                        {:lang('C1_CONTENT1')}
                     </li>
                     <li class="foot-li">
-                        0755-82290007 82290009 82289432
+                        {:lang('C1_CONTENT2')}
                     </li>
                     <li class="foot-li">
-                        13802254325
+                        {:lang('C1_CONTENT3')}
                     </li>
                     <li class="foot-li">
-                        iqsa@public.szptt.net.cn
+                        {:lang('C1_CONTENT4')}
                     </li>
                     <li class="foot-li">
-                        深圳市罗湖区人民南路36号深房广场A座35楼（自购物业）
+                        {:lang('C1_CONTENT5')}
                     </li>
                 </ul>
                 <br/>
             </div>
-            <div style="float:left;text-align:left;width: 280px">
-                <li class="foot-li">
-                    <h5>江苏综中合咨询服务有限公司</h5>
-                </li>
-                <ul style="float: left">
-                    <li class="foot-li">
-                        手机：
-                    </li>
-                    <li class="foot-li">
-                        电话：
-                    </li>
-                    <li class="foot-li">
-                        QQ：
-                    </li>
-                    <li class="foot-li">
-                        邮箱：
-                    </li>
-                    <li class="foot-li">
-                        地址：
-                    </li>
-                </ul>
-                <ul style="width:80%;float: left">
-                    <li class="foot-li">
-                        13776208467
-                    </li>
-                    <li class="foot-li">
-                        0512-81569046
-                    </li>
-                    <li class="foot-li">
-                        19502566&#160;
-                    </li>
-                    <li class="foot-li">
-                        yui@iqsachina.com
-                    </li>
-                    <li class="foot-li">
-                        江苏省常熟市东南大道333号科创大厦A区206室
-                    </li>
-                </ul>
-                <br/>
-            </div>
+            <php> if(cookie('lang') == 'en-us') {</php>
+            <div style="float:left;text-align:left;width: 320px">
+            <php>} else {</php>
             <div style="float:left;text-align:left;width: 300px">
+            <php>}</php>
                 <li class="foot-li">
-                    <h5>安徽综中合咨询服务有限公司</h5>
+                    <h5>{:lang('CNAME2')}</h5>
                 </li>
                 <ul style="float: left">
                     <li class="foot-li">
-                        手机：
+                        {:lang('C2_LABEL1')}：
                     </li>
                     <li class="foot-li">
-                        电话：
+                        {:lang('C2_LABEL2')}：
                     </li>
                     <li class="foot-li">
-                        地址：
+                        {:lang('C2_LABEL3')}：
+                    </li>
+                    <li class="foot-li">
+                        {:lang('C2_LABEL4')}：
+                    </li>
+                    <li class="foot-li">
+                        {:lang('C2_LABEL5')}：
                     </li>
                 </ul>
                 <ul style="width:80%;float: left">
                     <li class="foot-li">
-                        13505532175
+                        {:lang('C2_CONTENT1')}
                     </li>
                     <li class="foot-li">
-                        0553-3116125
+                        {:lang('C2_CONTENT2')}
                     </li>
                     <li class="foot-li">
-                        安徽省芜湖市文化路世纪花园I座901室
+                        {:lang('C2_CONTENT3')}
+                    </li>
+                    <li class="foot-li">
+                        {:lang('C2_CONTENT4')}
+                    </li>
+                    <li class="foot-li">
+                        {:lang('C2_CONTENT5')}
+                    </li>
+                </ul>
+                <br/>
+            </div>
+            <php> if(cookie('lang') == 'en-us') {</php>
+            <div style="float:left;text-align:left;width: 320px">
+            <php>} else {</php>
+            <div style="float:left;text-align:left;width: 300px">
+            <php>}</php>
+                <li class="foot-li">
+                    <h5>{:lang('CNAME3')}</h5>
+                </li>
+                <ul style="float: left">
+                    <li class="foot-li">
+                        {:lang('C3_LABEL1')}：
+                    </li>
+                    <li class="foot-li">
+                        {:lang('C3_LABEL2')}：
+                    </li>
+                    <li class="foot-li">
+                        {:lang('C3_LABEL3')}：
+                    </li>
+                </ul>
+                <ul style="width:80%;float: left">
+                    <li class="foot-li">
+                        {:lang('C3_CONTENT1')}
+                    </li>
+                    <li class="foot-li">
+                        {:lang('C3_CONTENT2')}
+                    </li>
+                    <li class="foot-li">
+                        {:lang('C3_CONTENT3')}
                     </li>
                 </ul>
                 <br/>
             </div>
         </div>
     </div>
+</div>
 
-    <div style="width: 60%;margin-left: auto;margin-right: auto">
-        <span>
-        Copyright 1998-2017 IQSA&COMPANY|All Rights Reserved 综中合咨询服务有限公司 从优秀到卓越的验厂咨询辅导公司！ <br />
-        粤 ICP 备 15111424号
-        </span>
-    </div>
+<div style="margin-left: auto;margin-right: auto;text-align: center;background-color: #005297;color: whitesmoke;">
+        {:lang('COPYRIGHT')}
 </div>
 
 <script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4d95ccc6ca296e16671b0a7de2e7aa46' type='text/javascript'%3E%3C/script%3E"));</script>

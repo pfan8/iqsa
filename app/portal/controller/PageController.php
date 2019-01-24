@@ -29,7 +29,7 @@ class PageController extends HomeBaseController
         $pageId      = $this->request->param('id', 0, 'intval');
         $categoryId      = $this->request->param('cid', 0, 'intval');
         $page        = $postService->publishedPage($pageId);
-        if($categoryId == '4' | $categoryId == '141') {
+        if($categoryId == '4' | $categoryId == '141' | $categoryId == '1005') {
             $portalCategoryModel = new PortalCategoryModel();
             $category = $portalCategoryModel->where('id', $categoryId)->where('status', 1)->find();
 
@@ -44,8 +44,12 @@ class PageController extends HomeBaseController
         $more = $page['more'];
 
         $tplName = empty($more['template']) ? 'page' : $more['template'];
-
         return $this->fetch("/$tplName");
+    }
+
+    public function ruanjianzt()
+    {
+        return $this->fetch("/ruanjianzt");
     }
 
 }

@@ -1,7 +1,44 @@
 <include file="public@head"/>
-<include file="public@nav_en"/>
+<include file="public@nav"/>
 </head>
 <!--幻灯片-->
+<div class="slides">
+
+    <div class="slides_box">
+        <php>
+            $top_slide_id=empty($theme_vars['top_slide'])?1:$theme_vars['top_slide'];
+        </php>
+        <slides id="$top_slide_id">
+            <a href="{$vo.url|default=''}"><div style="background: url('{:cmf_get_image_url($vo.image)}') no-repeat center center;"></div></a>
+        </slides>
+        <!--<noslides id="$top_slide_id">-->
+        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/1.jpg')"></div></a>-->
+        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/2.jpg')"></div></a>-->
+        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/3.jpg')"></div></a>-->
+        <!--</noslides>-->
+    </div>
+    <!--/slides_box-->
+
+    <div class="slides_nav">
+        <div class="scroll_box">
+            <div class="scroll_left"><span>左</span></div>
+            <div style="width:400px; overflow:hidden; position:absolute; height:65px;">
+                <ul class="scroll_center">
+                    <slides id="$top_slide_id">
+                        <li><span>{$i++;}</span></li>
+                    </slides>
+                    <noslides id="$top_slide_id">
+                        <li><span>1</span></li>
+                        <li><span>2</span></li>
+                        <li><span>3</span></li>
+                        <li><span>4</span></li>
+                        <li><span>5</span></li>
+                    </noslides>
+                </ul>
+            </div>
+            <div class="scroll_right"><span>右</span></div>
+        </div>
+    </div>
 <script type="text/javascript" src="__TMPL__/public/assets/js/jquery.featureList-1.0.0.js"></script>
 <script language="javascript">
     /*******************************
@@ -64,43 +101,6 @@
 
 
 </script>
-<div class="slides">
-
-    <div class="slides_box">
-        <php>
-            $top_slide_id=empty($theme_vars['top_slide'])?1:$theme_vars['top_slide'];
-        </php>
-        <slides id="$top_slide_id">
-            <a href="{$vo.url|default=''}"><div style="background: url('{:cmf_get_image_url($vo.image)}') no-repeat center center;"></div></a>
-    </slides>
-    <!--<noslides id="$top_slide_id">-->
-        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/1.jpg')"></div></a>-->
-        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/2.jpg')"></div></a>-->
-        <!--<a href=""><div style="background:url('__TMPL__/public/assets/images/demo/3.jpg')"></div></a>-->
-    <!--</noslides>-->
-</div>
-<!--/slides_box-->
-
-<div class="slides_nav">
-    <div class="scroll_box">
-        <div class="scroll_left"><span>左</span></div>
-        <div style="width:400px; overflow:hidden; position:absolute; height:65px;">
-            <ul class="scroll_center">
-                <slides id="$top_slide_id">
-                    <li><span>{$i++;}</span></li>
-                </slides>
-                <noslides id="$top_slide_id">
-                    <li><span>1</span></li>
-                    <li><span>2</span></li>
-                    <li><span>3</span></li>
-                    <li><span>4</span></li>
-                    <li><span>5</span></li>
-                </noslides>
-            </ul>
-        </div>
-        <div class="scroll_right"><span>右</span></div>
-    </div>
-</div>
 <!--/slides_nav-->
 </div>
 <!--/slides-->
@@ -111,11 +111,11 @@
 <div class="w_set2">
 
 <dl class="fl w_310">
-<dt class="t_1"><a href="{:url('portal/List/index',['id'=>1005])}" class="t_1_more">More</a><span>CASES</span></dt>
+<dt class="t_1"><a href="{:url('portal/List/index',['id'=>$cate_case])}" class="t_1_more">{:lang('MORE')}</a><h3>{:lang('SUCCEED_CASE')}</h3></dt>
 <dd class="about pa10" style="height:220px;">
     <ul class="list_1">
         <foreach name="caseList" item="vo">
-            <li><a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>1005])}">{$vo.post_title}</a><span><?php echo date('Y-m-d',$vo['update_time']) ?></span></li>
+            <li><a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>$cate_case])}">{$vo.post_title}</a><span><?php echo date('Y-m-d',$vo['update_time']) ?></span></li>
         </foreach>
     </ul>
 </dd>
@@ -125,12 +125,12 @@
 
 
 <dl class="fl w_310 ml15">
-<dt class="t_1 "><a href="{:url('portal/List/index',['id'=>1066])}" class="t_1_more">More</a><span>FAQ</span></dt>
+<dt class="t_1 "><a href="{:url('portal/List/index',['id'=>$cate_news])}" class="t_1_more">{:lang('MORE')}</a><h3>{:lang('FAQ')}</h3></dt>
 <dd class="pa10" style="height:240px;">
 
   <ul class="list_1">
       <foreach name="newsList" item="vo">
-          <li><a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>1066])}">{$vo.post_title}</a><span><?php echo date('Y-m-d',$vo['update_time']) ?></span></li>
+          <li><a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>$cate_news])}">{$vo.post_title}</a><span><?php echo date('Y-m-d',$vo['update_time']) ?></span></li>
       </foreach>
   </ul>
 
@@ -150,7 +150,7 @@
 
 <div class="bg_c_4 pt10 mb10" style="height:370px;overflow: hidden">
 <div class="w_set2">
-<dt class="t_2"><span>CATEGORY</span></dt>
+<dt class="t_2"><h3>{:lang('SERVICES')}</h3></dt>
 <dd>
     <div class="scroll2">
         <ul>
@@ -547,19 +547,18 @@
 <div class="bg_c_4 pt10 mb10" style="height:370px;overflow: hidden">
     <div class="w_set">
         <div class="w_680 fl">
-            <dt class="t_2"><h3>Introduction to factory inspection software</h3></dt>
+            <dt class="t_2"><h3>{:lang('SOFTWARE_INTRO')}</h3></dt>
             <dd>
-                <a target="_Blank" href="http://www.iqsachina.com/ruanjianzt.html">
-                    <img width="100%" border="0" alt="验厂考勤软件" src="http://www.iqsachina.com/templets/IQSA/images/IQSA-V8.png">
-
+                <a target="_Blank" href="{:url('portal/page/ruanjianzt')}">
+                    <img width="100%" border="0" alt="验厂考勤软件" src="__TMPL__/public/assets/images/IQSA-V8.png">
                 </a>
             </dd>
         </div>
         <div class="w_300 fr">
-            <dt class="t_2"><h3>company qualification</h3></dt>
+            <dt class="t_2"><h3>{:lang('QUALIFICATION')}</h3></dt>
             <dd>
-                <a target="_Blank" href="http://www.iqsachina.com/lianxi/about7.html">
-                    <img border="0" alt="" src="http://www.iqsachina.com/templets/IQSA/images/gszzd.jpg" style="height:285px;margin: 0 auto;display: block;">
+                <a target="_Blank" href="{:url('portal/other_page/index',array('id'=>10284))}">
+                    <img border="0" alt="" src="__TMPL__/public/assets/images/gszzd.jpg" style="height:285px;margin: 0 auto;display: block;">
                 </a>
             </dd>
         </div>
@@ -568,4 +567,4 @@
 
     <!--/w_set2-->
 </div>
-<include file="public@foot_en"/>
+<include file="public@foot"/>

@@ -10,11 +10,12 @@
         </dt>
         <div class="content">{$theme_page.post_content}</div>
         <?php
-            if ($cid == '2' | $cid == '3' | $cid == '5')
+            if ($cid == '2' | $cid == '3' | $cid == '5' |
+                $cid == '1002' | $cid == '1003' | $cid == '1004')
             {
         ?>
         <dt class="t_4">
-            <h3>{$theme_page.post_title}项目</h3>
+            <h3>{$theme_page.post_title}{:lang('CATEGORY')}</h3>
             <!--/web_nav-->
         </dt>
         <div class="bg_c_4 pt10 mb10" style="height:370px;overflow: hidden">
@@ -23,8 +24,7 @@
                     <div class="scroll2">
                         <ul>
                             <php>
-                                $where = ['parent_id' => $cid,
-                                        'language' => 'cn'];
+                                $where = ['parent_id' => $cid];
                             </php>
                             <portal:categories where="$where" order="list_order DESC" item="vo">
                                 <li>
@@ -45,19 +45,20 @@
 
         <?php
         }
-        else if($cid == '4' | $cid == '141')
+        else if($cid == '4' | $cid == '141'|
+                $cid == '1005')
         {
             $where=[
             'post.create_time'=>['egt',0]
             ];
             $page=[
             'list_rows'=>10,
-            'next'=>'下一页',
-            'prev'=>'上一页'
+            'next'=> \think\Lang::get('NEXT_PAGE'),
+            'prev'=> \think\Lang::get('PREV_PAGE'),
             ];
         ?>
         <dt class="t_4">
-            <h3>{$theme_page.post_title}列表</h3><span>LIST</span>
+            <h3>{$theme_page.post_title}{:lang('LIST')}</h3>
             <!--/web_nav-->
         </dt>
         <dd class="pa10 clear">
@@ -75,7 +76,7 @@
                         <p>
                             <span><?php echo date('Y-m-d',$vo['update_time']) ?></span>
                             {$vo.description}
-                            <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">[全文]</a>
+                            <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">{:lang('FULL_CONTENT')}</a>
                         </p>
                     </li>
 
@@ -96,13 +97,15 @@
         <?php
         }
         ?>
+
         <dt class="t_4">
-            <h3>权责声明</h3>
+            <p class="web_nav fr">
+            <h3>{:lang('RS_TITLE')}</h3>
+            </p>
             <!--/web_nav-->
         </dt>
-        <div class="content" style="margin-bottom: 30px">
-            <p>凡本站作品均属综中合验厂咨询网整理编辑，未经授权，不得转载使用。另：本站部分转贴文章均转载自
-                正规网站，并不代表本站赞同其观点和对其真实性负责。如涉及作品内容、版权和其它问题，请致电 0755-82289432！</p>
+        <div class="w_70p">
+            <p>{:lang('RS_CONTENT')}</p>
         </div>
         <!--/w_set2-->
     </dl>
