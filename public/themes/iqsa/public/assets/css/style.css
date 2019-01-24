@@ -14,7 +14,6 @@ a:hover{ color:#DB241C;}
 	width: 600px;
 	height:50px;
 	display:block;
-	background-image: url(../images/logo.png);
 	position:absolute;
 	background-repeat: no-repeat;
 	left:0;
@@ -1055,7 +1054,6 @@ a.url_b:hover{
 	/*text-indent: 2em;*/
 	overflow: hidden;
 	font-size: 15px;
-	text-align: right;
 }
 
 /**/

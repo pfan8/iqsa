@@ -151,345 +151,119 @@
 <div class="bg_c_4 pt10 mb10" style="height:370px;overflow: hidden">
 <div class="w_set2">
 <dt class="t_2"><h3>{:lang('SERVICES')}</h3></dt>
+    <php>if (\think\Cookie::get('lang') == 'en-us') {</php>
+    <dd>
+        <div class="scroll2">
+            <ul>
+                <volist name="categorys['p1002']" id="vo" length='8'>
+                    <li>
+                        <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
+                            <div class="dnvgl-image">
+                                <img src="{$vo['more']['thumbnail']}" />
+                            </div>
+                            <span>{$vo.name}</span>
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+        <div class="scroll2">
+            <ul>
+                <volist name="categorys['p1003']" id="vo" length='8'>
+                    <li>
+                        <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
+                            <div class="dnvgl-image">
+                                <img src="{$vo['more']['thumbnail']}" />
+                            </div>
+                            <span>{$vo.name}</span>
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+        <div class="scroll2">
+            <ul>
+                <volist name="categorys['p1004']" id="vo" length='8'>
+                    <li>
+                        <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
+                            <div class="dnvgl-image">
+                                <img src="{$vo['more']['thumbnail']}" />
+                            </div>
+                            <span>{$vo.name}</span>
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </dd>
+
+</div>
+
+    <!--/w_set2-->
+</div>
+<div class="scroll2_nav">
+    <ul class="scroll2_center">
+        <li><a href="javascript:void(0);"></a></li>
+        <li><a href="javascript:void(0);"></a></li>
+        <li><a href="javascript:void(0);"></a></li>
+    </ul>
+</div>
+    <php>} else {</php>
 <dd>
     <div class="scroll2">
         <ul>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="__TMPL__/public/assets/images/demo/bsci.png" />
-                    </div>
-                    <span>BSCI 认证</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/TPAT.jpg" />
-                    </div>
-                    <span>C-TPAT</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/gsv.jpg" />
-                    </div>
-                    <span>GSV反恐</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/wrap.jpg" />
-                    </div>
-                    <span>WRAP认证</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/icti.jpg" />
-                    </div>
-                    <span>ICTI 认证</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="__TMPL__/public/assets/images/demo/RBAlogo.png" />
-                    </div>
-                    <span>RBA(EICC)</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/sedex.jpg" />
-                    </div>
-                    <span>SEDEX认证</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/sa.jpg" />
-                    </div>
-                    <span>SA8000</span>
-                </a>
-            </li>
+            <volist name="categorys['p2']" id="vo" length='8'>
+                <li>
+                    <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
+                        <div class="dnvgl-image">
+                            <img src="{$vo['more']['thumbnail']}" />
+                        </div>
+                        <span>{$vo.name}</span>
+                    </a>
+                </li>
+            </volist>
         </ul>
     </div>
     <div class="scroll2">
         <ul>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/cqc.jpg" />
-                    </div>
-                    <span>ISO9001</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/14000.jpg" />
-                    </div>
-                    <span>ISO14001</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/13485.jpg" />
-                    </div>
-                    <span>ISO13485</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/16949.jpg" />
-                    </div>
-                    <span>TS16949</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/22716.jpg" />
-                    </div>
-                    <span>ISO22716</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/eti.jpg" />
-                    </div>
-                    <span>ETI认证</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/aib.jpg" />
-                    </div>
-                    <span>AIB认证</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/rohs.jpg" />
-                    </div>
-                    <span>ROHS认证</span>
-                </a>
-            </li>
+            <volist name="categorys['p3']" id="vo" length='8'>
+                <li>
+                    <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
+                        <div class="dnvgl-image">
+                            <img src="{$vo['more']['thumbnail']}" />
+                        </div>
+                        <span>{$vo.name}</span>
+                    </a>
+                </li>
+            </volist>
         </ul>
     </div>
     <div class="scroll2">
         <ul>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/walmart.jpg" />
-                    </div>
-                    <span>Wal-Mart</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/jspenney.jpg" />
-                    </div>
-                    <span>杰西潘尼</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/sears.jpg" />
-                    </div>
-                    <span>Sears验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/hasbro.jpg" />
-                    </div>
-                    <span>孩之宝验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/disney.jpg" />
-                    </div>
-                    <span>Disney验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/homedepot.jpg" />
-                    </div>
-                    <span>家得宝验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/wca.jpg" />
-                    </div>
-                    <span>WCA验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/staples.jpg" />
-                    </div>
-                    <span>Staple验厂</span>
-                </a>
-            </li>
+            <volist name="categorys['p5']" id="vo" length='8'>
+                <li>
+                    <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
+                        <div class="dnvgl-image">
+                            <img src="{$vo['more']['thumbnail']}" />
+                        </div>
+                        <span>{$vo.name}</span>
+                    </a>
+                </li>
+            </volist>
         </ul>
     </div>
     <div class="scroll2">
         <ul>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/target.jpg" />
-                    </div>
-                    <span>Target验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/jlf.jpg" />
-                    </div>
-                    <span>家乐福验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/nike.jpg" />
-                    </div>
-                    <span>NIKE验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/ikea.jpg" />
-                    </div>
-                    <span>宜家验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/mattel.jpg" />
-                    </div>
-                    <span>Mattel验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/lg.jpg" />
-                    </div>
-                    <span>乐购验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/kmart.jpg" />
-                    </div>
-                    <span>Kmart验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/lf.jpg" />
-                    </div>
-                    <span>利丰验厂</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="scroll2">
-        <ul>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/costco.jpg" />
-                    </div>
-                    <span>Costco验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/mx.jpg" />
-                    </div>
-                    <span>梅西验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/argos.jpg" />
-                    </div>
-                    <span>Argos验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/dkn.jpg" />
-                    </div>
-                    <span>迪卡侬验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/bsm.jpg" />
-                    </div>
-                    <span>百思买验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/adidas.jpg" />
-                    </div>
-                    <span>Adidas验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/puma.jpg" />
-                    </div>
-                    <span>Puma验厂</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="dnvgl-image">
-                        <img src="http://www.iqsachina.com/templets/IQSA/images/kokl.jpg" />
-                    </div>
-                    <span>可乐验厂</span>
-                </a>
-            </li>
+            <volist name="categorys['p73']" id="vo" length='8'>
+                <li>
+                    <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
+                        <div class="dnvgl-image">
+                            <img src="{$vo['more']['thumbnail']}" />
+                        </div>
+                        <span>{$vo.name}</span>
+                    </a>
+                </li>
+            </volist>
         </ul>
     </div>
 </dd>
@@ -504,9 +278,9 @@
         <li><a href="javascript:void(0);"></a></li>
         <li><a href="javascript:void(0);"></a></li>
         <li><a href="javascript:void(0);"></a></li>
-        <li><a href="javascript:void(0);"></a></li>
     </ul>
 </div>
+<php>}</php>
 <script type="text/javascript">
     var scroll_index = 0;//初始显示
     var scroll_count = $(".scroll2_center>li").length;
