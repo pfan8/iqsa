@@ -10,6 +10,7 @@
 // +----------------------------------------------------------------------
 namespace cmf\controller;
 
+use app\portal\service\PostService;
 use think\Cookie;
 use think\Db;
 use app\admin\model\ThemeModel;
@@ -88,6 +89,8 @@ class HomeBaseController extends BaseController
             Lang::load(APP_PATH.'portal\lang\en-us.php');
         }
         $this->assign('lang',cookie('lang'));
+        //赋值底部页面
+        $this->assign('foot_pages', PostService::getFootPages());
         $template = $this->parseTemplate($template);
         $more     = $this->getThemeFileMore($template);
         $this->assign('theme_vars', $more['vars']);

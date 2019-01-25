@@ -42,15 +42,18 @@
             </foreach>
 
 
-            <dt class="t_4" style="width: 90%">
-                <p class="web_nav fr">
-                <h3>{:lang('RS_TITLE')}</h3>
-                </p>
-                <!--/web_nav-->
-            </dt>
-            <div class="w_80p" style="margin-bottom: 30px">
-                <p>{:lang('RS_CONTENT')}</p>
-            </div>
+
+            <foreach name ="foot_pages" item="vo">
+                <dt class="t_4" style="width: 90%">
+                    <p class="web_nav fr">
+                    <h3>{$vo.post_title}</h3>
+                    </p>
+                    <!--/web_nav-->
+                </dt>
+                <div class="w_80p">
+                    {$vo.post_content}
+                </div>
+            </foreach>
         </dl>
 
     </div>

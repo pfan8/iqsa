@@ -30,7 +30,7 @@
                                 <li>
                                     <a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">
                                         <div class="dnvgl-image">
-                                            <img src="{$vo.more['thumbnail']}">
+                                            <img src="{:cmf_get_image_preview_url($vo['more']['thumbnail'])}">
                                         </div>
                                         <span>{$vo.name}</span>
                                     </a>
@@ -70,7 +70,7 @@
                                  returnVarName="articles_data">
                     <li>
                         <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">
-                            <img src="{$vo.thumbnail}" onerror="this.onerror='';src='__TMPL__/public/assets/images/defaultpic.gif'" width="110" height="110" />
+                            <img src="{:cmf_url('upload')}" onerror="this.onerror='';src='__TMPL__/public/assets/images/defaultpic.gif'" width="110" height="110" />
                         </a>
                         <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}" class="list_page_t">{$vo.post_title}</a>
                         <p>
@@ -98,15 +98,18 @@
         }
         ?>
 
-        <dt class="t_4">
-            <p class="web_nav fr">
-            <h3>{:lang('RS_TITLE')}</h3>
-            </p>
-            <!--/web_nav-->
-        </dt>
-        <div class="w_70p">
-            <p>{:lang('RS_CONTENT')}</p>
-        </div>
+
+        <foreach name ="foot_pages" item="vo">
+            <dt class="t_4">
+                <p class="web_nav fr">
+                <h3>{$vo.post_title}</h3>
+                </p>
+                <!--/web_nav-->
+            </dt>
+            <div class="w_70p">
+                {$vo.post_content}
+            </div>
+        </foreach>
         <!--/w_set2-->
     </dl>
 </div>

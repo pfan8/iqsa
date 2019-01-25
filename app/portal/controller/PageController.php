@@ -13,6 +13,8 @@ namespace app\portal\controller;
 use cmf\controller\HomeBaseController;
 use app\portal\service\PostService;
 use app\portal\model\PortalCategoryModel;
+use think\Cookie;
+use think\Db;
 
 class PageController extends HomeBaseController
 {

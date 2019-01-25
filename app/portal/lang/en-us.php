@@ -56,12 +56,6 @@ return [
     'ENTERPRISE_ADVANTAGE'   => 'Why IQSA?',
     'SERVICE_SCOPE'   => 'Scope of Services',
     'COMPANY_QUALIFICATION'   => 'Company Qualification',
-    'RS_TITLE'          => 'Responsibility Statement',
-    'RS_CONTENT'          => 'All the works of this site are edited and edited by the comprehensive consultation factory, and may not be reproduced without authorization. Another: Some of the reposted articles on this site are reprinted from the regular website, which does not mean that the site agrees with its views and is responsible for its authenticity. For work content, copyright and other questions, please call 0755-82289432!',
-    'TIP_TITLE'         => 'IQSA Tips',
-    'TIP_CONTENT'       => '
-The comprehensive comprehensive inspection factory network (referred to as: IQSA) as the leading brand of inspection consulting and counseling, committed to corporate social responsibility audit, quality inspection and anti-terrorism inspection, provide BSCI inspection, ICTI inspection, Wal-Mart inspection, GSV inspection Factory, WCA inspection, SEDEX inspection, WRAP inspection and other inspection consulting services! After years of unremitting efforts, the company has successfully coached many large, medium and small enterprises across the country with the “best service and the most professional counseling”.
-            25 years of focus on inspection and consultation, adhering to the good word of mouth of customers, to help you avoid supply chain risks and ensure the sustainability of foreign trade business! We sincerely invite you to negotiate business, see the confirmation!',
     'CONTENT'           => 'Content',
     'CATEGORY'          => 'Category',
     'LIST'              => 'List',

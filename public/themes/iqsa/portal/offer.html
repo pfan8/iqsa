@@ -305,15 +305,17 @@
                 <!--</div>-->
             <!--</div>-->
 
-            <dt class="t_4" style="width: 90%">
-                <p class="web_nav fr">
-                <h3>权责声明</h3>
-                </p>
-                <!--/web_nav-->
-            </dt>
-            <div class="w_80p" style="margin-bottom: 30px">
-                凡本站作品均属综中合验厂咨询网整理编辑，未经授权，不得转载使用。另：本站部分转贴文章均转载自 正规网站，并不代表本站赞同其观点和对其真实性负责。如涉及作品内容、版权和其它问题，请致电 0755-82289432！
-            </div>
+            <foreach name ="foot_pages" item="vo">
+                <dt class="t_4">
+                    <p class="web_nav fr">
+                    <h3>{$vo.post_title}</h3>
+                    </p>
+                    <!--/web_nav-->
+                </dt>
+                <div class="w_70p">
+                    {$vo.post_content}
+                </div>
+            </foreach>
         </dl>
 
     </div>

@@ -40,23 +40,17 @@
     <!--/c_title-->
     <div class="content">{$article.post_content}</div>
 
+    <foreach name ="foot_pages" item="vo">
     <dt class="t_4">
-        <h3>{:lang('TIP_TITLE')}</h3>
+        <p class="web_nav fr">
+        <h3>{$vo.post_title}</h3>
+        </p>
         <!--/web_nav-->
     </dt>
-    <dd class=" pa20 clear">
-        <div class="content">
-        {:lang('TIP_CONTENT')}
-        </div>
-
-    <dt class="t_4">
-        <h3>{:lang('RS_TITLE')}</h3>
-        <!--/web_nav-->
-    </dt>
-    <dd class=" pa20 clear">
-        <div class="content">
-            {:lang('RS_CONTENT')}
-        </div>
+    <div class="w_70p">
+        {$vo.post_content}
+    </div>
+    </foreach>
 </div>
 <!--/w_set2-->
 

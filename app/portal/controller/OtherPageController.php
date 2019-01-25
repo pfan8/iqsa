@@ -63,7 +63,6 @@ class OtherPageController extends HomeBaseController
             } else if($pageId > 10306 && $pageId <= 10308) {
                 $lmId = 8;
                 array_push($pages, $postService->publishedPage(10307));
-                array_push($pages, $postService->publishedPage(10308));
             }
 
 
@@ -112,7 +111,6 @@ class OtherPageController extends HomeBaseController
             } else if($pageId > 10287 && $pageId <= 10289) {
                 $lmId = 8;
                 array_push($pages, $postService->publishedPage(10288));
-                array_push($pages, $postService->publishedPage(10289));
             }
 
 

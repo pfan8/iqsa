@@ -13,6 +13,7 @@ namespace app\portal\service;
 use app\portal\model\PortalPostModel;
 use think\Cookie;
 use think\db\Query;
+use think\Db;
 
 class PostService
 {
@@ -289,6 +290,29 @@ class PostService
             ->find();
 
         return $page;
+    }
+
+
+    // 获取友情提示和权责声明页面
+    public static function getFootPages()
+    {
+        $pages = array();
+        if (Cookie::get('lang') == 'en-us') {
+            $temp = Db::name('portal_post')->where('id',10308)->find();
+            $temp['post_content'] = htmlspecialchars_decode($temp['post_content']);
+            array_push($pages, $temp);
+            $temp = Db::name('portal_post')->where('id',10310)->find();
+            $temp['post_content'] = htmlspecialchars_decode($temp['post_content']);
+            array_push($pages, $temp);
+        } else {
+            $temp = Db::name('portal_post')->where('id',10289)->find();
+            $temp['post_content'] = htmlspecialchars_decode($temp['post_content']);
+            array_push($pages, $temp);
+            $temp = Db::name('portal_post')->where('id',10309)->find();
+            $temp['post_content'] = htmlspecialchars_decode($temp['post_content']);
+            array_push($pages, $temp);
+        }
+        return $pages;
     }
 
 }
