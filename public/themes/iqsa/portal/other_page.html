@@ -32,6 +32,15 @@
                 <dt class="t_4" style="width: 90%">
                     <p class="web_nav fr">
                     <h3>{$vo.post_title}</h3>
+                    <php>
+                        if ($vo['post_title'] == '联系我们' | $vo['post_title'] == 'Contact') {
+                    </php>
+                    <p style="font-size: 14px">
+                        {:lang('HOTLINE')}
+                    </p>
+                    <php>
+                        }
+                    </php>
                     </p>
                     <!--/web_nav-->
                 </dt>

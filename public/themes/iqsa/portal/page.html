@@ -18,29 +18,56 @@
             <h3>{$theme_page.post_title}{:lang('CATEGORY')}</h3>
             <!--/web_nav-->
         </dt>
-        <div class="bg_c_4 pt10 mb10" style="height:370px;overflow: hidden">
+        <div class="bg_c_4 pt10 mb10" style="height:370px">
             <div class="w_set2">
                 <dd>
-                    <div class="scroll2">
-                        <ul>
-                            <php>
-                                $where = ['parent_id' => $cid];
-                            </php>
-                            <portal:categories where="$where" order="list_order DESC" item="vo">
+                    <php>
+                        $where = ['parent_id' => $cid];
+                        $count = 0;
+                    </php>
+                    <portal:categories where="$where" order="list_order DESC" item="vo">
+                        <php>
+                            $count += 1;
+                            if ($count % 14 == 1) {
+                        </php>
+                        <div class="scroll2">
+                            <ul>
+                        <php>
+                            }
+                        </php>
                                 <li>
                                     <a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">
                                         <div class="dnvgl-image">
-                                            <img src="{:cmf_get_image_preview_url($vo['more']['thumbnail'])}">
+                                            <img src="{:cmf_get_image_preview_url($vo['more']['thumbnail'])}" onerror="this.onerror='';src='__TMPL__/public/assets/images/defaultpic.gif'">
                                         </div>
                                         <span>{$vo.name}</span>
                                     </a>
                                 </li>
-                            </portal:categories>
-                        </ul>
-                    </div>
+                        <php>
+                            if ($count % 14 == 0) {
+                        </php>
+                            </ul>
+                        </div>
+                        <php>
+                            }
+                        </php>
+                    </portal:categories>
                 </dd>
 
             </div>
+        </div>
+        <div class="scroll2_nav">
+            <ul class="scroll2_center">
+                <php>
+                    $page_num = ($count / 14);
+                    while($page_num > 0) {
+                        $page_num -= 1;
+                </php>
+                <li><a href="javascript:void(0);"></a></li>
+                <php>
+                    }
+                </php>
+            </ul>
         </div>
 
         <?php
@@ -114,5 +141,40 @@
     </dl>
 </div>
 
+<script type="text/javascript">
+    var scroll_index = 0;//初始显示
+    var scroll_count = $(".scroll2_center>li").length;
+    var qh = function(){
+        $(".scroll2_center>li").removeClass('current');
+        $(".scroll2_center>li").eq(scroll_index).addClass('current');//初始状态
+        $(".scroll2").hide();
+        $(".scroll2").eq(scroll_index).fadeIn(1000);
+    };
+    //初始一次
+    qh();
+    var run =function(){
+        scroll_index++;
+        if(scroll_index>=scroll_count){
+            scroll_index = 0;
+        }
+        qh();
+    };
+    $(".scroll2_center>li").click(function(){
+        scroll_index =  $(".scroll2_center>li").index($(this));
+        qh();
+        clearInterval(timeq);
+        timeq = setInterval(run,4*1000);
+    });
+    var timeq = setInterval(run,4*1000);
+    $(".scroll2>ul>li").mouseover(function(){
+        clearInterval(timeq);
+    });
+    $(".scroll2>ul>li").mouseout(function(){
+        timeq = setInterval(run,4*1000);
+    })
+
+
+
+</script>
 <!--/w_set2-->
 <include file="public@foot"/>

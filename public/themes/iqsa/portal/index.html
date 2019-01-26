@@ -111,7 +111,7 @@
 <div class="w_set2">
 
 <dl class="fl w_310">
-<dt class="t_1"><a href="{:url('portal/List/index',['id'=>$cate_case])}" class="t_1_more">{:lang('MORE')}</a><h3>{:lang('SUCCEED_CASE')}</h3></dt>
+<dt class="t_1"><a href="{:cmf_url('portal/List/index',['id'=>$cate_case])}" class="t_1_more">{:lang('MORE')}</a><h3>{:lang('SUCCEED_CASE')}</h3></dt>
 <dd class="about pa10" style="height:220px;">
     <ul class="list_1">
         <foreach name="caseList" item="vo">
@@ -148,14 +148,14 @@
 
 
 
-<div class="bg_c_4 pt10 mb10" style="height:370px;overflow: hidden">
+<div class="bg_c_4 pt10 mb10" style="height:420px;overflow: hidden">
 <div class="w_set2">
 <dt class="t_2"><h3>{:lang('SERVICES')}</h3></dt>
     <php>if (\think\Cookie::get('lang') == 'en-us') {</php>
     <dd>
         <div class="scroll2">
             <ul>
-                <volist name="categorys['p1002']" id="vo" length='8'>
+                <volist name="categorys['p1002']" id="vo" length='14'>
                     <li>
                         <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
                             <div class="dnvgl-image">
@@ -169,7 +169,7 @@
         </div>
         <div class="scroll2">
             <ul>
-                <volist name="categorys['p1003']" id="vo" length='8'>
+                <volist name="categorys['p1003']" id="vo" length='14'>
                     <li>
                         <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
                             <div class="dnvgl-image">
@@ -183,7 +183,7 @@
         </div>
         <div class="scroll2">
             <ul>
-                <volist name="categorys['p1004']" id="vo" length='8'>
+                <volist name="categorys['p1004']" id="vo" length='14'>
                     <li>
                         <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
                             <div class="dnvgl-image">
@@ -212,7 +212,7 @@
 <dd>
     <div class="scroll2">
         <ul>
-            <volist name="categorys['p2']" id="vo" length='8'>
+            <volist name="categorys['p2']" id="vo" length='14'>
                 <li>
                     <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
                         <div class="dnvgl-image">
@@ -226,7 +226,7 @@
     </div>
     <div class="scroll2">
         <ul>
-            <volist name="categorys['p3']" id="vo" length='8'>
+            <volist name="categorys['p3']" id="vo" length='14'>
                 <li>
                     <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
                         <div class="dnvgl-image">
@@ -240,7 +240,7 @@
     </div>
     <div class="scroll2">
         <ul>
-            <volist name="categorys['p5']" id="vo" length='8'>
+            <volist name="categorys['p5']" id="vo" length='14'>
                 <li>
                     <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
                         <div class="dnvgl-image">
@@ -254,7 +254,7 @@
     </div>
     <div class="scroll2">
         <ul>
-            <volist name="categorys['p73']" id="vo" length='8'>
+            <volist name="categorys['p73']" id="vo" length='14'>
                 <li>
                     <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
                         <div class="dnvgl-image">

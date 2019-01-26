@@ -232,6 +232,8 @@ a:hover{ color:#DB241C;}
 	pointer-events: none;
 }
 .offer-group{width: 50%;float: left}
+.offer-label-left{width: 110px;display: inline-block}
+.offer-label-right{width: 80px;display: inline-block}
 
 .topnav{ position:absolute; top:10px; right:0;color:#183150; }
 .topnav a{ font-size:12px; color:#183150; padding:0 10px;}
@@ -1256,7 +1258,7 @@ a.url_b:hover{
 /*框架*/
 /**/
 .w_set{ width:980px; margin-left:auto; margin-right:auto;}
-.w_set2{ width:960px; margin-left:auto; margin-right:auto;}
+.w_set2{ width:1000px; margin-left:auto; margin-right:auto;}
 
 .w_300{ width:300px;}
 .w_310{ width:465px;}
@@ -1339,20 +1341,21 @@ a.url_b:hover{
 .scroll a.bx-next:hover{background: url(../images/scroll.gif) no-repeat -120px center;}
 /*/scroll*/
 .scroll2{
-	height: 300px;
+	height: 400px;
 }
 /*滚动图片2*/
 .scroll2 ul{
 
 }
 .scroll2 li{
-	width: 240px;
+	width: 140px;
 	height: 150px;
 	float:left;
+	margin-top: 30px;
 }
 .dnvgl-image{
 	overflow: hidden;
-	width: 200px;
+	width: 150px;
 	height: 120px;
 	margin: 0 auto;
 	display: flex;
@@ -1371,7 +1374,7 @@ a.url_b:hover{
 	height: 40px;
 	line-height: 40px;
 	display: block;
-	width: 240px;
+	width: 140px;
 	text-align: center;
 	font-size: 15px;
 
@@ -1452,3 +1455,4 @@ a.url_b:hover{
 /*/foot*/
 
 .foot-li {padding-top: 15px;letter-spacing: 1px;}
+.foot-li-en {padding-top: 10px;letter-spacing: 1px;}

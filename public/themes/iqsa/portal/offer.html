@@ -10,75 +10,351 @@
         <dl class="f_1_a pl10 pr10">
             <dt class="t_4" style="width: 90%">
                 <p class="web_nav fr">
-                <h3>自助报价</h3>
+                <h3>{:lang('QUOTE')}</h3>
                 </p>
                 <!--/web_nav-->
             </dt>
-            <div class="offer">
+            <php> if(cookie('lang') == 'en-us') {</php>
+            <div class="offer" style="width: 900px;height: 700px;">
                 <form class="form-inline" action="{:url('Offer/addOffer')}" method="post">
                     <div class="offer-title">
-                        <h3><font color="white">基本信息</font></h3>
+                        <h3><font color="white">{:lang('BASIC_INFO')}</font></h3>
                     </div>
                     <div class="offer-content">
                         <div class="offer-group">
-                            <label for="cpn">公司名称：<span class="form-required">*</span></label>
+                            <label class="offer-label-left" for="cpn">{:lang('COMPANY_NAME')}：<span class="form-required">*</span></label>
                             <input type="text" name="cpn" value="<?php if(isset($preset['cpn'])) echo $preset['cpn']?>" id="cpn" style="width: 250px" required>
                         </div>
                         <div style="position: relative;" class="offer-group">
-                            <div style="float: left;padding-top: 5px"> <label for="city-picker3">所在区域：<span class="form-required">*</span></label></div>
+                            <div style="float: left;padding-top: 5px"> <label class="offer-label-right" for="city-picker3">{:lang('LOCATION')}：<span class="form-required">*</span></label></div>
                             <input id="city-picker3" name="region" class="form-control" type="text" value="<?php if(isset($preset['region'])) echo $preset['region'];else echo '广东省/深圳市/南山区'?>" data-toggle="city-picker">
-                            <button class="btn btn-primary" id="reset" type="button">重置</button>
-                            <button class="btn btn-default" id="destroy" type="button">确定</button>
+                            <button class="btn btn-primary" id="reset" type="button">{:lang('RESET')}</button>
+                            <button class="btn btn-default" id="destroy" type="button">{:lang('CONFIRM')}</button>
                         </div>
                     </div>
                     <div class="offer-content">
                         <div class="offer-group">
-                            <label for="mb">主营业务：</label>
-                            <input type="text" name="mb" value="<?php if(isset($preset['mb'])) echo $preset['mb']?>" id="mb" style="width: 250px;margin-left: 5px;">
+                            <label class="offer-label-left" for="mb">{:lang('MAIN_BUS')}：</label>
+                            <input type="text" name="mb" value="<?php if(isset($preset['mb'])) echo $preset['mb']?>" id="mb" style="width: 250px">
                         </div>
                         <div class="offer-group">
-                            <label for="cn">工厂人数：<span class="form-required">*</span></label>
-                            <input type="text" name="cn" value="<?php if(isset($preset['cn'])) echo $preset['cn']?>" id="cn" style="width: 250px" required>
+                            <label class="offer-label-right" for="cn">{:lang('NUM_OF_FAC')}：<span class="form-required">*</span></label>
+                            <input type="text" name="cn" value="<?php if(isset($preset['cn'])) echo $preset['cn']?>" id="cn" style="width: 250px;vertical-align: top;" required>
                         </div>
                     </div>
                     <div class="offer-content">
                         <div class="offer-group">
-                            <label for="dorm">建筑物：</label>
-                            <input type="text" name="dorm" placeholder=" 工厂栋数/层数（含宿舍）" value="<?php if(isset($preset['dorm'])) echo $preset['dorm']?>" id="dorm" style="margin-left: 17px;width: 250px">
+                            <label class="offer-label-left" for="dorm">{:lang('BUILDINGS')}：</label>
+                            <input type="text" name="dorm" placeholder="{:lang('BUILDINGS_PH')}" value="<?php if(isset($preset['dorm'])) echo $preset['dorm']?>" id="dorm" style="width: 250px">
                         </div>
                         <div class="offer-group">
-                            <label for="name">联系人：<span class="form-required">*</span></label>
-                            <input type="text" name="name" value="<?php if(isset($preset['name'])) echo $preset['name']?>" id="name" style="margin-left: 12px" required>
+                            <label class="offer-label-right" for="name">{:lang('CONTACTS')}：<span class="form-required">*</span></label>
+                            <input type="text" name="name" value="<?php if(isset($preset['name'])) echo $preset['name']?>" id="name" required>
                             <div class="btn-group dropdown" id="dropdown">
                                 <button id="g_button" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    先生 <span class="caret"></span>
+                                    {:lang('MALE')} <span class="caret"></span>
                                 </button>
                                 <input type="hidden" name="gender" id="g_input" value="0">
                                 <ul class="dropdown-menu">
-                                    <li><a href="#" onclick="changeGender(0)">先生</a></li>
+                                    <li><a href="#" onclick="changeGender(0)">{:lang('MALE')}</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#" onclick="changeGender(1)">女士</a></li>
+                                    <li><a href="#" onclick="changeGender(1)">{:lang('FEMALE')}</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="offer-content">
                         <div class="offer-group">
-                            <label for="phone">手机号码：<span class="form-required">*</span></label>
+                            <label class="offer-label-left" for="phone">{:lang('MOBILE_PHONE')}：<span class="form-required">*</span></label>
                             <input type="text" name="phone" value="<?php if(isset($preset['phone'])) echo $preset['phone']?>" id="phone" style="width: 250px" required>
                         </div>
                         <div class="offer-group">
-                            <label for="email">电子邮件：<span class="form-required">*</span></label>
+                            <label class="offer-label-right" for="email">{:lang('EMAIL')}：<span class="form-required">*</span></label>
                             <input type="text" name="email" value="<?php if(isset($preset['email'])) echo $preset['email']?>" id="email" style="width: 250px" required>
                         </div>
                     </div>
                     <div class="offer-title" style="margin-top: 5px;">
-                        <h3><font color="white">项目类型</font></h3>
+                        <h3><font color="white">{:lang('PROJECT_TYPE')}</font></h3>
+                    </div>
+                    <div  style="height:80px;border-bottom:2px solid darkgray ;">
+                        <div class="offer-content2">
+                            <div style="width: 100px;height: 70px;text-align: center;float: left;margin-top: 5px;margin-right: 20px;">
+                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;margin-right: 20px;">{:lang('SRM')}</p>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="icti" name="icti" class="styled" type="checkbox" >
+                                <label for="icti">
+                                    ICTI
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="bsci" name="bsci" class="styled" type="checkbox">
+                                <label for="bsci">
+                                    BSCI
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="disney" name="disney" class="styled" type="checkbox">
+                                <label for="disney">
+                                    Disney
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="walmart" name="walmart" class="styled" type="checkbox">
+                                <label for="walmart">
+                                    Wal-mart
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="rba" name="rba" class="styled" type="checkbox">
+                                <label for="rba">
+                                    RBA(EICC)
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="sedex" name="sedex" class="styled" type="checkbox">
+                                <label for="sedex">
+                                    SEDEX(SMETA)
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="wrap" name="wrap" class="styled" type="checkbox">
+                                <label for="wrap">
+                                    WRAP
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="coc" name="coc" class="styled" type="checkbox">
+                                <label for="coc">
+                                    COC
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="wca" name="wca" class="styled" type="checkbox">
+                                <label for="wca">
+                                    WCA
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="sa8000" name="sa8000" class="styled" type="checkbox">
+                                <label for="sa8000">
+                                    SA8000
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="shzrother" class="styled" type="checkbox">
+                                <label for="shzrother" style="width: 40px;">
+                                    {:lang('OTHERS')}
+                                </label>
+                                <input type="text" name="shzrother" value="<?php if(isset($preset['shzrother'])) echo $preset['shzrother']?>" id="shzr" style="width: 80px">
+                            </div>
+                        </div>
+                    </div>
+                    <div  style="height:70px;border-bottom:2px solid darkgray ;">
+                        <div class="offer-content2">
+                            <div style="width: 100px;height: 50px;text-align: center;float: left;margin-right: 20px;">
+                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;">{:lang('PQM')}</p>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="sqp" name="sqp" class="styled" type="checkbox">
+                                <label for="sqp">
+                                    SQP
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="gmp" name="gmp" class="styled" type="checkbox">
+                                <label for="gmp">
+                                    GMP
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="haccp" name="haccp" class="styled" type="checkbox">
+                                <label for="haccp">
+                                    HACCP
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="iatf16949" name="iatf16949" class="styled" type="checkbox">
+                                <label for="iatf16949">
+                                    IATF16949
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="fcca" name="fcca" class="styled" type="checkbox">
+                                <label for="fcca">
+                                    沃尔玛FCCA
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="scpzother" class="styled" type="checkbox">
+                                <label for="scpzother" style="width: 40px;">
+                                    {:lang('OTHERS')}
+                                </label>
+                            </div>
+                            <input type="text" name="scpzother" value="<?php if(isset($preset['scpzother'])) echo $preset['scpzother']?>" id="scpz" style="width: 50px">
+                        </div>
+                    </div>
+                    <div  style="height:70px;border-bottom:2px solid darkgray ;">
+                        <div class="offer-content2">
+                            <div style="width: 100px;height: 50px;text-align: center;float: left;margin-right: 20px;">
+                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;">{:lang('SMAT')}</p>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="ctpat" name="ctpat" class="styled" type="checkbox">
+                                <label for="ctpat">
+                                    C-TPAT
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="gsv" name="gsv" class="styled" type="checkbox">
+                                <label for="gsv">
+                                    GSV
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="scan" name="scan" class="styled" type="checkbox">
+                                <label for="scan">
+                                    SCAN
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="scs" name="scs" class="styled" type="checkbox">
+                                <label for="scs">
+                                    沃尔玛SCS
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="fkaqother" class="styled" type="checkbox">
+                                <label for="fkaqother" style="width: 40px;">
+                                    {:lang('OTHERS')}
+                                </label>
+                            </div>
+                            <input type="text" name="fkaqother" value="" id="fkaq_input" style="width: 80px">
+                        </div>
+                    </div>
+                    <div  style="height:70px;border-bottom:2px solid darkgray ;">
+                        <div class="offer-content2">
+                            <div style="width: 100px;height: 50px;text-align: center;float: left;margin-right: 20px;">
+                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;">{:lang('MSC')}</p>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="iso45000" name="iso45000" class="styled" type="checkbox">
+                                <label for="iso45000">
+                                    ISO45000
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="iso14000" name="iso14000" class="styled" type="checkbox">
+                                <label for="iso14000">
+                                    ISO14000
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="iso9000" name="iso9000" class="styled" type="checkbox">
+                                <label for="iso9000">
+                                    ISO9000
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="gltxother" class="styled" type="checkbox">
+                                <label for="gltxother" style="width: 40px;">
+                                    {:lang('OTHERS')}
+                                </label>
+                            </div>
+                            <input type="text" name="gltxother" value="" id="gltx_input" style="width: 80px">
+                        </div>
+                    </div>
+                    <div  style="height:70px;border-bottom:2px solid darkgray ;">
+                        <div class="offer-content2">
+                            <div style="width: 100px;height: 50px;text-align: center;float: left;margin-right: 20px;">
+                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;">{:lang('ISC')}</p>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="iso27001" name="iso27001" class="styled" type="checkbox">
+                                <label for="iso27001">
+                                    ISO27001
+                                </label>
+                            </div>
+                            <div class="checkbox checkbox-primary">
+                                <input id="xxaqother" class="styled" type="checkbox">
+                                <label for="xxaqother" style="width: 40px;">
+                                    {:lang('OTHERS')}
+                                </label>
+                            </div>
+                            <input type="text" name="xxaqother" value="" id="xxaq_input" style="width: 80px">
+                        </div>
+                    </div>
+                    <div style="width: 54px;margin-left: auto;margin-right: auto;margin-top:5px;">
+                        <button type="submit" class="btn btn-default">{:lang('SUBMIT')}</button>
+                    </div>
+                </form>
+            </div>
+            <php> } else {</php>
+            <div class="offer">
+                <form class="form-inline" action="{:url('Offer/addOffer')}" method="post">
+                    <div class="offer-title">
+                        <h3><font color="white">{:lang('BASIC_INFO')}</font></h3>
+                    </div>
+                    <div class="offer-content">
+                        <div class="offer-group">
+                            <label for="cpn">{:lang('COMPANY_NAME')}：<span class="form-required">*</span></label>
+                            <input type="text" name="cpn" value="<?php if(isset($preset['cpn'])) echo $preset['cpn']?>" id="cpn" style="width: 250px" required>
+                        </div>
+                        <div style="position: relative;" class="offer-group">
+                            <div style="float: left;padding-top: 5px"> <label for="city-picker3">{:lang('LOCATION')}：<span class="form-required">*</span></label></div>
+                            <input id="city-picker3" name="region" class="form-control" type="text" value="<?php if(isset($preset['region'])) echo $preset['region'];else echo '广东省/深圳市/南山区'?>" data-toggle="city-picker">
+                            <button class="btn btn-primary" id="reset" type="button">{:lang('RESET')}</button>
+                            <button class="btn btn-default" id="destroy" type="button">{:lang('CONFIRM')}</button>
+                        </div>
+                    </div>
+                    <div class="offer-content">
+                        <div class="offer-group">
+                            <label for="mb">{:lang('MAIN_BUS')}：</label>
+                            <input type="text" name="mb" value="<?php if(isset($preset['mb'])) echo $preset['mb']?>" id="mb" style="width: 250px;margin-left: 5px;">
+                        </div>
+                        <div class="offer-group">
+                            <label for="cn">{:lang('NUM_OF_FAC')}：<span class="form-required">*</span></label>
+                            <input type="text" name="cn" value="<?php if(isset($preset['cn'])) echo $preset['cn']?>" id="cn" style="width: 250px" required>
+                        </div>
+                    </div>
+                    <div class="offer-content">
+                        <div class="offer-group">
+                            <label for="dorm">{:lang('BUILDINGS')}：</label>
+                            <input type="text" name="dorm" placeholder="{:lang('BUILDINGS_PH')}" value="<?php if(isset($preset['dorm'])) echo $preset['dorm']?>" id="dorm" style="margin-left: 17px;width: 250px">
+                        </div>
+                        <div class="offer-group">
+                            <label for="name">{:lang('CONTACTS')}：<span class="form-required">*</span></label>
+                            <input type="text" name="name" value="<?php if(isset($preset['name'])) echo $preset['name']?>" id="name" style="margin-left: 12px" required>
+                            <div class="btn-group dropdown" id="dropdown">
+                                <button id="g_button" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {:lang('MALE')} <span class="caret"></span>
+                                </button>
+                                <input type="hidden" name="gender" id="g_input" value="0">
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" onclick="changeGender(0)">{:lang('MALE')}</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#" onclick="changeGender(1)">{:lang('FEMALE')}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offer-content">
+                        <div class="offer-group">
+                            <label for="phone">{:lang('MOBILE_PHONE')}：<span class="form-required">*</span></label>
+                            <input type="text" name="phone" value="<?php if(isset($preset['phone'])) echo $preset['phone']?>" id="phone" style="width: 250px" required>
+                        </div>
+                        <div class="offer-group">
+                            <label for="email">{:lang('EMAIL')}：<span class="form-required">*</span></label>
+                            <input type="text" name="email" value="<?php if(isset($preset['email'])) echo $preset['email']?>" id="email" style="width: 250px" required>
+                        </div>
+                    </div>
+                    <div class="offer-title" style="margin-top: 5px;">
+                        <h3><font color="white">{:lang('PROJECT_TYPE')}</font></h3>
                     </div>
                     <div  style="height:80px;border-bottom:2px solid darkgray ;">
                         <div class="offer-content2">
                             <div style="width: 50px;height: 70px;text-align: center;float: left;margin-right: 20px">
-                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;margin-top: 20px;">社会责任管理类</p>
+                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;margin-top: 20px;">{:lang('SRM')}</p>
                             </div>
                             <div class="checkbox checkbox-primary">
                                 <input id="icti" name="icti" class="styled" type="checkbox" >
@@ -143,7 +419,7 @@
                             <div class="checkbox checkbox-primary">
                                 <input id="shzrother" class="styled" type="checkbox">
                                 <label for="shzrother" style="width: 30px;">
-                                    其他
+                                    {:lang('OTHERS')}
                                 </label>
                                 <input type="text" name="shzrother" value="<?php if(isset($preset['shzrother'])) echo $preset['shzrother']?>" id="shzr" style="width: 80px">
                             </div>
@@ -152,7 +428,7 @@
                     <div  style="height:50px;border-bottom:2px solid darkgray ;">
                         <div class="offer-content2">
                             <div style="width: 50px;height: 50px;text-align: center;float: left;margin-right: 20px;">
-                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;">生产品质管理类</p>
+                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;">{:lang('PQM')}</p>
                             </div>
                             <div class="checkbox checkbox-primary">
                                 <input id="sqp" name="sqp" class="styled" type="checkbox">
@@ -187,7 +463,7 @@
                             <div class="checkbox checkbox-primary">
                                 <input id="scpzother" class="styled" type="checkbox">
                                 <label for="scpzother" style="width: 30px;">
-                                    其他
+                                    {:lang('OTHERS')}
                                 </label>
                             </div>
                             <input type="text" name="scpzother" value="<?php if(isset($preset['scpzother'])) echo $preset['scpzother']?>" id="scpz" style="width: 50px">
@@ -196,7 +472,7 @@
                     <div  style="height:50px;border-bottom:2px solid darkgray ;">
                         <div class="offer-content2">
                             <div style="width: 50px;height: 50px;text-align: center;float: left;margin-right: 20px;">
-                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;">反恐安全管理类</p>
+                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;">{:lang('SMAT')}</p>
                             </div>
                             <div class="checkbox checkbox-primary">
                                 <input id="ctpat" name="ctpat" class="styled" type="checkbox">
@@ -225,7 +501,7 @@
                             <div class="checkbox checkbox-primary">
                                 <input id="fkaqother" class="styled" type="checkbox">
                                 <label for="fkaqother" style="width: 30px;">
-                                    其他
+                                    {:lang('OTHERS')}
                                 </label>
                             </div>
                             <input type="text" name="fkaqother" value="" id="fkaq_input" style="width: 80px">
@@ -234,7 +510,7 @@
                     <div  style="height:50px;border-bottom:2px solid darkgray ;">
                         <div class="offer-content2">
                             <div style="width: 50px;height: 50px;text-align: center;float: left;margin-right: 20px;">
-                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;">管理体系认证类</p>
+                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;">{:lang('MSC')}</p>
                             </div>
                             <div class="checkbox checkbox-primary">
                                 <input id="iso45000" name="iso45000" class="styled" type="checkbox">
@@ -257,7 +533,7 @@
                             <div class="checkbox checkbox-primary">
                                 <input id="gltxother" class="styled" type="checkbox">
                                 <label for="gltxother" style="width: 30px;">
-                                    其他
+                                    {:lang('OTHERS')}
                                 </label>
                             </div>
                             <input type="text" name="gltxother" value="" id="gltx_input" style="width: 80px">
@@ -266,7 +542,7 @@
                     <div  style="height:50px;border-bottom:2px solid darkgray ;">
                         <div class="offer-content2">
                             <div style="width: 50px;height: 50px;text-align: center;float: left;margin-right: 20px;">
-                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;">信息安全认证类</p>
+                                <p style="width: 100%;height: 20px;display: block;line-height: 20px;">{:lang('ISC')}</p>
                             </div>
                             <div class="checkbox checkbox-primary">
                                 <input id="iso27001" name="iso27001" class="styled" type="checkbox">
@@ -277,34 +553,18 @@
                             <div class="checkbox checkbox-primary">
                                 <input id="xxaqother" class="styled" type="checkbox">
                                 <label for="xxaqother" style="width: 30px;">
-                                    其他
+                                    {:lang('OTHERS')}
                                 </label>
                             </div>
                             <input type="text" name="xxaqother" value="" id="xxaq_input" style="width: 80px">
                         </div>
                     </div>
                     <div style="width: 54px;margin-left: auto;margin-right: auto;margin-top:5px;">
-                        <button type="submit" class="btn btn-default">提交</button>
+                        <button type="submit" class="btn btn-default">{:lang('SUBMIT')}</button>
                     </div>
                 </form>
             </div>
-            <!--<div style="height: 500px">-->
-                <!--<div class="docs-methods">-->
-                    <!--<form class="form-inline">-->
-                        <!--<div id="distpicker" style="margin-left: 50%;">-->
-                            <!--<div class="form-group">-->
-                                <!--<div style="position: relative;float: left;">-->
-                                    <!--<input id="city-picker3" class="form-control" type="text" value="江苏省/常州市/溧阳市" data-toggle="city-picker">-->
-                                <!--</div>-->
-                                <!--<button class="btn btn-primary" id="reset" type="button" style="float: left;">重置</button>-->
-                            <!--</div>-->
-                            <!--<div class="form-group">-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</form>-->
-                <!--</div>-->
-            <!--</div>-->
-
+            <php> }</php>
             <foreach name ="foot_pages" item="vo">
                 <dt class="t_4">
                     <p class="web_nav fr">
@@ -329,10 +589,10 @@
     function changeGender(gender) {
         if(gender == 0){
             $("#g_input").val(0);
-            $("#g_button").text('先生');
+            $("#g_button").text("<?php echo \think\Lang::get('MALE');?>");
         }else if(gender == 1){
             $("#g_input").val(1);
-            $("#g_button").text('女士');
+            $("#g_button").text("<?php echo \think\Lang::get('FEMALE');?>");
         }
     }
 </script>

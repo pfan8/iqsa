@@ -164,7 +164,8 @@ class AdminCategoryController extends AdminBaseController
         if ($id > 0) {
             $portalCategoryModel = new PortalCategoryModel();
             $category            = $portalCategoryModel->get($id)->toArray();
-
+            // 字符转义
+            $category['content'] = htmlspecialchars_decode($category['content']);
 
             $categoriesTree = $portalCategoryModel->adminCategoryTree($category['parent_id'], $id);
 

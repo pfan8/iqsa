@@ -15,7 +15,7 @@
                 <a class="list-group-item" href="#C" data-toggle="tab">模板设置</a>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8">
             <form class="js-ajax-form" action="{:url('AdminCategory/editPost')}" method="post">
                 <div class="tab-content">
                     <div class="tab-pane active" id="A">
@@ -46,6 +46,12 @@
                             <div>
                                 <textarea class="form-control" name="description"
                                           id="input-description">{$description}</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>内容</label>
+                            <div>
+                                <script type="text/plain" id="content" name="content">{$content}</script>
                             </div>
                         </div>
                         <div class="form-group">
@@ -129,7 +135,29 @@
     </div>
 </div>
 <script type="text/javascript" src="__STATIC__/js/admin.js"></script>
-<script>
+<script type="text/javascript">
+    //编辑器路径定义
+    var editorURL = GV.WEB_ROOT;
+</script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('content');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+        $('#more-template-select').val("{$post.more.template|default=''}");
+    });
     $('#input-list_tpl').val("{$list_tpl|default=''}");
     $('#input-one_tpl').val("{$one_tpl|default=''}");
 </script>
