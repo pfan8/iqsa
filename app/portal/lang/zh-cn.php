@@ -72,7 +72,7 @@ return [
     'HOME'              => '首页',
     'NEXT_PAGE'              => '下一页',
     'PREV_PAGE'              => '上一页',
-    'LOGO'              => '/themes/iqsa/public/assets/images/logo.png',
+    'LOGO'              => '/themes/iqsa/public/assets/images/logo4.png',
     'QUOTE'             => '自助报价',
     'BASIC_INFO'        => '基本信息',
     'COMPANY_NAME'      => '公司名称',

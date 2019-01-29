@@ -6,6 +6,7 @@ body{background: url(../images/body.png) repeat-x left 0px;}
 a{}
 a:hover{ color:#DB241C;}
 #header{ position:relative; height:120px;}
+#header_mask {width:100%;height:80px;position: relative; background-color: #005297}
 
 /**/
 /*标识*/
@@ -21,8 +22,102 @@ a:hover{ color:#DB241C;}
 }
 #logo span{ display:none;}
 
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+	width: 100%;
+}
+@media (min-width: 768px) {
+	.form-inline .form-group {
+		/*display: inline-block;*/
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+	.form-inline .form-control {
+		display: inline-block;
+		width: auto;
+		vertical-align: middle;
+	}
+	.form-inline .form-control-static {
+		display: inline-block;
+	}
+	.form-inline .input-group {
+		display: inline-table;
+		vertical-align: middle;
+	}
+	.form-inline .input-group .input-group-addon,
+	.form-inline .input-group .input-group-btn,
+	.form-inline .input-group .form-control {
+		width: auto;
+	}
+	.form-inline .input-group > .form-control {
+		width: 100%;
+	}
+	.form-inline .control-label {
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+	.form-inline .radio,
+	.form-inline .checkbox {
+		display: inline-block;
+		margin-top: 5px;
+		margin-bottom: 12px;
+		vertical-align: middle;
+	}
+	.form-inline .radio label,
+	.form-inline .checkbox label {
+		padding-left: 5px;
+	}
+	.form-inline .radio input[type="radio"],
+	.form-inline .checkbox input[type="checkbox"] {
+		position: relative;
+		margin-left: 0;
+	}
+	.form-inline .has-feedback .form-control-feedback {
+		top: 0;
+	}
+}
+.form-horizontal .radio,
+.form-horizontal .checkbox,
+.form-horizontal .radio-inline,
+.form-horizontal .checkbox-inline {
+	padding-top: 7px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.form-horizontal .radio,
+.form-horizontal .checkbox {
+	min-height: 27px;
+}
+.form-horizontal .form-group {
+	margin-right: -15px;
+	margin-left: -15px;
+}
+@media (min-width: 768px) {
+	.form-horizontal .control-label {
+		padding-top: 7px;
+		margin-bottom: 0;
+		text-align: right;
+	}
+}
+.form-horizontal .has-feedback .form-control-feedback {
+	right: 15px;
+}
+@media (min-width: 768px) {
+	.form-horizontal .form-group-lg .control-label {
+		padding-top: 11px;
+		font-size: 18px;
+	}
+}
+@media (min-width: 768px) {
+	.form-horizontal .form-group-sm .control-label {
+		padding-top: 6px;
+		font-size: 12px;
+	}
+}
+
 .offer{
-	width: 800px;
+	width: 820px;
 	height: 615px;
 	margin-left: auto;
 	margin-right: auto;
@@ -49,10 +144,13 @@ a:hover{ color:#DB241C;}
 }
 .offer-content2{
 	width: 95%;
-	height: 30px;
+	height: 80px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top:10px;
+}
+.offer-checkbox.checkbox.checkbox-primary {
+	margin-top: 20px;
 }
 .offer-content2 p{
 	font-size: unset;
@@ -235,8 +333,8 @@ a:hover{ color:#DB241C;}
 .offer-label-left{width: 110px;display: inline-block}
 .offer-label-right{width: 80px;display: inline-block}
 
-.topnav{ position:absolute; top:10px; right:0;color:#183150; }
-.topnav a{ font-size:12px; color:#183150; padding:0 10px;}
+.topnav{ position:absolute; top:10px; right:0;color:white; }
+.topnav a{ font-size:12px; color:white; padding:0 10px;}
 .topnav a:hover{ color:#06C;}
 
 
@@ -245,16 +343,15 @@ a:hover{ color:#DB241C;}
 .input_search{
 	width:170px;
 	height:30px;
-	background: url(../images/input_search.gif) no-repeat;
+	/*background: url(../images/input_search.gif) no-repeat;*/
 	padding:0 8px 0 20px;
 	border:none;
 	float:right;
-	color:#CCC;
 	font-size:12px;
 }
 .input_search:focus{ outline:none }
 
-.btn_search{ width:34px; height:30px;background: url(../images/btn_search.gif) no-repeat; border:none; float:right;}
+.btn_search{ width:34px; height:30px;border:none; float:right;}
 
 .btn {
 	display: inline-block;
@@ -838,106 +935,13 @@ fieldset[disabled] .btn-link:focus {
 .btn-block + .btn-block {
 	margin-top: 5px;
 }
-input[type="submit"].btn-block,
-input[type="reset"].btn-block,
-input[type="button"].btn-block {
-	width: 100%;
-}
-@media (min-width: 768px) {
-	.form-inline .form-group {
-		/*display: inline-block;*/
-		margin-bottom: 0;
-		vertical-align: middle;
-	}
-	.form-inline .form-control {
-		display: inline-block;
-		width: auto;
-		vertical-align: middle;
-	}
-	.form-inline .form-control-static {
-		display: inline-block;
-	}
-	.form-inline .input-group {
-		display: inline-table;
-		vertical-align: middle;
-	}
-	.form-inline .input-group .input-group-addon,
-	.form-inline .input-group .input-group-btn,
-	.form-inline .input-group .form-control {
-		width: auto;
-	}
-	.form-inline .input-group > .form-control {
-		width: 100%;
-	}
-	.form-inline .control-label {
-		margin-bottom: 0;
-		vertical-align: middle;
-	}
-	.form-inline .radio,
-	.form-inline .checkbox {
-		display: inline-block;
-		margin-top: 5px;
-		margin-bottom: 12px;
-		vertical-align: middle;
-	}
-	.form-inline .radio label,
-	.form-inline .checkbox label {
-		padding-left: 5px;
-	}
-	.form-inline .radio input[type="radio"],
-	.form-inline .checkbox input[type="checkbox"] {
-		position: relative;
-		margin-left: 0;
-	}
-	.form-inline .has-feedback .form-control-feedback {
-		top: 0;
-	}
-}
-.form-horizontal .radio,
-.form-horizontal .checkbox,
-.form-horizontal .radio-inline,
-.form-horizontal .checkbox-inline {
-	padding-top: 7px;
-	margin-top: 0;
-	margin-bottom: 0;
-}
-.form-horizontal .radio,
-.form-horizontal .checkbox {
-	min-height: 27px;
-}
-.form-horizontal .form-group {
-	margin-right: -15px;
-	margin-left: -15px;
-}
-@media (min-width: 768px) {
-	.form-horizontal .control-label {
-		padding-top: 7px;
-		margin-bottom: 0;
-		text-align: right;
-	}
-}
-.form-horizontal .has-feedback .form-control-feedback {
-	right: 15px;
-}
-@media (min-width: 768px) {
-	.form-horizontal .form-group-lg .control-label {
-		padding-top: 11px;
-		font-size: 18px;
-	}
-}
-@media (min-width: 768px) {
-	.form-horizontal .form-group-sm .control-label {
-		padding-top: 6px;
-		font-size: 12px;
-	}
-}
 
 
 /**/
 /*顶部菜单-单排menutop-f*/
 /**/
 #topmenu_f{ position:absolute; bottom:0px; left:0; width:1380px;
-	background: url(../images/topmenu_f.jpg) no-repeat center top;
+	/*background: url(../images/topmenu_f.jpg) no-repeat center top;*/
 }
 #topmenu_f li{
 	height:40px;
@@ -1257,7 +1261,7 @@ a.url_b:hover{
 /**/
 /*框架*/
 /**/
-.w_set{ width:980px; margin-left:auto; margin-right:auto;}
+.w_set{ width:980px; height: 40px; margin-left:auto; margin-right:auto; position:relative;}
 .w_set2{ width:1000px; margin-left:auto; margin-right:auto;}
 
 .w_300{ width:300px;}
@@ -1271,6 +1275,7 @@ a.url_b:hover{
 .w_70p{ width:70%;margin-left: auto;margin-right: auto;}
 .w_80p{ width:80%;margin-left: auto;margin-right: auto;}
 .w_90p{ width:90%;margin-left: auto;margin-right: auto;}
+.w_foot{width:1400px;margin-left: auto;margin-right: auto;}
 
 /*/w_*/
 
@@ -1451,7 +1456,8 @@ a.url_b:hover{
 #footmenu a{ padding:0 10px; color:#6697C1;}
 /*/footmenu*/
 
-#foot{ position:relative; margin-left:auto; margin-right:auto; color:whitesmoke; text-align:center; padding:10px; background-color:#005297; clear:both; }
+#foot{ position:relative; margin-left:auto; margin-right:auto; color:whitesmoke; text-align:center; padding:10px; background-color:#005297; clear:both;
+	font-family: "Microsoft YaHei", 瀹嬩綋, "WenQuanYi Micro Hei", sans-serif;}
 /*/foot*/
 
 .foot-li {padding-top: 15px;letter-spacing: 1px;}

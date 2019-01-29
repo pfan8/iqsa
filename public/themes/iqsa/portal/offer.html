@@ -15,7 +15,7 @@
                 <!--/web_nav-->
             </dt>
             <php> if(cookie('lang') == 'en-us') {</php>
-            <div class="offer" style="width: 900px;height: 700px;">
+            <div class="offer" style="width: 910px;height: 700px;">
                 <form class="form-inline" action="{:url('Offer/addOffer')}" method="post">
                     <div class="offer-title">
                         <h3><font color="white">{:lang('BASIC_INFO')}</font></h3>
@@ -155,43 +155,43 @@
                             <div style="width: 100px;height: 50px;text-align: center;float: left;margin-right: 20px;">
                                 <p style="width: 100%;height: 20px;display: block;line-height: 20px;">{:lang('PQM')}</p>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="sqp" name="sqp" class="styled" type="checkbox">
                                 <label for="sqp">
                                     SQP
                                 </label>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="gmp" name="gmp" class="styled" type="checkbox">
                                 <label for="gmp">
                                     GMP
                                 </label>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="haccp" name="haccp" class="styled" type="checkbox">
                                 <label for="haccp">
                                     HACCP
                                 </label>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="iatf16949" name="iatf16949" class="styled" type="checkbox">
                                 <label for="iatf16949">
                                     IATF16949
                                 </label>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="fcca" name="fcca" class="styled" type="checkbox">
                                 <label for="fcca">
-                                    沃尔玛FCCA
+                                    Wal-Mart FCCA
                                 </label>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="scpzother" class="styled" type="checkbox">
                                 <label for="scpzother" style="width: 40px;">
                                     {:lang('OTHERS')}
                                 </label>
+                                <input type="text" name="scpzother" value="<?php if(isset($preset['scpzother'])) echo $preset['scpzother']?>" id="scpz" style="width: 50px">
                             </div>
-                            <input type="text" name="scpzother" value="<?php if(isset($preset['scpzother'])) echo $preset['scpzother']?>" id="scpz" style="width: 50px">
                         </div>
                     </div>
                     <div  style="height:70px;border-bottom:2px solid darkgray ;">
@@ -199,37 +199,37 @@
                             <div style="width: 100px;height: 50px;text-align: center;float: left;margin-right: 20px;">
                                 <p style="width: 100%;height: 20px;display: block;line-height: 20px;">{:lang('SMAT')}</p>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="ctpat" name="ctpat" class="styled" type="checkbox">
                                 <label for="ctpat">
                                     C-TPAT
                                 </label>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="gsv" name="gsv" class="styled" type="checkbox">
                                 <label for="gsv">
                                     GSV
                                 </label>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="scan" name="scan" class="styled" type="checkbox">
                                 <label for="scan">
                                     SCAN
                                 </label>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="scs" name="scs" class="styled" type="checkbox">
                                 <label for="scs">
-                                    沃尔玛SCS
+                                    Wal-Mart SCS
                                 </label>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="fkaqother" class="styled" type="checkbox">
                                 <label for="fkaqother" style="width: 40px;">
                                     {:lang('OTHERS')}
                                 </label>
+                                <input type="text" name="fkaqother" value="" id="fkaq_input" style="width: 80px">
                             </div>
-                            <input type="text" name="fkaqother" value="" id="fkaq_input" style="width: 80px">
                         </div>
                     </div>
                     <div  style="height:70px;border-bottom:2px solid darkgray ;">
@@ -237,31 +237,31 @@
                             <div style="width: 100px;height: 50px;text-align: center;float: left;margin-right: 20px;">
                                 <p style="width: 100%;height: 20px;display: block;line-height: 20px;">{:lang('MSC')}</p>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="iso45000" name="iso45000" class="styled" type="checkbox">
                                 <label for="iso45000">
                                     ISO45000
                                 </label>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="iso14000" name="iso14000" class="styled" type="checkbox">
                                 <label for="iso14000">
                                     ISO14000
                                 </label>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="iso9000" name="iso9000" class="styled" type="checkbox">
                                 <label for="iso9000">
                                     ISO9000
                                 </label>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="gltxother" class="styled" type="checkbox">
                                 <label for="gltxother" style="width: 40px;">
                                     {:lang('OTHERS')}
                                 </label>
+                                <input type="text" name="gltxother" value="" id="gltx_input" style="width: 80px">
                             </div>
-                            <input type="text" name="gltxother" value="" id="gltx_input" style="width: 80px">
                         </div>
                     </div>
                     <div  style="height:70px;border-bottom:2px solid darkgray ;">
@@ -269,19 +269,19 @@
                             <div style="width: 100px;height: 50px;text-align: center;float: left;margin-right: 20px;">
                                 <p style="width: 100%;height: 20px;display: block;line-height: 20px;">{:lang('ISC')}</p>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="iso27001" name="iso27001" class="styled" type="checkbox">
                                 <label for="iso27001">
                                     ISO27001
                                 </label>
                             </div>
-                            <div class="checkbox checkbox-primary">
+                            <div class="offer-checkbox checkbox checkbox-primary">
                                 <input id="xxaqother" class="styled" type="checkbox">
                                 <label for="xxaqother" style="width: 40px;">
                                     {:lang('OTHERS')}
                                 </label>
+                                <input type="text" name="xxaqother" value="" id="xxaq_input" style="width: 80px">
                             </div>
-                            <input type="text" name="xxaqother" value="" id="xxaq_input" style="width: 80px">
                         </div>
                     </div>
                     <div style="width: 54px;margin-left: auto;margin-right: auto;margin-top:5px;">
@@ -573,7 +573,7 @@
                     <!--/web_nav-->
                 </dt>
                 <div class="w_70p">
-                    {$vo.post_content}
+                    <p>{$vo.post_content}</p>
                 </div>
             </foreach>
         </dl>

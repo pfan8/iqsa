@@ -1,52 +1,58 @@
 <body>
 
-<div id="header" class="w_set">
-    <a href="http://www.iqsachina.com/index.html" id="logo" style="background-image: url({:lang('LOGO')})"></a>
-    <div class="topnav">
-        400-860-3833  &nbsp;&nbsp;/
-        <a href="http://weibo.com/iqsa">{:lang('WEIBO')}</a>/
-        <a href="{:url('/portal/Index?lang=zh-cn&')}">{:lang('CN')}</a>/
-        <a href="{:url('/portal/Index?lang=en-us&')}">English</a>/
-        <a href="javascript:window.external.AddFavorite('http://www.iqsachina.com','')">{:lang('ADD_FAVORITE')}</a>
+<div id="header">
+
+    <div id="header_mask">
+        <div class="w_set">
+            <a href="http://www.iqsachina.com/index.html" id="logo" style="background-image: url({:lang('LOGO')})"></a>
+            <div class="topnav">
+                |&nbsp;&nbsp;400-860-3833&nbsp;&nbsp;|
+                <a href="http://weibo.com/iqsa">{:lang('WEIBO')}</a>|
+                <a href="{:url('/portal/Index?lang=zh-cn&')}">{:lang('CN')}</a>|
+                <a href="{:url('/portal/Index?lang=en-us&')}">English</a>|
+                <a href="javascript:window.external.AddFavorite('http://www.iqsachina.com','')">{:lang('ADD_FAVORITE')}</a>
+            </div>
+
+            <form class="search" method="post" action="{:cmf_url('portal/Search/index')}">
+                <!--<input name="" type="submit" class="btn_search" value="" />-->
+                <input type="text" class="input_search" name="keyword" placeholder="Search"
+                       value="{:input('param.keyword','')}">
+            </form>
+        </div>
     </div>
-    <div id="topmenu_f" class="clear">
-        <ul>
-            <php>$lang = $lang == '' ? 'zh-cn' : $lang;</php>
-            <navigation nav-id="$lang == 'zh-cn' ? 1 : 3" root="" id="main-navigation" class="nav navbar-nav navbar-nav-custom"
-                        max-level="0">
-                <navigationMenu>
-                    <if condition="$level gt 1">
-                        <li class="menu-item menu-item-level-{$level} levelgt1">
-                            <a href="{$menu.href|default=''}" target="{$menu.target|default=''}">
-                                {$menu.name|default=''}
-                            </a>
-                        </li>
-                        <else/>
-                        <li class="menu-item menu-item-level-{$level}">
-                            <a href="{$menu.href|default=''}" target="{$menu.target|default=''}">
-                                {$menu.name|default=''}
-                            </a>
-                        </li>
-                    </if>
-                </navigationMenu>
-                <navigationFolder root="li"
-                                  class="dropdown dropdown-custom dropdown-custom-level-{$level}"
-                                  dropdown="ul"
-                                  dropdown-class="dropdown-menu dropdown-menu-level-{$level}">
-                    <a href="#" class="dropdown-toggle dropdown-toggle-{$level}" data-toggle="dropdown">
-                        {$menu.name|default=''}<span class="caret"></span>
-                    </a>
-                </navigationFolder>
-            </navigation>
-        </ul>
+
+    <div class="w_set">
+        <div id="topmenu_f" class="clear">
+            <ul>
+                <php>$lang = $lang == '' ? 'zh-cn' : $lang;</php>
+                <navigation nav-id="$lang == 'zh-cn' ? 1 : 3" root="" id="main-navigation" class="nav navbar-nav navbar-nav-custom"
+                            max-level="0">
+                    <navigationMenu>
+                        <if condition="$level gt 1">
+                            <li class="menu-item menu-item-level-{$level} levelgt1">
+                                <a href="{$menu.href|default=''}" target="{$menu.target|default=''}">
+                                    {$menu.name|default=''}
+                                </a>
+                            </li>
+                            <else/>
+                            <li class="menu-item menu-item-level-{$level}">
+                                <a href="{$menu.href|default=''}" target="{$menu.target|default=''}">
+                                    {$menu.name|default=''}
+                                </a>
+                            </li>
+                        </if>
+                    </navigationMenu>
+                    <navigationFolder root="li"
+                                      class="dropdown dropdown-custom dropdown-custom-level-{$level}"
+                                      dropdown="ul"
+                                      dropdown-class="dropdown-menu dropdown-menu-level-{$level}">
+                        <a href="#" class="dropdown-toggle dropdown-toggle-{$level}" data-toggle="dropdown">
+                            {$menu.name|default=''}<span class="caret"></span>
+                        </a>
+                    </navigationFolder>
+                </navigation>
+            </ul>
+        </div>
+        <!--/topmenu_e-->
     </div>
-    <!--/topmenu_e-->
-
-    <form class="search" method="post" action="{:cmf_url('portal/Search/index')}">
-        <input name="" type="submit" class="btn_search" value="" />
-        <input type="text" class="input_search" name="keyword" placeholder="Search"
-               value="{:input('param.keyword','')}">
-    </form>
-
-
 </div>

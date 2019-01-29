@@ -124,8 +124,8 @@ class OtherPageController extends HomeBaseController
                     ['pid'=>10284,'name'=>'公司资质','lm'=>5]);
             } elseif ($pageId < 10288) {
                 $left_menu_name = '验厂通';
-                $left_menu = array(['pid'=>10285,'name'=>'综中和·验厂通','lm'=>6],
-                    ['pid'=>10286,'name'=>'综中和·云','lm'=>7]);
+                $left_menu = array(['pid'=>10285,'name'=>'综中合·验厂通','lm'=>6],
+                    ['pid'=>10286,'name'=>'综中合·云','lm'=>7]);
             }
         }
 
