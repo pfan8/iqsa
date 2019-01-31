@@ -200,7 +200,11 @@ class PortalOfferModel extends Model
         if (isset($data['wca'])) $shzr_overall .= "," . "WCA";
         if (isset($data['sa8000'])) $shzr_overall .= "," . "SA8000";
         if ($data['shzrother'] != '') $shzr_overall .= "," . $data['shzrother'];
-        if ($shzr_overall[0] == ',') $shzr_overall = substr($shzr_overall, 1);
+        if (!empty($shzr_overall)) {
+            if ($shzr_overall[0] == ',') {
+                $shzr_overall = substr($shzr_overall, 1);
+            }
+        }
         $data['shzr_overall'] = $shzr_overall;
         // 生产品质管理类 整合字段
         $scpz_overall = '';
@@ -210,7 +214,11 @@ class PortalOfferModel extends Model
         if (isset($data['iatf16949'])) $scpz_overall .= "," . "IATF16949";
         if (isset($data['fcca'])) $scpz_overall .= "," . "沃尔玛FCCA";
         if ($data['scpzother'] != '') $scpz_overall .= "," . $data['scpzother'];
-        if ($scpz_overall[0] == ',') $scpz_overall = substr($scpz_overall, 1);
+        if (!empty($scpz_overall)) {
+            if ($scpz_overall[0] == ',') {
+                $scpz_overall = substr($scpz_overall, 1);
+            }
+        }
         $data['scpz_overall'] = $scpz_overall;
         // 反恐安全管理类 整合字段
         $fkaq_overall = '';
@@ -219,7 +227,11 @@ class PortalOfferModel extends Model
         if (isset($data['scan'])) $fkaq_overall .= "," . "SCAN";
         if (isset($data['scs'])) $fkaq_overall .= "," . "沃尔玛SCS";
         if ($data['fkaqother'] != '') $fkaq_overall .= "," . $data['fkaqother'];
-        if ($fkaq_overall[0] == ',') $fkaq_overall = substr($fkaq_overall, 1);
+        if (!empty($fkaq_overall)) {
+            if ($fkaq_overall[0] == ',') {
+                $fkaq_overall = substr($fkaq_overall, 1);
+            }
+        }
         $data['fkaq_overall'] = $fkaq_overall;
         // 管理体系认证类 整合字段
         $gltx_overall = '';
@@ -227,13 +239,21 @@ class PortalOfferModel extends Model
         if (isset($data['iso14000'])) $gltx_overall .= "," . "ISO14000";
         if (isset($data['iso9000'])) $gltx_overall .= "," . "ISO9000";
         if ($data['gltxother'] != '') $gltx_overall .= "," . $data['gltxother'];
-        if ($gltx_overall[0] == ',') $gltx_overall = substr($gltx_overall, 1);
+        if (!empty($gltx_overall)) {
+            if ($gltx_overall[0] == ',') {
+                $gltx_overall = substr($gltx_overall, 1);
+            }
+        }
         $data['gltx_overall'] = $gltx_overall;
         // 信息安全认证类 整合字段
         $xxaq_overall = '';
         if (isset($data['iso27000'])) $xxaq_overall .= "ISO27001";
         if ($data['xxaqother'] != '') $xxaq_overall .= "," . $data['xxaqother'];
-        if ($xxaq_overall[0] == ',') $xxaq_overall = substr($xxaq_overall, 1);
+        if (!empty($xxaq_overall)) {
+            if ($xxaq_overall[0] == ',') {
+                $xxaq_overall = substr($xxaq_overall, 1);
+            }
+        }
         $data['xxaq_overall'] = $xxaq_overall;
         return $data;
     }

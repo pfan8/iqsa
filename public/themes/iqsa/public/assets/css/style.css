@@ -121,7 +121,7 @@ input[type="button"].btn-block {
 	height: 615px;
 	margin-left: auto;
 	margin-right: auto;
-	border: solid;
+	/*border: solid;*/
 	border-width: 2px;
 }
 
@@ -949,6 +949,7 @@ fieldset[disabled] .btn-link:focus {
 	width:100px;
 	float:left;
 	text-align:center;
+	list-style: none;
 	/*background: url(../images/topmenu_f.jpg) no-repeat right top;*/
 }
 #topmenu_f li a,#topmenu_f li a:visited,#topmenu_f li a:link{ font-size:14px; color:#FFF; }
@@ -1023,6 +1024,7 @@ ul.prevNext li{float:left;padding:2px 6px;border:solid 1px #fff;background:#eee;
 .scroll_box{z-index:300; position:absolute; height:20px; right:10px; bottom:10px; overflow:hidden; width:150px;}
 
 .scroll_center{ height:20px; overflow:hidden;}
+.scroll_center li{list-style: none;}
 
 .scroll_left{  position:absolute; left:0px; bottom:32px;z-index:310; width:15px; height:20px; cursor:pointer;}
 .scroll_left span{ display:none;}
@@ -1070,6 +1072,7 @@ a.url_b:hover{
 	position: relative;
 	background: url(../images/list_1.gif) no-repeat left top;
 	padding:3px 0px 3px 15px;
+	list-style: none;
 }
 .list_1 li a,.list_1 li a:visited,.list_1 li a:link{ color:#333;}
 .list_1 li a:hover{color:#DB241C;}
@@ -1113,7 +1116,7 @@ a.url_b:hover{
 
 .list_page_1{width: 70%;margin-left: auto;;margin-right: auto;}
 .list_page_1 a.list_page_t{ color:#055C9E; font-size:14px;}
-.list_page_1 li{ padding:10px 10px 15px 10px; clear:both;}
+.list_page_1 li{ padding:10px 10px 15px 10px; clear:both;list-style: none;}
 .list_page_1 li img{ float:left; padding:0 15px 10px 0;}
 .list_page_1 li p{ color:#777;}
 .list_page_1 li p a{ color:#777;}
@@ -1328,7 +1331,7 @@ a.url_b:hover{
 /**/
 .scroll{ width:890px; height:165px; margin:auto; position:relative; padding:10px 30px 10px 35px; overflow:hidden;}
 .scroll ul{}
-.scroll li{ width:190px; height:165px; text-align:center; overflow:hidden; padding:0 15px;}
+.scroll li{ width:190px; height:165px; text-align:center; overflow:hidden; padding:0 15px;list-style: none;2}
 .scroll li a{ display:block; color:#666; line-height:20px;font-size:12px;}
 .scroll img{  border:1px solid #DDD; padding:5px; margin-bottom:6px; background-color:#FFF;}
 .scroll a.bx-prev,.scroll a.bx-next{
@@ -1357,6 +1360,7 @@ a.url_b:hover{
 	height: 150px;
 	float:left;
 	margin-top: 30px;
+	list-style: none;
 }
 .dnvgl-image{
 	overflow: hidden;
@@ -1400,12 +1404,22 @@ a.url_b:hover{
 	height: 30px;
 	text-align:center;
 }
-.scroll2_nav li{ cursor:pointer; width:20px; height:20px; float:left;margin:0 5px; background: url(../images/slides_nav.gif) no-repeat left top;}
+.scroll2_nav li{
+	cursor:pointer;
+	width:20px;
+	height:20px;
+	float:left;
+	margin:0 5px;
+	background: url(../images/slides_nav.gif) no-repeat left top;
+	list-style: none;
+}
 .scroll2_nav li span{ display:none;}
 .scroll2_center a{
 	display:block;
 	background-color:#000;
 }
+.scroll2_center li{list-style: none;}
+
 .scroll2_center{
 	display:inline-block;
 }
@@ -1459,6 +1473,6 @@ a.url_b:hover{
 #foot{ position:relative; margin-left:auto; margin-right:auto; color:whitesmoke; text-align:center; padding:10px; background-color:#005297; clear:both;
 	font-family: "Microsoft YaHei", 瀹嬩綋, "WenQuanYi Micro Hei", sans-serif;}
 /*/foot*/
-
-.foot-li {padding-top: 15px;letter-spacing: 1px;}
-.foot-li-en {padding-top: 10px;letter-spacing: 1px;}
+.foot-div {margin-top:20px;float:left;text-align:left;}
+.foot-li {padding-top: 8px;letter-spacing: 1px; list-style: none}
+.foot-li-en {padding-top: 10px;letter-spacing: 1px; list-style: none}

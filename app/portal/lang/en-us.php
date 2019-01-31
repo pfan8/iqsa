@@ -95,4 +95,5 @@ return [
     'CONFIRM'           => 'Confirm',
     'MALE'              => 'Male',
     'FEMAIL'            => 'Female',
+    'OFFER_FEEDBACK'    => 'You\'ve successfully submitted the inquiry! We will send you the quote asap, thanks!',
 ];

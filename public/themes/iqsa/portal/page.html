@@ -2,6 +2,9 @@
 <include file="public@nav"/>
 <head/>
 
+<php>
+    $need_js = true;
+</php>
 <div class="w70p">
     <dl class="f_1_a pl10 pr10">
         <dt class="t_4">
@@ -60,11 +63,14 @@
             <ul class="scroll2_center">
                 <php>
                     $page_num = ($count / 14);
-                    while($page_num > 0) {
-                        $page_num -= 1;
+                    $need_js = $page_num > 1;
+                    if($need_js) {
+                        while($page_num > 0) {
+                            $page_num -= 1;
                 </php>
                 <li><a href="javascript:void(0);"></a></li>
                 <php>
+                        }
                     }
                 </php>
             </ul>
@@ -141,6 +147,9 @@
     </dl>
 </div>
 
+<php>
+    if($need_js) {
+</php>
 <script type="text/javascript">
     var scroll_index = 0;//初始显示
     var scroll_count = $(".scroll2_center>li").length;
@@ -176,5 +185,8 @@
 
 
 </script>
+<php>
+    }
+</php>
 <!--/w_set2-->
 <include file="public@foot"/>

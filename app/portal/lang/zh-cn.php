@@ -96,6 +96,6 @@ return [
     'CONFIRM'           => '确认',
     'MALE'              => '先生',
     'FEMALE'            => '女士',
-
+    'OFFER_FEEDBACK'    => '您已提交成功，我们会尽快为您发送报价，谢谢！',
 ];
 
