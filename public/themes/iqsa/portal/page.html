@@ -97,19 +97,19 @@
         <dd class="pa10 clear">
 
             <ul class="list_page_1">
-                <portal:articles item="vo" where="$where" order="post.create_time DESC" page="$page"
+                <portal:articles item="vo" where="$where" order="post.update_time DESC" page="$page"
                                  relation="categories"
-                                 categoryIds="$category.id"
+                                 categoryIds="$categoryIds"
                                  returnVarName="articles_data">
                     <li>
-                        <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">
+                        <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id']))}">
                             <img src="{:cmf_url('upload')}" onerror="this.onerror='';src='__TMPL__/public/assets/images/defaultpic.gif'" width="110" height="110" />
                         </a>
-                        <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}" class="list_page_t">{$vo.post_title}</a>
+                        <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id']))}" class="list_page_t">{$vo.post_title}</a>
                         <p>
                             <span><?php echo date('Y-m-d',$vo['update_time']) ?></span>
                             {$vo.description}
-                            <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">{:lang('FULL_CONTENT')}</a>
+                            <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id']))}">{:lang('FULL_CONTENT')}</a>
                         </p>
                     </li>
 

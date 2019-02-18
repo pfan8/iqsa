@@ -26,11 +26,18 @@ class ListController extends HomeBaseController
     {
         $id                  = $this->request->param('id', 0, 'intval');
         $portalCategoryModel = new PortalCategoryModel();
-        $category = $portalCategoryModel->where('id', $id)->where('status', 1)->find();
-
+        $categorys[] = $portalCategoryModel->where('id', $id)->where('status', 1)->find();
+        $categoryids[] = $categorys[0]['id'];
+        $temp = $portalCategoryModel->where('parent_id', $id)->where('status', 1)->select();
         // 字符转义
-        $category['content'] = htmlspecialchars_decode($category['content']);
-        $this->assign('category', $category);
+        $categorys[0]['content'] = htmlspecialchars_decode($categorys[0]['content']);
+        foreach ($temp as $category) {
+            $category['content'] = htmlspecialchars_decode($category['content']);
+            $categorys[] = $category;
+            $categoryids[] = $category['id'];
+        }
+        $this->assign('categorys', $categorys);
+        $this->assign('categoryids', $categoryids);
         $listTpl = empty($category['list_tpl']) ? 'list' : $category['list_tpl'];
         return $this->fetch('/' . $listTpl);
     }

@@ -56,3 +56,17 @@
         <!--/topmenu_e-->
     </div>
 </div>
+
+<script>
+    nav_items = document.getElementsByClassName("menu-item menu-item-level-1");
+    for (var i = 0;i < nav_items.length;i++){
+        nav_content = nav_items[i].lastElementChild.innerHTML
+        //去掉所有的换行符
+        nav_content = nav_content.replace(/\r\n/g,"")
+        nav_content = nav_content.replace(/\n/g,"");
+        //去掉所有的空格（中文空格、英文空格都会被替换）
+        nav_content = nav_content.replace(/\s/g,"");
+        if (nav_content.length > 9)
+            nav_items[i].setAttribute('style', 'width: 150px');
+    }
+</script>

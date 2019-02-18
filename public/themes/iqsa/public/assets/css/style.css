@@ -17,7 +17,7 @@ a:hover{ color:#DB241C;}
 	display:block;
 	position:absolute;
 	background-repeat: no-repeat;
-	left:0;
+	left:26px;
 	top:26px;
 }
 #logo span{ display:none;}
@@ -136,14 +136,28 @@ input[type="button"].btn-block {
 	color: white;
 }
 .offer-content{
-	width: 92%;
+	width: 770px;
 	height: 30px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top:10px;
 }
 .offer-content2{
-	width: 95%;
+	width: 780px;
+	height: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:10px;
+}
+.offer-content-en{
+	width: 840px;
+	height: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:10px;
+}
+.offer-content2-en{
+	width: 865px;
 	height: 80px;
 	margin-left: auto;
 	margin-right: auto;
@@ -153,7 +167,7 @@ input[type="button"].btn-block {
 	margin-top: 20px;
 }
 .offer-content2 p{
-	font-size: unset;
+	font-size: inherit;
 }
 .form-required {
 	color: red;
@@ -330,11 +344,14 @@ input[type="button"].btn-block {
 	pointer-events: none;
 }
 .offer-group{width: 50%;float: left}
-.offer-label-left{width: 110px;display: inline-block}
+.offer-group input{
+	height: 22px;
+}
+.offer-label-left{width: 120px;display: inline-block}
 .offer-label-right{width: 80px;display: inline-block}
 
-.topnav{ position:absolute; top:10px; right:0;color:white; }
-.topnav a{ font-size:12px; color:white; padding:0 10px;}
+.topnav{ position:absolute; top:10px; right:0;color:white;font-size:14px; }
+.topnav a{ font-size:14px; color:white; padding:0 10px;}
 .topnav a:hover{ color:#06C;}
 
 
@@ -952,7 +969,7 @@ fieldset[disabled] .btn-link:focus {
 	list-style: none;
 	/*background: url(../images/topmenu_f.jpg) no-repeat right top;*/
 }
-#topmenu_f li a,#topmenu_f li a:visited,#topmenu_f li a:link{ font-size:14px; color:#FFF; }
+#topmenu_f li a,#topmenu_f li a:visited,#topmenu_f li a:link{ font-size:16px; color:#FFF; }
 #topmenu_f li a:hover{
 	color: #FF9;
 	text-decoration: none;
@@ -1067,7 +1084,7 @@ a.url_b:hover{
 /**/
 /*列表*/
 /**/
-.list_1{}
+.list_1{font-size: 15px}
 .list_1 li{
 	position: relative;
 	background: url(../images/list_1.gif) no-repeat left top;
@@ -1076,7 +1093,7 @@ a.url_b:hover{
 }
 .list_1 li a,.list_1 li a:visited,.list_1 li a:link{ color:#333;}
 .list_1 li a:hover{color:#DB241C;}
-.list_1 li span{ position:absolute; right:0;_right:8px; top:0;_top:-5px; font-size:11px; color:#878787;}
+.list_1 li span{ position:absolute; right:0;_right:8px; top:0;_top:-5px; font-size:15px; color:#878787;}
 
 
 
@@ -1158,9 +1175,10 @@ a.url_b:hover{
 	padding:20px 0 0 40px;
 	height:45px;
 	line-height:45px;
+	font-size: 16px;
 	background: url(../images/t_1.jpg) no-repeat left top;
 }
-.t_1 h3{ font-size:14px; color:#111111; float:left; margin-right:10px;}
+.t_1 h3{ font-size:16px; color:#111111; float:left; margin-right:10px;}
 .t_1 a.t_1_more{ float:right; color:#373737;background: url(../images/t_1.gif) no-repeat right center; padding-right:15px;}
 .t_1 span{ font-size:14px; color:#005297;}
 .t_1 p{ display:inline; padding:0 15px; color:#666;}
@@ -1172,7 +1190,7 @@ a.url_b:hover{
 	line-height:40px;
 	background: url(../images/t_2.png) no-repeat left center;
 }
-.t_2 h3{ font-size:14px; color:#111111; float:left; margin-right:10px;}
+.t_2 h3{ font-size:16px; color:#111111; float:left; margin-right:10px;}
 .t_2 a.t_2_more{ float:right; color:#373737;background: url(../images/t_1.gif) no-repeat right center; padding-right:15px;}
 .t_2 span{ font-size:14px; color:#005297;}
 .t_2 p{ display:inline; padding:0 15px; color:#666;}
@@ -1264,11 +1282,12 @@ a.url_b:hover{
 /**/
 /*框架*/
 /**/
-.w_set{ width:980px; height: 40px; margin-left:auto; margin-right:auto; position:relative;}
+.w_set{ width:1050px; height: 40px; margin-left:auto; margin-right:auto; position:relative;}
 .w_set2{ width:1000px; margin-left:auto; margin-right:auto;}
 
 .w_300{ width:300px;}
 .w_310{ width:465px;}
+.w_500{ width:500px;}
 .w_680{ width:680px;}
 .w_215{ width:215px;}
 .w_750{ width:750px;}
@@ -1470,9 +1489,9 @@ a.url_b:hover{
 #footmenu a{ padding:0 10px; color:#6697C1;}
 /*/footmenu*/
 
-#foot{ position:relative; margin-left:auto; margin-right:auto; color:whitesmoke; text-align:center; padding:10px; background-color:#005297; clear:both;
+#foot{ position:relative; margin-left:auto; margin-right:auto; text-align:center; padding:10px;\ clear:both;
 	font-family: "Microsoft YaHei", 瀹嬩綋, "WenQuanYi Micro Hei", sans-serif;}
 /*/foot*/
-.foot-div {margin-top:20px;float:left;text-align:left;}
-.foot-li {padding-top: 8px;letter-spacing: 1px; list-style: none}
+.foot-div {margin-top:10px;float:left;text-align:left;}
+.foot-li {font-size:14px;padding-top: 5px;letter-spacing: 1px; list-style: none}
 .foot-li-en {padding-top: 10px;letter-spacing: 1px; list-style: none}

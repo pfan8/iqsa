@@ -107,7 +107,7 @@
 
 
 
-<div class="bg_c_2" style="height:330px;">
+<div class="bg_c_2" style="height:350px;">
 <div class="w_set2">
 
 <dl class="fl w_310">
@@ -115,7 +115,12 @@
 <dd class="about pa10" style="height:220px;">
     <ul class="list_1">
         <foreach name="caseList" item="vo">
-            <li><a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>$cate_case])}">{$vo.post_title}</a><span><?php echo date('Y-m-d',$vo['update_time']) ?></span></li>
+            <li>
+                <div style="width: 340px;height: 20px;overflow: hidden">
+                    <a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>$cate_case])}">{$vo.post_title}</a>
+                </div>
+                <span><?php echo date('Y-m-d',$vo['update_time']) ?></span>
+            </li>
         </foreach>
     </ul>
 </dd>
@@ -130,7 +135,12 @@
 
   <ul class="list_1">
       <foreach name="newsList" item="vo">
-          <li><a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>$cate_news])}">{$vo.post_title}</a><span><?php echo date('Y-m-d',$vo['update_time']) ?></span></li>
+          <li>
+              <div style="width: 340px;height: 20px;overflow: hidden">
+                <a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>$cate_news])}">{$vo.post_title}</a>
+              </div>
+              <span><?php echo date('Y-m-d',$vo['update_time']) ?></span>
+          </li>
       </foreach>
   </ul>
 

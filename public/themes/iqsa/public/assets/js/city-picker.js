@@ -181,6 +181,7 @@
         },
 
         getWidthStyle: function (w, dropdown) {
+            w = w + 10;
             if (this.options.responsive && !$.isNumeric(w)) {
                 return 'width:' + w + ';';
             } else {

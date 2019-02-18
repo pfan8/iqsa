@@ -9,7 +9,7 @@ form, fieldset, legend, button, input, textarea
 {margin:0px;padding:0px;}
 fieldset, img {border:0;}
 /*li {list-style:none;}*/
-body,button, input, select, textarea /* for ie */ {font: 78%/1.5 tahoma,Helvetica,arial, "\5b8b\4f53", sans-serif;}
+body,button, input, select, textarea /* for ie */ {font: 78%/1.5 Microsoft YaHei,Helvetica,arial, "\5b8b\4f53", sans-serif;}
 address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
 code, kbd,samp { font-family: courier new, courier, monospace; }
 

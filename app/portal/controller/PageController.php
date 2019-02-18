@@ -42,6 +42,12 @@ class PageController extends HomeBaseController
         }
         $this->assign('theme_page', $page);
         $this->assign('cid', $categoryId);
+        $categoryIds[] = $categoryId;
+        $temp = $portalCategoryModel->where('parent_id', $categoryId)->where('status', 1)->select();
+        foreach ($temp as $category) {
+            $categoryIds[] = $category['id'];
+        }
+        $this->assign('categoryIds',$categoryIds);
 
         $more = $page['more'];
 
