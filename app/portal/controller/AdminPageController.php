@@ -41,12 +41,17 @@ class AdminPageController extends AdminBaseController
         }
 
         $param = $this->request->param();
+        //默认返回所有语言的页面
+        if (!isset($param['language'])) {
+            $param['language'] = 'all';
+        }
 
         $postService = new PostService();
         $data        = $postService->adminPageList($param);
         $data->appends($param);
 
         $this->assign('keyword', isset($param['keyword']) ? $param['keyword'] : '');
+        $this->assign('language', isset($param['language']) ? $param['language'] : 'all');
         $this->assign('pages', $data->items());
         $this->assign('page', $data->render());
 

@@ -13,6 +13,7 @@ namespace app\portal\controller;
 use app\admin\model\RouteModel;
 use cmf\controller\AdminBaseController;
 use app\portal\model\PortalCategoryModel;
+use think\db\Query;
 use think\Db;
 use app\admin\model\ThemeModel;
 
@@ -46,17 +47,29 @@ class AdminCategoryController extends AdminBaseController
 
         $portalCategoryModel = new PortalCategoryModel();
         $keyword             = $this->request->param('keyword');
+        $language            = $this->request->param('language');
+        if (empty($language)){
+            $language = 'all';
+        }
 
         if (empty($keyword)) {
-            $categoryTree = $portalCategoryModel->adminCategoryTableTree();
+            $categoryTree = $portalCategoryModel->adminCategoryTableTree($language);
             $this->assign('category_tree', $categoryTree);
         } else {
-            $categories = $portalCategoryModel->where('name', 'like', "%{$keyword}%")
-                ->where('delete_time', 0)->select();
+            $categories = $portalCategoryModel
+                ->where('name', 'like', "%{$keyword}%")
+                ->where('delete_time', 0)
+                ->where(function (Query $query) use ($language) {
+                    if ($language != 'all') {
+                        $query->where('language', $language);
+                    }
+                })
+                ->select();
             $this->assign('categories', $categories);
         }
 
         $this->assign('keyword', $keyword);
+        $this->assign('language', isset($language) ? $language : 'all');
 
         return $this->fetch();
     }
@@ -256,7 +269,7 @@ class AdminCategoryController extends AdminBaseController
 </tr>
 tpl;
 
-        $categoryTree = $portalCategoryModel->adminCategoryTableTree($selectedIds, $tpl);
+        $categoryTree = $portalCategoryModel->adminCategoryTableTree('all',$selectedIds, $tpl);
 
         $categories = $portalCategoryModel->where('delete_time', 0)->select();
 

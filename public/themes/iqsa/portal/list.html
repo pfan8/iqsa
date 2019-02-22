@@ -36,10 +36,10 @@
                                      returnVarName="articles_data">
                         <li>
                             <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id']))}">
-                                <img src="{$vo.thumbnail}" onerror="this.onerror='';src='__TMPL__/public/assets/images/defaultpic.gif'" width="110" height="110" />
+                                <img src="/upload/{$vo.thumbnail}" onerror="this.onerror='';src='__TMPL__/public/assets/images/defaultpic.gif'" width="110" height="110" />
                             </a>
                             <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id']))}" class="list_page_t">{$vo.post_title}</a>
-                            <p>
+                            <p style="text-align: unset">
                                 <span><?php echo date('Y-m-d',$vo['update_time']) ?></span>
                                 {$vo.description}
                                 <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id']))}">{:lang('FULL_CONTENT')}</a>

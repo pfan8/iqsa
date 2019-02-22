@@ -62,6 +62,7 @@ class PortalCategoryModel extends Model
 
     /**
      * 分类树形结构
+     * @param string $language
      * @param int    $currentIds
      * @param string $tpl
      * @return string
@@ -69,12 +70,20 @@ class PortalCategoryModel extends Model
      * @throws \think\db\exception\ModelNotFoundException
      * @throws \think\exception\DbException
      */
-    public function adminCategoryTableTree($currentIds = 0, $tpl = '')
+    public function adminCategoryTableTree($language = 'all',$currentIds = 0, $tpl = '')
     {
 //        if (!empty($currentCid)) {
 //            $where['id'] = ['neq', $currentCid];
 //        }
-        $categories = $this->order("list_order ASC")->where('delete_time', 0)->select()->toArray();
+
+        $categories = $this->order("list_order ASC")
+            ->where('delete_time', 0)
+            ->where(function (Query $query) use ($language) {
+                if ($language != 'all') {
+                    $query->where('language', $language);
+                }
+            })
+            ->select()->toArray();
 
         $tree       = new Tree();
         $tree->icon = ['&nbsp;&nbsp;│', '&nbsp;&nbsp;├─', '&nbsp;&nbsp;└─'];
@@ -90,7 +99,7 @@ class PortalCategoryModel extends Model
             $item['style']          = empty($item['parent_id']) ? '' : 'display:none;';
             $item['status_text']    = empty($item['status']) ? '<span class="label label-warning">隐藏</span>' : '<span class="label label-success">显示</span>';
             $item['checked']        = in_array($item['id'], $currentIds) ? "checked" : "";
-            $item['url']            = cmf_url('iqsa/List/index', ['id' => $item['id']]);
+            $item['url']            = cmf_url('portal/List/index', ['id' => $item['id']]);
             $item['str_action']     = '<a class="btn btn-xs btn-primary" href="' . url("AdminCategory/add", ["parent" => $item['id']]) . '">添加子分类</a>  <a class="btn btn-xs btn-primary" href="' . url("AdminCategory/edit", ["id" => $item['id']]) . '">' . lang('EDIT') . '</a>  <a class="btn btn-xs btn-danger js-ajax-delete" href="' . url("AdminCategory/delete", ["id" => $item['id']]) . '">' . lang('DELETE') . '</a> ';
             if ($item['status']) {
                 $item['str_action'] .= '<a class="btn btn-xs btn-warning js-ajax-dialog-btn" data-msg="您确定隐藏此分类吗" href="' . url('AdminCategory/toggle', ['ids' => $item['id'], 'hide' => 1]) . '">隐藏</a>';

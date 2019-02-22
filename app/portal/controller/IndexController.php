@@ -31,10 +31,12 @@ class IndexController extends HomeBaseController
         $this->assign('cate_news',$cate_news);
         $filter_case = [
                 'category' => $cate_case,
+                'post_status' => 1,
                 'language' => $language
             ];
         $filter_news = [
             'category' => $cate_news,
+            'post_status' => 1,
             'language' => $language
         ];
         $case_list = $postService->adminPostList($filter_case);

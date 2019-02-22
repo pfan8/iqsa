@@ -1048,3 +1048,17 @@ function openIframeLayer(url, title, options) {
     });
 
 }
+
+
+function changeLang(lang) {
+    if(lang == 'cn'){
+        $("#lang_input").val('cn');
+        $("#lang_button").text('中文');
+    }else if(lang == 'en'){
+        $("#lang_input").val('en');
+        $("#lang_button").text('English');
+    }else if(lang == 'all'){
+        $("#lang_input").val('all');
+        $("#lang_button").text('全部(All)');
+    }
+}

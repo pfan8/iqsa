@@ -103,7 +103,7 @@
                                  returnVarName="articles_data">
                     <li>
                         <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id']))}">
-                            <img src="{:cmf_url('upload')}" onerror="this.onerror='';src='__TMPL__/public/assets/images/defaultpic.gif'" width="110" height="110" />
+                            <img src="{:cmf_get_image_url($vo['thumbnail'])}" onerror="this.onerror='';src='__TMPL__/public/assets/images/defaultpic.gif'" width="110" height="110" />
                         </a>
                         <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id']))}" class="list_page_t">{$vo.post_title}</a>
                         <p>

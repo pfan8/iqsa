@@ -86,7 +86,7 @@ class HomeBaseController extends BaseController
         //赋值语种变量
         Lang::range(Cookie::has('lang') ? cookie('lang') : 'zh-cn');
         if (\cookie('lang') == 'en-us') {
-            Lang::load(APP_PATH.'portal\lang\en-us.php');
+            Lang::load(APP_PATH.'portal/lang/en-us.php');
         }
         $this->assign('lang',cookie('lang'));
         //赋值底部页面

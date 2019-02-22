@@ -45,6 +45,10 @@ class AdminArticleController extends AdminBaseController
         }
 
         $param = $this->request->param();
+        //默认返回所有语言的页面
+        if (!isset($param['language'])) {
+            $param['language'] = 'all';
+        }
 
         $categoryId = $this->request->param('category', 0, 'intval');
 
@@ -56,6 +60,7 @@ class AdminArticleController extends AdminBaseController
         $portalCategoryModel = new PortalCategoryModel();
         $categoryTree        = $portalCategoryModel->adminCategoryTree($categoryId);
 
+        $this->assign('language', isset($param['language']) ? $param['language'] : 'all');
         $this->assign('start_time', isset($param['start_time']) ? $param['start_time'] : '');
         $this->assign('end_time', isset($param['end_time']) ? $param['end_time'] : '');
         $this->assign('keyword', isset($param['keyword']) ? $param['keyword'] : '');

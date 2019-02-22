@@ -163,4 +163,8 @@ html{color:#000;background:#FFF;}
 	background: url(line_xb.gif) repeat-x left bottom;
 }
 
-p {text-align: justify;font-size: 15px;}
+p {
+	text-align: justify;
+	font-size: 15px;
+	word-break: break-all;
+}

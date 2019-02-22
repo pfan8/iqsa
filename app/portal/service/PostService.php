@@ -69,13 +69,19 @@ class PostService
             ->where('a.create_time', '>=', 0)
             ->where('a.delete_time', 0)
             ->where(function (Query $query) use ($filter, $isPage) {
-                if (Cookie::has('lang')) {
+                if (isset($filter['language'])) {
+                    $language = $filter['language'];
+                }else if (Cookie::has('lang')) {
                     $language = cookie('lang')=='en-us' ? 'en' : 'cn';
                 } else {
                     $language = 'cn';
                 }
                 if (in_array($language,array('cn','en'))) {
                     $query->where('a.language', $language);
+                }
+
+                if (isset($filter['post_status'])) {
+                   $query->where('a.post_status',$filter['post_status']);
                 }
 
                 $category = empty($filter['category']) ? 0 : intval($filter['category']);

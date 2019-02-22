@@ -10,6 +10,29 @@
         分类名称:
         <input type="text" class="form-control" name="keyword" style="width: 200px;"
                value="{$keyword|default=''}" placeholder="请输入分类名称">
+        语言：
+        <div class="btn-group dropdown" id="dropdown">
+            <button id='lang_button' type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <php>
+                    if ($language == 'cn') {
+                    echo '中文';
+                    } else if ($language == 'en') {
+                    echo 'English';
+                    } else {
+                    echo '全部(All)';
+                    }
+                </php>
+                <span class="caret"></span>
+            </button>
+            <input type="hidden" name ="language" id="lang_input" value="{$language|default='all'}" />
+            <ul class="dropdown-menu">
+                <li><a href="#" onclick="changeLang('all')">全部(All)</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#" onclick="changeLang('cn')">中文</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#" onclick="changeLang('en')">English</a></li>
+            </ul>
+        </div>
         <input type="submit" class="btn btn-primary" value="搜索"/>
         <a class="btn btn-danger" href="{:url('AdminCategory/index')}">清空</a>
     </form>

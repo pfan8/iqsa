@@ -28,11 +28,11 @@ class PageController extends HomeBaseController
     public function index()
     {
         $postService = new PostService();
+        $portalCategoryModel = new PortalCategoryModel();
         $pageId      = $this->request->param('id', 0, 'intval');
         $categoryId      = $this->request->param('cid', 0, 'intval');
         $page        = $postService->publishedPage($pageId);
         if($categoryId == '4' | $categoryId == '141' | $categoryId == '1005') {
-            $portalCategoryModel = new PortalCategoryModel();
             $category = $portalCategoryModel->where('id', $categoryId)->where('status', 1)->find();
 
             $this->assign('category', $category);

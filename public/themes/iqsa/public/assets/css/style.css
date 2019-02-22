@@ -1,7 +1,7 @@
 /***织梦模板***/
 /*http://www.dede58.com*/
 /*大量商业优质模板分享交易平台*/
-html{}
+html{user-select:none}
 body{background: url(../images/body.png) repeat-x left 0px;}
 a{}
 a:hover{ color:#DB241C;}
@@ -1493,5 +1493,49 @@ a.url_b:hover{
 	font-family: "Microsoft YaHei", 瀹嬩綋, "WenQuanYi Micro Hei", sans-serif;}
 /*/foot*/
 .foot-div {margin-top:10px;float:left;text-align:left;}
-.foot-li {font-size:14px;padding-top: 5px;letter-spacing: 1px; list-style: none}
+.foot-li {font-size:14px;padding-top: 5px;letter-spacing: 1px; list-style: none;width:}
 .foot-li-en {padding-top: 10px;letter-spacing: 1px; list-style: none}
+.foot-li-en h5{text-align:center}
+.foot-label {text-align: right}
+     footer{
+            width: 1134px;
+            margin: 0 auto;
+            font-size: 13px;
+        }
+        .foot-title{
+            font-weight: bold;
+            font-size: 15px;
+            text-align: left;
+            width: 100%;
+        }
+        .foot-group img{
+            vertical-align: middle;
+            margin: 0 auto;
+			margin-top:20px;
+            display: block;
+        }
+        .foot-row{
+            width: 100%;
+            height: auto;
+        }
+        .foot-group{
+            float: left;
+            width: 25%;
+        }
+        .foot-group-item{
+            width: 100%;
+            height: 25px;
+            line-height: 25px;
+        }
+        .foot-group-item-title{
+            float: left;
+            width: 60px;
+            text-align: right;
+            padding-right: 10px;
+            box-sizing: border-box;
+        }
+        .foot-group-item-text{
+            max-width: 214px;
+            float: left;
+        }
+
